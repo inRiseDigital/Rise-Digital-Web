@@ -1,8 +1,8 @@
 'use client'
 import React, {useState} from 'react'
-import CodeSpace from '../Productivity/CodeSpace'
+import CodeSpace from '../Capabilities/CodeSpace'
 import Discount from './Discount'
-import HoverCard from '../Productivity/HoverCard'
+import HoverCard from '../Capabilities/HoverCard'
 import {motion} from "framer-motion"
 
 type Props = {}

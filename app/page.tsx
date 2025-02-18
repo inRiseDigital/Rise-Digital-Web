@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Hero from './components/Hero-section/Hero';
-import Productivity from './components/Productivity/Capabilities';
+import Productivity from './components/Capabilities/Capabilities';
 import Collaboration from './components/Collaboration/Collaboration';
 import Security from './components/Security/Security';
 import Globe from './components/Footer/Globe';

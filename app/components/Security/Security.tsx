@@ -1,6 +1,6 @@
 'use client'
 import React, {useState} from 'react'
-import HoverCard from '../Productivity/HoverCard'
+import HoverCard from '../Capabilities/HoverCard'
 import Projects from './Projects'
 import {motion} from "framer-motion"
 
