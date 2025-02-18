@@ -82,6 +82,7 @@ const Clients = (props: Props) => {
                     </div>
                 </div>                
             </div>
+            <motion.div initial={{height:0}} whileInView={{height:'160px'}} transition={{delay:0.2}} className=" md:ml-10 ml-3 h-[160px] mt-[-20px] w-[3px] rounded-md bg-gradient-to-b from-transparent via-[#797ef9] to-[#abb4ff]" ></motion.div>
         </div>
     );
 };
