@@ -17,6 +17,7 @@ const Productivity = (props: Props) => {
                     <motion.h3 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.3 }} viewport={{ once: false }} className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate" style={{ transitionDelay: '300ms' }}>
                         <span className="text-[#7ee787]">Our Capabilities</span>
                     </motion.h3>
+                    <motion.div initial={{height:0}} whileInView={{height:'100%'}} transition={{delay:0.8}}  className=" h-full w-[3px] mt-7 rounded-md bg-gradient-to-b from-[#7ee787] via-[#95fc9d] to-transparent" ></motion.div>
                 </div>
             </div>
             <div className='flex justify-between items-center'>
@@ -78,7 +79,7 @@ const Productivity = (props: Props) => {
                     </HoverCard>
                 </div>
             </div>
-            <motion.div initial={{ height: 0 }} whileInView={{ height: '160px' }} transition={{ delay: 0.3 }} viewport={{ once: false }} className="md:ml-10 ml-3 h-[160px] mt-[-20px] w-[3px] rounded-md bg-gradient-to-b from-transparent via-[#ea6045] to-[#ffa28b]" ></motion.div>
+            <motion.div initial={{ height: 0 }} whileInView={{ height: '160px' }} transition={{ delay: 0.3 }} viewport={{ once: false }} className="md:ml-10 ml-3 h-[160px] mt-[-20px] w-[3px] rounded-md bg-gradient-to-b from-[#7ee787] via-[#95fc9d]" ></motion.div>
         </div>
     );
 };

@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Hero from './components/Hero-section/Hero';
 import Productivity from './components/Capabilities/Capabilities';
-import Collaboration from './components/Collaboration/Collaboration';
 import Security from './components/Security/Security';
 import Globe from './components/Footer/Globe';
 import Footer from './components/Footer/Footer';
@@ -23,7 +22,6 @@ export default function Home() {
             <Productivity/>
           </div>
           <div id='collaboration' className='home-campaign-productivity px-4 pt-8  overflow-hidden'>
-            <Collaboration/>
           </div>
           <div id='security' className='home-campaign-productivity px-4 pt-8 pb-16 overflow-hidden'>
             <Security/>
