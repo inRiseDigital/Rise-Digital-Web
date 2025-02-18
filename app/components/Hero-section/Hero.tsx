@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import Earth from './Earth1'
 import Earth2 from './Earth2'
-import {motion} from "framer-motion"
 
 
 type Props = {}

@@ -15,16 +15,16 @@ const Capabilities = (props: Props) => {
             <div className='flex md:pl-10 space-x-3 md:space-x-10'>
                 <div className='md:w-10/12 mb-24'>
                     <motion.h3 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.3 }} viewport={{ once: false }} className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate" style={{ transitionDelay: '300ms' }}>
-                        <span className="text-[#7ee787]">Our Capabilities</span>
+                        <span className="text-[#939aff]">Our Capabilities</span>
                     </motion.h3>
                 </div>
             </div>
             <div className='flex justify-between items-center'>
                 <div className='flex justify-between md:space-x-10 max-md:flex-col'>
                     {/* HoverCard 1 */}
-                    <HoverCard backgroundColor='#7ee787' direction='flex-col' left='0'>
+                    <HoverCard backgroundColor='#939aff' direction='flex-col' left='0'>
                         <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                            <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                            <p className="text-xl md:text-2xl mb-6 font-medium text-[#F8FAFC]">
                                 <span className="text-white font-semibold block">Marketing</span>Strategic Solutions That Resonate Deeply, Captivate Audiences, and Inspire Action—Marketing That Engages Emotionally, Persuades Effectively, and Converts with Impact.
                             </p>
                             <div>
@@ -41,9 +41,9 @@ const Capabilities = (props: Props) => {
                     </HoverCard>
 
                     {/* HoverCard 2 */}
-                    <HoverCard backgroundColor='#7ee787' direction='flex-col' left='-400px'>
+                    <HoverCard backgroundColor='#939aff' direction='flex-col' left='-400px'>
                         <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                            <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                            <p className="text-xl md:text-2xl mb-6 font-medium text-[#F8FAFC]">
                                 <span className="text-white font-semibold block">AI Solutions</span>AI-driven solutions that push boundaries, spark innovation, and deliver strategic marketing that emotionally engages, influences, and converts effectively.
                             </p>
                             <div>
@@ -59,9 +59,9 @@ const Capabilities = (props: Props) => {
                         </div>
                     </HoverCard>
                     {/* HoverCard 3 */}
-                    <HoverCard backgroundColor='#7ee787' direction='flex-col' left='-400px'>
+                    <HoverCard backgroundColor='#939aff' direction='flex-col' left='-400px'>
                         <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                            <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                            <p className="text-xl md:text-2xl mb-6 font-medium text-[#F8FAFC]">
                                 <span className="text-white font-semibold block">Technology</span>Pioneering and Innovative Technology Solutions Designed to Empower Businesses, Enhance Connectivity, and Transform the Way the World Interacts and Operates.
                             </p>
                             <div>
@@ -83,3 +83,5 @@ const Capabilities = (props: Props) => {
 };
 
 export default Capabilities;
+
+
