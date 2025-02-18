@@ -25,16 +25,16 @@ const Hero = (props: Props) => {
             {/* Right Side - Text Content */}
             <div className="w-[50%] text-right pr-4 md:pr-12">
                 <h1 className="text-[48px] md:text-[72px] lg:text-[80px] font-semibold text-white leading-tight">
+                    Innovative Marketing, AI, and Technology Solutions for Unstoppable Growth
+                </h1>
+                <p className="text-[24px] md:text-[28px] lg:text-[32px] leading-[30px] md:leading-[36px] lg:leading-[44px] mt-4 text-[#7d8590]">
                     <Typewriter
                         options={{
-                            strings: ['Innovative Marketing, AI, and Technology Solutions for Unstoppable Growth'],
+                            strings: ["Partnering with forward-thinking brands to design and scale transformative digital solutions"],
                             autoStart: true,
                             loop: true,
                         }}
                     />
-                </h1>
-                <p className="text-[24px] md:text-[28px] lg:text-[32px] leading-[30px] md:leading-[36px] lg:leading-[44px] mt-4 text-[#7d8590]">
-                    Partnering with forward-thinking brands to design and scale transformative digital solutions
                 </p>
                 <div className="mt-8">
                     <a
