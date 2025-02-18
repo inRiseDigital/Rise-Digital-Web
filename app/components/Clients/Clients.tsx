@@ -1,0 +1,89 @@
+"use client";
+
+import {motion} from "framer-motion"
+import React, {useState} from 'react'
+
+
+
+const companies = [
+    {
+      id: 1,
+      name: "cloudinary",
+      img: "/cloud.svg",
+      nameImg: "/cloudName.svg",
+    },
+    {
+      id: 2,
+      name: "appwrite",
+      img: "/app.svg",
+      nameImg: "/appName.svg",
+    },
+    {
+      id: 3,
+      name: "HOSTINGER",
+      img: "/host.svg",
+      nameImg: "/hostName.svg",
+    },
+    {
+      id: 4,
+      name: "stream",
+      img: "/s.svg",
+      nameImg: "/streamName.svg",
+    },
+    {
+      id: 5,
+      name: "docker.",
+      img: "/dock.svg",
+      nameImg: "/dockerName.svg",
+    },
+    {
+        id: 5,
+        name: "docker.",
+        img: "/dock.svg",
+        nameImg: "/dockerName.svg",
+    },
+  ];
+
+
+
+
+type Props = {}
+
+const Clients = (props: Props) => {
+    return (
+        <div className='max-w-[1280px] mx-auto'>
+            <div className='flex md:pl-10 space-x-3 md:space-x-10'>
+                <div className='md:w-10/12 mb-24'>
+                    <motion.h3 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.3 }} viewport={{ once: false }} className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate" style={{ transitionDelay: '300ms' }}>
+                        <span className="text-[#7ee787]">Our Clients</span>
+                    </motion.h3>
+                </div>
+            </div>
+            <div className='flex justify-between items-center'>
+                <div className="flex flex-col items-center max-lg:mt-10">
+                    <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10">
+                        {companies.map((company) => (
+                            <React.Fragment key={company.id}>
+                                <div className="flex md:max-w-60 max-w-32 gap-2">
+                                    <img
+                                        src={company.img}
+                                        alt={company.name}
+                                        className="md:w-10 w-5"
+                                    />
+                                    <img
+                                        src={company.nameImg}
+                                        alt={company.name}
+                                        width={company.id === 4 || company.id === 5 ? 100 : 150}
+                                        className="md:w-24 w-20"
+                                    />
+                                </div>
+                            </React.Fragment>
+                        ))}
+                    </div>
+                </div>                
+            </div>
+        </div>
+    );
+};
+
+export default Clients;
