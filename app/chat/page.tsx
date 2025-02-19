@@ -45,9 +45,11 @@ export default function Chat() {
       setUserInput(""); // clear the textarea
 
       // llm api connect
-      setTimeout(() => {
-        addMessage({ message: "ok", type: "bot" });
-      }, (Math.floor(Math.random() * (15 - 10 + 1)) + 10) * 100);
+      let response="Hello";
+
+      addMessage({ message: response, type: "bot" });
+
+      
     }
   };
 
@@ -82,7 +84,7 @@ export default function Chat() {
                   className={`max-w-[60%] flex flex-col ${
                     msg.type === "bot"
                       ? "bg-white mr-auto"
-                      : "text-white bg-black ml-auto"
+                      : "text-black bg-white ml-auto"
                   } items-start gap-2 rounded-lg border p-2 text-left text-sm transition-all whitespace-pre-wrap`}
                 >
                   {msg.message}
