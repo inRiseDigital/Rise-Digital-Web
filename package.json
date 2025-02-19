@@ -9,7 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^9.121.5",
+    "@react-three/drei": "^9.50.0",
+    "@react-three/fiber": "8.12.0",
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.5",
@@ -18,6 +19,7 @@
     "eslint": "8.42.0",
     "eslint-config-next": "13.4.5",
     "framer-motion": "^10.12.16",
+    "lucide-react": "^0.475.0",
     "next": "^13.5.8",
     "postcss": "8.4.24",
     "react": "^18.2.0",
