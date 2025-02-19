@@ -5,9 +5,10 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 // @ts-ignore
 import * as random from "maath/random/dist/maath-random.esm";
+import * as THREE from "three";
 
-const Background = (props: any) => {
-  const ref: any = useRef();
+const Star = (props: any) => {
+  const ref = useRef<THREE.Group>(null!);
   const [sphere] = useState(() =>
     random.inSphere(new Float32Array(5000), { radius: 1.2 })
   );
@@ -41,14 +42,13 @@ const Background = (props: any) => {
 
 const StarsCanvas = () => (
   <div className="w-full h-auto fixed inset-0 z-[0] pointer-events-none">
-      <Canvas
-          className="pointer-events-none"
-          camera={{ position: [0, 0, 1] }}
-      >
-          <Suspense fallback={null}>
-              <Background />
-          </Suspense>
-      </Canvas>
+    <Canvas 
+      className="pointer-events-none"
+      camera={{ position: [0, 0, 1] }}>
+      <Suspense fallback={null}>
+        <Star /> {/* Now correctly inside Canvas */}
+      </Suspense>
+    </Canvas>
   </div>
 );
 

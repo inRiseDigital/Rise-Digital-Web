@@ -1,19 +1,28 @@
 'use client'
-import React, { useState } from 'react'
+
+import React, { useEffect, useState } from 'react'
 import Earth from './Earth1'
 import Earth2 from './Earth2'
-import Typewriter from 'typewriter-effect';
+import dynamic from "next/dynamic";
+const Typewriter = dynamic(() => import("typewriter-effect"), { ssr: false });
+import { motion } from 'framer-motion';
+
 
 
 type Props = {}
 
 const Hero = (props: Props) => {
     const [hovered, setHovered] = useState<boolean>(false)
+    const [isClient, setIsClient] = useState(false);
+
+    useEffect(() => {
+        setIsClient(true);
+    }, []);
 
     return (
-        <div className="relative max-w-[1280px] lg:pt-32 md:px-10 mx-auto pt-16 flex items-center justify-between">
+        <div className="relative max-w-[1680px] lg:pt-32 md:px-10 mx-auto pt-16 flex items-center justify-between">
             {/* Earth Component - FULLY Visible in the Left Corner */}
-            <div className="relative w-[50%] max-w-[600px]">
+            <div className="relative w-[40%] max-w-[600px]">
                 <div className="max-sm:hidden w-full">
                     <Earth />
                 </div>
@@ -23,18 +32,22 @@ const Hero = (props: Props) => {
             </div>
 
             {/* Right Side - Text Content */}
-            <div className="w-[50%] text-right pr-4 md:pr-12">
-                <h1 className="text-[48px] md:text-[72px] lg:text-[80px] font-semibold text-white leading-tight">
+            <div className="text-right pr-4 md:pr-12 w-full max-w-5xl">
+                <h1 className="text-[32px] md:text-[48px] lg:text-[56px] font-semibold text-white leading-tight w-full max-w-5xl">
                     Innovative Marketing, AI, and Technology Solutions for Unstoppable Growth
                 </h1>
-                <p className="text-[24px] md:text-[28px] lg:text-[32px] leading-[30px] md:leading-[36px] lg:leading-[44px] mt-4 text-[#7d8590]">
-                    <Typewriter
-                        options={{
-                            strings: ["Partnering with forward-thinking brands to design and scale transformative digital solutions"],
-                            autoStart: true,
-                            loop: true,
-                        }}
-                    />
+                <p className="text-[24px] md:text-[28px] lg:text-[32px] leading-[30px] md:leading-[36px]   lg:leading-[44px] mt-4 text-[#7d8590]">
+                    {isClient ? (
+                        <Typewriter
+                            options={{
+                                strings: ["Partnering with forward-thinking brands to design and scale transformative digital solutions"],
+                                autoStart: true,
+                                loop: true,
+                            }}
+                        />
+                    ) : (
+                        "Partnering with forward-thinking brands..."
+                    )}
                 </p>
                 <div className="mt-8">
                     <a
@@ -90,7 +103,6 @@ const Hero = (props: Props) => {
                 </div>
             </div>
         </div>
-
     )
 }
 
