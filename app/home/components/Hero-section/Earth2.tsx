@@ -2,17 +2,31 @@
 import React, { useEffect, useRef, useState } from 'react';
 import createGlobe from 'cobe';
 
-
 const Earth2: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  // Default to desktop size; will update if screen is smaller.
+  const [size, setSize] = useState(600);
+
+  // Update canvas size based on window width.
+  useEffect(() => {
+    const updateSize = () => {
+      if (window.innerWidth < 640) {
+        setSize(300);
+      } else {
+        setSize(600);
+      }
+    };
+    updateSize();
+    window.addEventListener("resize", updateSize);
+    return () => window.removeEventListener("resize", updateSize);
+  }, []);
 
   useEffect(() => {
     let phi = 0;
-
     const globe = createGlobe(canvasRef.current!, {
       devicePixelRatio: 2,
-      width: 600 * 2,
-      height: 600 * 2,
+      width: size * 2, // Double for retina clarity
+      height: size * 2,
       phi: 0,
       theta: 0.25,
       dark: 1,
@@ -20,16 +34,12 @@ const Earth2: React.FC = () => {
       mapSamples: 30000,
       mapBrightness: 6,
       baseColor: [1, 0.5, 3],
-      markerColor: [0.1, 0.8, 1], // Customize marker color here
+      markerColor: [0.1, 0.8, 1],
       glowColor: [1, 1, 2],
-      opacity:1,
-      offset: [-300,0],
-      markers: [
-        // longitude latitude
-      ],
+      opacity: 1,
+      offset: [-size / 2, 0],
+      markers: [],
       onRender: (state: Record<string, any>) => {
-        // Called on every animation frame.
-        // `state` will be an empty object, return updated params.\
         state.phi = phi;
         phi += 0.003;
       },
@@ -38,16 +48,17 @@ const Earth2: React.FC = () => {
     return () => {
       globe.destroy();
     };
-  }, []);
+  }, [size]);
 
   return (
-    <div className="App flex items-center justify-center z-[10]">
+    <div className="flex items-center justify-center z-[10]">
       <canvas
         ref={canvasRef}
-        style={{ width: 600, height: 600, maxWidth: '100%', aspectRatio: '1' }}
+        style={{ width: size, height: size }}
+        className="max-w-full"
       />
     </div>
   );
 };
 
-export default Earth2
+export default Earth2;
