@@ -5,7 +5,7 @@ import Globe from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Clients from './components/Clients/Clients';
 import Tools from "./components/Tools/Tools"
-import Nav from '../components/Nav/Nav';
+import Nav from './components/Nav/Nav';
 
 export default function Home() {
   
