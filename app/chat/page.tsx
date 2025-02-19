@@ -75,47 +75,6 @@ export default function Chat() {
 
   return (
     <main className="h-screen flex flex-col bg-muted/50">
-      <div>
-        <div className="bg-white h-10 flex gap-3 items-center px-3">
-          <div>
-            <Link href="/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M21 3l-5 9h5l-6.891 7.086a6.5 6.5 0 1 1 -8.855 -9.506l7.746 -6.58l-1 5l9 -5z" />
-                <path d="M9.5 14.5m-2.5 0a2.5 2.5 0 1 0 5 0a2.5 2.5 0 1 0 -5 0" />
-              </svg>
-            </Link>
-          </div>
-          <div className="flex-1"></div>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="outline-none">
-              <Avatar className="w-6 h-6 bg-gray-200">
-                <AvatarImage src="avatar/01.png" />
-                <AvatarFallback>CN</AvatarFallback>
-              </Avatar>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" alignOffset={-5}>
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Profile</DropdownMenuItem>
-              <DropdownMenuItem>Billing</DropdownMenuItem>
-              <DropdownMenuItem>Team</DropdownMenuItem>
-              <DropdownMenuItem>Subscription</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-        <div className="shrink-0 bg-border h-[1px] w-full"></div>
-      </div>
       <ScrollArea ref={scrollRef} className="flex-1 overflow-x-hidden">
         <div className="flex flex-col gap-1 p-2 max-w-3xl mx-auto">
           {conversation.map((msg, i) => {
