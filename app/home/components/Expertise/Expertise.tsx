@@ -1,7 +1,7 @@
 'use client'
 import React, {useState} from 'react'
 import {motion} from "framer-motion"
-import Explore from "../Expertise/Explore"
+import Explore from "./Explore"
 
 type Props = {}
 
