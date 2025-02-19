@@ -44,7 +44,8 @@ const StarsCanvas = () => (
   <div className="w-full h-auto fixed inset-0 z-[0] pointer-events-none">
     <Canvas 
       className="pointer-events-none"
-      camera={{ position: [0, 0, 1] }}>
+      camera={{ position: [0, 0, 1] }}
+      gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={null}>
         <Star /> {/* Now correctly inside Canvas */}
       </Suspense>
