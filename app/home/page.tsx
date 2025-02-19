@@ -1,7 +1,7 @@
 import Hero from './components/Hero-section/Hero';
 import Capabilities from './components/Capabilities/Capabilities';
 import Expertise from './components/Expertise/Expertise';
-import Globe from './components/Contact/Contact';
+import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Clients from './components/Clients/Clients';
 import Tools from "./components/Tools/Tools"
@@ -30,10 +30,12 @@ export default function Home() {
             <div id='capabilities' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
               <Capabilities/>
             </div>
-            <div id='security' className='home-campaign-productivity px-4 pt-8 pb-16 overflow-hidden'>
+            <div id='expertise' className='home-campaign-productivity px-4 pt-8 pb-16 overflow-hidden'>
               <Expertise/>
             </div>
-          <Globe/>
+            <div id='security' className='home-campaign-productivity px-4 pt-8 pb-16 overflow-hidden'>
+              <Contact />
+            </div>
           </div>
         </div>
         <Footer/>
