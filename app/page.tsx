@@ -1,10 +1,10 @@
-import Image from 'next/image';
 import Hero from './components/Hero-section/Hero';
-import Productivity from './components/Productivity/Productivity';
-import Collaboration from './components/Collaboration/Collaboration';
-import Security from './components/Security/Security';
-import Globe from './components/Footer/Globe';
-import Footer from './components/Footer/Footer';
+import Capabilities from './components/Capabilities/Capabilities';
+import Expertise from './components/Expertise/Expertise';
+import Globe from './components/Contact/Contact';
+import Footer from './components/Contact/Footer';
+import Clients from './components/Clients/Clients';
+import Tools from "./components/Tools/Tools"
 
 export default function Home() {
   
@@ -19,22 +19,25 @@ export default function Home() {
           <div className='hero-section px-3 '>
             <Hero/>
           </div>
-          <div id='productivity' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
-            <Productivity/>
+          <div id='tools' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
+            <Tools />
+          </div>
+          <div id='tools' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
+          </div>
+          <div id='clients' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
+            <Clients />
           </div>
           <div id='collaboration' className='home-campaign-productivity px-4 pt-8  overflow-hidden'>
-            <Collaboration/>
+          </div>
+          <div id='productivity' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
+            <Capabilities/>
+          </div>
+          <div id='collaboration' className='home-campaign-productivity px-4 pt-8  overflow-hidden'>
           </div>
           <div id='security' className='home-campaign-productivity px-4 pt-8 pb-16 overflow-hidden'>
-            <Security/>
+            <Expertise/>
           </div>
          <Globe/>
-          <div className='max-w-[1280px] mx-auto relative z-[2]  px-5'>
-            <ul className='lg:w-9/12 text-[14px] pt-16 text-[#7d8590] space-y-1'>
-              <li><sup id="footnote-1">1</sup> The Total Economic Impact™ Of GitHub Enterprise Cloud and Advanced Security, a commissioned study conducted by Forrester Consulting, 2022. Results are for a composite organization based on interviewed customers.</li>
-              <li><sup id="footnote-2">2</sup> GitHub, Octoverse 2022 The state of open source software.</li>
-            </ul>
-          </div>
         </div>
       </div>
       <Footer/>

@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import Earth from './Earth1'
 import Earth2 from './Earth2'
+import Typewriter from 'typewriter-effect';
+
 
 type Props = {}
 
@@ -26,7 +28,13 @@ const Hero = (props: Props) => {
                     Innovative Marketing, AI, and Technology Solutions for Unstoppable Growth
                 </h1>
                 <p className="text-[24px] md:text-[28px] lg:text-[32px] leading-[30px] md:leading-[36px] lg:leading-[44px] mt-4 text-[#7d8590]">
-                    Partnering with forward-thinking brands to design and scale transformative digital solutions
+                    <Typewriter
+                        options={{
+                            strings: ["Partnering with forward-thinking brands to design and scale transformative digital solutions"],
+                            autoStart: true,
+                            loop: true,
+                        }}
+                    />
                 </p>
                 <div className="mt-8">
                     <a
@@ -82,6 +90,7 @@ const Hero = (props: Props) => {
                 </div>
             </div>
         </div>
+
     )
 }
 
