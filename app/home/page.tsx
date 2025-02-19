@@ -1,10 +1,10 @@
-import Hero from '../components/Hero-section/Hero';
-import Capabilities from '../components/Capabilities/Capabilities';
-import Expertise from '../components/Expertise/Expertise';
-import Globe from '../components/Contact/Contact';
-import Footer from '../components/Footer/Footer';
-import Clients from '../components/Clients/Clients';
-import Tools from "../components/Tools/Tools"
+import Hero from './components/Hero-section/Hero';
+import Capabilities from './components/Capabilities/Capabilities';
+import Expertise from './components/Expertise/Expertise';
+import Globe from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
+import Clients from './components/Clients/Clients';
+import Tools from "./components/Tools/Tools"
 
 export default function Home() {
   

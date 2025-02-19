@@ -1,10 +1,4 @@
-import Hero from './components/Hero-section/Hero';
-import Capabilities from './components/Capabilities/Capabilities';
-import Expertise from './components/Expertise/Expertise';
-import Globe from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
-import Clients from './components/Clients/Clients';
-import Tools from "./components/Tools/Tools"
+import Chat from "./chat/page";
 
 export default function Home() {
   
@@ -17,30 +11,10 @@ export default function Home() {
       <div>
         <div className='overflow-hidden'>
           <div className='hero-section px-3 '>
-            <Hero/>
+            <Chat/>
           </div>
-          <div id='tools' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
-            <Tools />
-          </div>
-          <div id='tools' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
-          </div>
-          <div id='clients' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
-            <Clients />
-          </div>
-          <div id='collaboration' className='home-campaign-productivity px-4 pt-8  overflow-hidden'>
-          </div>
-          <div id='productivity' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
-            <Capabilities/>
-          </div>
-          <div id='collaboration' className='home-campaign-productivity px-4 pt-8  overflow-hidden'>
-          </div>
-          <div id='security' className='home-campaign-productivity px-4 pt-8 pb-16 overflow-hidden'>
-            <Expertise/>
-          </div>
-         <Globe/>
         </div>
       </div>
-      <Footer/>
     </div>
   );
 }
