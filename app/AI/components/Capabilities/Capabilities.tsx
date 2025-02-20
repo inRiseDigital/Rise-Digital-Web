@@ -52,7 +52,7 @@ const Capabilities = (props: Props) => {
                                         <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Personalization at Scale</span> Deliver personalized experiences with AI that tailors recommendations and marketing messages. Our solutions analyze customer data to enhance engagement, increase conversions, and build lasting relationships.</p>
                                     </div>
                                     <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className='overflow-hidden rounded-s-lg'>
-                                        <Image className="w-full h-auto" width={1209} height={890} loading="lazy" alt="" aria-hidden="true" src="" />
+                                        <Image className="w-full h-auto" width={1209} height={890} loading="lazy" alt="" aria-hidden="true" src="/ai/personalizationatscale.png" />
                                     </motion.div>
                                 </HoverCard>
                                 <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='-400px'>

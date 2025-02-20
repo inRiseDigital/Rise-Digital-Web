@@ -8,27 +8,27 @@ import { fadeIn, staggerContainer } from '../../../../utils/motion';
 
 const exploreWorlds = [
   {
-    id: 'world-1',
+    id: 'Education',
     imgUrl: '/home/education.jpg',
     title: 'Education',
   },
   {
-    id: 'world-2',
+    id: 'Government',
     imgUrl: '/home/governance.jpg',
     title: 'Government',
   },
   {
-    id: 'world-3',
+    id: 'Retail',
     imgUrl: '/home/retail.png',
     title: 'Retail',
   },
   {
-    id: 'world-4',
-    imgUrl: '/planet-04.png',
+    id: 'Finance',
+    imgUrl: '/home/finance.png',
     title: 'Finance',
   },
   {
-    id: 'world-5',
+    id: 'Healthcare',
     imgUrl: '/home/health.jpg',
     title: 'Healthcare',
   },
