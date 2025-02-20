@@ -1,55 +1,48 @@
 "use client";
 
+import { useEffect, useRef, useState, KeyboardEvent, ChangeEvent } from "react";
 import { AutosizeTextarea } from "./components/ui/autosize-textarea";
 import { Button } from "./components/ui/button";
 import { ScrollArea } from "./components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
-import { KeyboardEvent, useRef, useState } from "react";
-
+import { Mic as MicIcon, Send as SendIcon, Paperclip as AttachmentIcon } from "lucide-react";
 
 interface Message {
   message: string;
   type: "bot" | "user";
+  file?: File;
+  audio?: string;
 }
 
 export default function Chat() {
-  const scrollRef = useRef<null | HTMLDivElement>(null);
-  const messagesEndRef = useRef<null | HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
   const [userInput, setUserInput] = useState("");
   const [conversation, setConversation] = useState<Message[]>([]);
+  const [isRecording, setIsRecording] = useState(false);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioChunksRef = useRef<Blob[]>([]);
+
+  // Scroll to the top when messages update
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = 0;
+    }
+  }, [conversation]);
 
   const addMessage = (message: Message) => {
-    setConversation((oldArray: Message[]) => [...oldArray, message]);
-    if (message.type === "user") {
-      setTimeout(() => {
-        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-      }, 100);
-    } else {
-      const messageEndPosition =
-        messagesEndRef.current?.getBoundingClientRect()?.top || 0;
-      const scrollAreaPosition =
-        scrollRef.current?.getBoundingClientRect()?.top || 0;
-      const scrollAreaHeight = scrollRef.current?.clientHeight || 0;
-      const scrollPosition = messageEndPosition - scrollAreaPosition;
-      if (scrollAreaHeight - scrollPosition >= -200) {
-        setTimeout(() => {
-          messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-      }
-    }
+    setConversation((prev) => [...prev, message]);
   };
 
   const sendMessage = () => {
-    if (userInput) {
+    if (userInput.trim()) {
       addMessage({ message: userInput, type: "user" });
-      setUserInput(""); // clear the textarea
+      setUserInput("");
 
-      // llm api connect
-      let response="Hello";
-
-      addMessage({ message: response, type: "bot" });
-
-      
+      // Simulated bot response
+      setTimeout(() => {
+        addMessage({ message: "Hello! How can I assist you?", type: "bot" });
+      }, 500);
     }
   };
 
@@ -60,78 +53,158 @@ export default function Chat() {
     }
   };
 
+  // Handle file selection
+  const handleFileSelect = (event: ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      addMessage({ message: `📎 Attached: ${file.name}`, type: "user", file });
+    }
+  };
+
+  // Trigger file input when attachment icon is clicked
+  const handleAttachmentClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  // Start Recording Voice
+  const startRecording = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const mediaRecorder = new MediaRecorder(stream);
+      mediaRecorderRef.current = mediaRecorder;
+      audioChunksRef.current = [];
+
+      mediaRecorder.ondataavailable = (event) => {
+        if (event.data.size > 0) {
+          audioChunksRef.current.push(event.data);
+        }
+      };
+
+      mediaRecorder.onstop = () => {
+        const audioBlob = new Blob(audioChunksRef.current, { type: "audio/mp3" });
+        const audioUrl = URL.createObjectURL(audioBlob);
+
+        addMessage({ message: "🎤 Voice Message", type: "user", audio: audioUrl });
+      };
+
+      mediaRecorder.start();
+      setIsRecording(true);
+    } catch (error) {
+      console.error("Error accessing microphone:", error);
+    }
+  };
+
+  // Stop Recording Voice
+  const stopRecording = () => {
+    if (mediaRecorderRef.current) {
+      mediaRecorderRef.current.stop();
+      setIsRecording(false);
+    }
+  };
+
   return (
     <main className="h-screen flex flex-col bg-muted/50">
-      <ScrollArea ref={scrollRef} className="flex-1 overflow-x-hidden">
-        <div className="flex flex-col gap-1 p-2 max-w-3xl mx-auto">
-          {conversation.map((msg, i) => {
-            return (
-              <div key={i} className="flex gap-2 first:mt-2">
-                {msg.type === "bot" && (
-                  <>
-                    {conversation[i - 1] &&
-                    conversation[i - 1].type === "bot" ? (
-                      <div className={`w-6 h-6`}></div>
-                    ) : (
-                      <Avatar className={`w-6 h-6 bg-gray-200`}>
-                        <AvatarImage src="avatar/02.png" />
-                        <AvatarFallback>.ˍ.</AvatarFallback>
-                      </Avatar>
-                    )}
-                  </>
-                )}
-                <div
-                  className={`max-w-[60%] flex flex-col ${
-                    msg.type === "bot"
-                      ? "bg-white mr-auto"
-                      : "text-black bg-white ml-auto"
-                  } items-start gap-2 rounded-lg border p-2 text-left text-sm transition-all whitespace-pre-wrap`}
-                >
-                  {msg.message}
-                </div>
-                {msg.type === "user" && (
-                  <>
-                    {conversation[i - 1] &&
-                    conversation[i - 1].type === "user" ? (
-                      <div className={`w-6 h-6`}></div>
-                    ) : (
-                      <Avatar className={`w-6 h-6 bg-gray-200`}>
-                        <AvatarImage src="avatar/01.png" />
-                        <AvatarFallback>.ˍ.</AvatarFallback>
-                      </Avatar>
-                    )}
-                  </>
-                )}
-              </div>
-            );
-          })}
+      {/* Chat Header */}
+      <div>
+        <div className="h-30 flex items-center justify-center px-3">
+          <img src="/chatUI/rise_digital.png" className="w-64" alt="Chat Logo" />
         </div>
-        <div ref={messagesEndRef} className="mb-2"></div>
-      </ScrollArea>
-      <div className="w-full sm:max-w-3xl mx-auto">
-        <div className="bg-white sm:rounded-t-md border-t sm:border shadow-lg">
-          <div className="p-4">
-            <div className="flex flex-row gap-3 p-4 border rounded-t-md">
-            <AutosizeTextarea
-              className="flex-1 outline-none border-0"
-              placeholder="Type here ..."
-              minHeight={25}
-              maxHeight={55}
-              rows={1}
-              onKeyDown={handleEnter} 
-              value={userInput}
-              onChange={(e) => setUserInput(e.target.value)}
-            />
-            <Button onClick={() => sendMessage()} className="h-8 w-8 p-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 256 256"
-                fill="currentColor"
-                className="h-4 w-4"
-              >
-                <path d="M200 32v144a8 8 0 0 1-8 8H67.31l34.35 34.34a8 8 0 0 1-11.32 11.32l-48-48a8 8 0 0 1 0-11.32l48-48a8 8 0 0 1 11.32 11.32L67.31 168H184V32a8 8 0 0 1 16 0Z"></path>
-              </svg>
-            </Button>
+        <div className="shrink-0 bg-border h-[1px] w-full"></div>
+      </div>
+
+      {/* Chat Messages Container */}
+      <div className="flex-1 flex justify-center overflow-hidden">
+        <div className="w-full sm:w-3/5 flex flex-col">
+          <ScrollArea ref={scrollRef} className="flex-1 overflow-y-auto">
+            <div className="flex flex-col gap-2 p-4">
+              {conversation.map((msg, i) => (
+                <div key={i} className={`flex items-end gap-2 ${msg.type === "user" ? "justify-end" : "justify-start"}`}>
+
+                  {/* Bot Avatar (Only Bot Messages Have an Avatar) */}
+                  {msg.type === "bot" && (
+                    <Avatar className="w-8 h-8 bg-gray-200">
+                      <AvatarImage src="/avatar/02.png" />
+                      <AvatarFallback>.ˍ.</AvatarFallback>
+                    </Avatar>
+                  )}
+
+                  {/* Chat Bubble */}
+                  <div
+                    className={`max-w-[65%] px-4 py-2 rounded-lg text-white text-sm ${msg.type === "bot" ? "bg-transparent" : "bg-transparent"
+                      }`}
+                  >
+                    {msg.message}
+                    {msg.file && (
+                      <div className="mt-1 text-xs text-gray-300">
+                        📎 {msg.file.name}
+                      </div>
+                    )}
+                    {msg.audio && (
+                      <audio controls className="mt-2">
+                        <source src={msg.audio} type="audio/mp3" />
+                        Your browser does not support the audio element.
+                      </audio>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </ScrollArea>
+        </div>
+      </div>
+
+      {/* Bottom chat bar */}
+      <div className="flex justify-center">
+        <div className="w-full sm:w-3/5">
+          <div className="bg-transparent">
+            <div className="p-4">
+              <div className="flex items-center h-14 gap-3 p-4 rounded-full bg-white/10 backdrop-blur-md shadow-md transition-all 
+                  hover:border-purple-500/70 hover:ring-2 hover:ring-purple-500/50 hover:shadow-purple-500/50 hover:shadow-lg">
+
+                {/* Hidden File Input */}
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  className="hidden"
+                  onChange={handleFileSelect}
+                />
+
+                {/* Attachment Icon */}
+                <button
+                  onClick={handleAttachmentClick}
+                  className="p-2 text-gray-400 hover:text-gray-200 transition-all">
+                  <AttachmentIcon className="w-6 h-6 cursor-pointer" />
+                </button>
+
+                {/* Input Field */}
+                <AutosizeTextarea
+                  className="flex-1 outline-none border-0 bg-transparent placeholder:text-white/60 text-white text-base"
+                  placeholder="Type a message..."
+                  minHeight={25}
+                  maxHeight={55}
+                  rows={1}
+                  onKeyDown={handleEnter}
+                  value={userInput}
+                  onChange={(e) => setUserInput(e.target.value)}
+                />
+
+                {/* Microphone Icon */}
+                <button
+                  onClick={isRecording ? stopRecording : startRecording}
+                  className={`p-2 transition-all ${isRecording ? "text-red-500 animate-pulse" : "text-gray-400 hover:text-gray-200"}`}
+                >
+                  <MicIcon className="w-6 h-6 cursor-pointer" />
+                </button>
+
+                {/* Send Button with Custom SVG Icon */}
+                <Button
+                  onClick={sendMessage}
+                  className="h-10 w-10 p-0 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-purple-500 hover:to-blue-500 text-white 
+             rounded-full flex items-center justify-center transition-all transform hover:scale-110 shadow-lg hover:shadow-xl">
+                  <img src="/chatUI/send-icon.svg" alt="Send" className="h-8 w-8" />
+                </Button>
+
+              </div>
             </div>
           </div>
         </div>
