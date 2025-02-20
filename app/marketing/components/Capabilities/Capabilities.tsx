@@ -30,7 +30,7 @@ const Capabilities = (props: Props) => {
                     <motion.h3 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.3 }} viewport={{ once: false }} className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate" style={{ transitionDelay: '300ms' }}>
                         <h3 className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate" style={{transitionDelay: '300ms'}}>
                             <p className="text-[#939aff]">Core Marketing Services</p>
-                            Comprehensive Marketing Solutions for Every Goal
+                            <span className="text-[28px] md:text-[32px] leading-[36px]">Comprehensive Marketing Solutions for Every Goal</span>
                         </h3>
                     </motion.h3>
                 </div>
@@ -42,7 +42,7 @@ const Capabilities = (props: Props) => {
                             <div className='flex justify-between md:space-x-10 max-md:flex-col'>
                                 <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='-400px'>
                                     <div className='md:flex flex-col  flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32 '>
-                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Go-to-Market Strategies</span> AI Solutions That Redefine Possibilities.</p>
+                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Go-to-Market Strategies</span> Launch your brand with confidence using AI-powered Go-to-Market strategies. We provide market research, competitor analysis, and tailored plans for product positioning, competitive pricing, and promotional strategies that ensure long-term growth and market relevance.</p>
                                     </div>
                                     <div className='overflow-hidden rounded-s-lg'>
                                     <motion.img initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className="w-full h-auto " width="1208" height="764" loading="lazy" decoding="async" alt="" aria-hidden="true" src="https://cdn.prod.website-files.com/61845f7929f5aa517ebab941/6440f9477c2a321f0dd6ab61_How%20Artificial%20Intelligence%20(AI)%20Is%20Used%20In%20Biometrics.jpg" />
@@ -50,7 +50,7 @@ const Capabilities = (props: Props) => {
                                 </HoverCard>
                                 <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='0'>
                                     <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32 '>
-                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Performance Marketing</span> Strategies That Speak. Marketing That Converts.</p>
+                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Performance Marketing</span> Drive business growth with AI-driven performance marketing that optimizes ad placements and campaign targeting. We use data-backed insights and A/B testing to improve ROI, increase conversions, and turn leads into loyal customers.</p>
                                     </div>
                                     <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className='overflow-hidden rounded-s-lg'>
                                         <img className="w-full h-auto" width="1209" height="890" loading="lazy" decoding="async" alt="" aria-hidden="true" src="https://www.berlinsbi.com/uploads/sites/2/2021/12/5-ways-msc-digital-marketing-will-advance-your-career.jpg" />
@@ -62,7 +62,7 @@ const Capabilities = (props: Props) => {
                             <div className='flex justify-between md:space-x-10 max-md:flex-col'>
                                 <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='0'>
                                     <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32 '>
-                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Content That Captivates</span> Strategies That Speak. Marketing That Converts.</p>
+                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Content That Captivates</span> Create impactful, SEO-optimized content with AI tools that boost engagement and search engine rankings. Our strategies tailor content to your audience’s preferences, positioning your brand as a leader in your industry.</p>
                                     </div>
                                     <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className='overflow-hidden rounded-s-lg'>
                                         <img className="w-full h-auto" width="1209" height="890" loading="lazy" decoding="async" alt="" aria-hidden="true" src="https://www.berlinsbi.com/uploads/sites/2/2021/12/5-ways-msc-digital-marketing-will-advance-your-career.jpg" />
@@ -70,7 +70,7 @@ const Capabilities = (props: Props) => {
                                 </HoverCard>
                                 <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='-400px'>
                                     <div className='md:flex flex-col  flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32 '>
-                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Marketing Automation</span> AI Solutions That Redefine Possibilities.</p>
+                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Marketing Automation</span> Streamline your marketing with AI-powered automation that enhances CRM, email campaigns, and audience segmentation. Our solutions drive efficiency, scalability, and higher conversions, minimizing manual work and optimizing customer relationships.</p>
                                     </div>
                                     <div className='overflow-hidden rounded-s-lg'>
                                     <motion.img initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className="w-full h-auto " width="1208" height="764" loading="lazy" decoding="async" alt="" aria-hidden="true" src="https://cdn.prod.website-files.com/61845f7929f5aa517ebab941/6440f9477c2a321f0dd6ab61_How%20Artificial%20Intelligence%20(AI)%20Is%20Used%20In%20Biometrics.jpg" />

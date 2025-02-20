@@ -18,10 +18,10 @@ const Hero = () => (
         className="flex flex-col justify-center items-center relative z-10"
       >
         <h1 className="text-white font-bold text-[64px] leading-[80px] text-center">
-        AI Solutions That Redefine Possibilities
+          Let’s Collaborate to Build Your Digital Future
         </h1>
         <h2 className="text-[#c7c7c7] font-normal text-[20px] leading-[32px] text-center mt-4 mb-8">
-        Empowering businesses with intelligent tools, predictive analytics, and automation to unlock new growth opportunities
+          Share your vision, and let’s work together to create exceptional solutions.
         </h2>
       </motion.div>
 

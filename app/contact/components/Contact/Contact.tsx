@@ -3,15 +3,32 @@ import React, { useState } from "react";
 import HoverCard from "./ContactCard";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
-import FadeIn from "../../lib/variants";
 
 type Props = {};
 
-/**
- * A component that displays a contact section with a form and a hover card.
- *
- * @returns A JSX element representing the contact section.
- */
+type Direction = 'up' | 'down' | 'left' | 'right';
+
+const FadeIn = (direction: Direction, delay: number) => {
+  return {
+    hidden: {
+      y: direction === 'up' ? 80 : direction === 'down' ? -80 : 0,
+      opacity: 0,
+      x: direction === 'left' ? 80 : direction === 'right' ? -80 : 0
+    },
+    show: {
+      y: 0,
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: 'tween',
+        duration: 1.2,
+        delay: delay,
+        ease: [0.25, 0.25, 0.25, 0.75]
+      }
+    }
+  }
+}
+
 const Contact = (props: Props) => {
   const [hovered, setHovered] = useState<boolean>(false);
 
@@ -31,8 +48,7 @@ const Contact = (props: Props) => {
               className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
               style={{ transitionDelay: "300ms" }}
             >
-              <p className="text-[#939aff]">Your Strategic Digital Partner</p>
-              Design, Marketing, AI Solutions, Technology
+              <p className="text-[#939aff]">Tell Us About Your Project</p>
             </h3>
           </motion.h3>
         </div>
@@ -100,30 +116,13 @@ const Contact = (props: Props) => {
                         className="flex items-center text-white font-bold justify-center space-x-2 text-[20px]  border-[1px] border-neutral-500 px-4 py-3 rounded-md"
                       >
                         Submit Your Inquiry
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          className={` ml-2 transition ease-in duration-150 ${
-                            hovered ? "translate-x-2 " : "-translate-x-0"
+                        <Send
+                          className={`ml-2 transition ease-in duration-150 ${
+                          hovered ? "translate-x-2" : "-translate-x-0"
                           }`}
-                          width="20"
-                          height="20"
-                          viewBox="0 0 16 16"
-                          fill="none"
-                        >
-                          <path
-                            fill="currentColor"
-                            d="M7.28033 3.21967C6.98744 2.92678 6.51256 2.92678 6.21967 3.21967C5.92678 3.51256 5.92678 3.98744 6.21967 4.28033L7.28033 3.21967ZM11 8L11.5303 8.53033C11.8232 8.23744 11.8232 7.76256 11.5303 7.46967L11 8ZM6.21967 11.7197C5.92678 12.0126 5.92678 12.4874 6.21967 12.7803C6.51256 13.0732 6.98744 13.0732 7.28033 12.7803L6.21967 11.7197ZM6.21967 4.28033L10.4697 8.53033L11.5303 7.46967L7.28033 3.21967L6.21967 4.28033ZM10.4697 7.46967L6.21967 11.7197L7.28033 12.7803L11.5303 8.53033L10.4697 7.46967Z"
-                          ></path>
-                          <path
-                            className={` text-white transition ease-in duration-150 origin-right ${
-                              hovered ? " opacity-100" : "opacity-0 "
-                            }`}
-                            stroke="currentColor"
-                            d="M1.75 8H11"
-                            strokeWidth="1.5"
-                            strokeLinecap="round"
-                          ></path>
-                        </svg>
+                          size={20}
+                          color="currentColor"
+                        />
                       </a>
                     </div>
                   </motion.form>

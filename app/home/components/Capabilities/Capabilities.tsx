@@ -30,7 +30,7 @@ const Capabilities = (props: Props) => {
                     <motion.h3 initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.3 }} viewport={{ once: false }} className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate" style={{ transitionDelay: '300ms' }}>
                         <h3 className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate" style={{transitionDelay: '300ms'}}>
                             <p className="text-[#939aff]">Your Strategic Digital Partner</p>
-                            Design, Marketing, AI Solutions, Technology
+                            <span className="text-[28px] md:text-[32px] leading-[36px]">Design, Marketing, AI Solutions, Technology</span>
                         </h3>
                     </motion.h3>
                 </div>
@@ -91,7 +91,7 @@ const Capabilities = (props: Props) => {
                                 </div>
                             </div>
                             <div className='overflow-hidden rounded-s-lg'>
-                                <motion.img initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className="w-full h-auto " width="600" height="350" loading="lazy" decoding="async" alt="" aria-hidden="true" src="/home/marketing.avif" />
+                                <motion.img initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className="w-full h-auto " width="600" height="250" loading="lazy" decoding="async" alt="" aria-hidden="true" src="/home/marketing.png" />
                             </div>
                         </HoverCard>
                     </div>

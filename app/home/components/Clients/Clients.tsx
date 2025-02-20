@@ -70,7 +70,7 @@ const Clients = (props: Props) => {
               style={{ transitionDelay: "300ms" }}
             >
               <p className="text-[#939aff] font-poppins">Our Clients</p>
-              Trust with Reliability and Excellence
+              <span className="text-[28px] md:text-[32px] leading-[36px]">Trust with Reliability and Excellence</ span>
             </h3>
           </motion.h3>
         </div>
