@@ -6,6 +6,7 @@ import { Button } from "./components/ui/button";
 import { ScrollArea } from "./components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
 import { Mic as MicIcon, Send as SendIcon, Paperclip as AttachmentIcon } from "lucide-react";
+import {getGroqChatCompletion} from "./services/chatService";
 
 interface Message {
   message: string;
@@ -34,14 +35,15 @@ export default function Chat() {
     setConversation((prev) => [...prev, message]);
   };
 
-  const sendMessage = () => {
+  const sendMessage = async () => {
     if (userInput.trim()) {
       addMessage({ message: userInput, type: "user" });
       setUserInput("");
 
-      // Simulated bot response
+      const response = await getGroqChatCompletion(userInput);
+      // Extract message content from ChatCompletion response
       setTimeout(() => {
-        addMessage({ message: "Hello! How can I assist you?", type: "bot" });
+        addMessage({ message: response.choices[0].message.content || "", type: "bot" });
       }, 500);
     }
   };
