@@ -18,6 +18,9 @@ module.exports = {
       },
       fontFamily: {
         shareTechMono: ["Share Tech Mono", 'monospace'],
+        fingerPaint: ['Finger Paint', 'cursive'],
+        orbitron: ['Orbitron', 'sans-serif'],
+        shareTechMono: ['Share Tech Mono', 'monospace'],
       },
     },
   },

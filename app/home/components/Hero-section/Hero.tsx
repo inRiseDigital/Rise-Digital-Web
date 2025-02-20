@@ -4,6 +4,12 @@ import dynamic from "next/dynamic";
 import Earth from "./Earth1";
 import Earth2 from "./Earth2";
 import { motion } from "framer-motion";
+import { Orbitron } from 'next/font/google';
+
+const orbitron = Orbitron({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+});
 
 const Typewriter = dynamic(() => import("typewriter-effect"), { ssr: false });
 
@@ -21,13 +27,12 @@ const Hero = (props: Props) => {
     <>
       {/* === DESKTOP LAYOUT === */}
       <div className="hidden lg:flex relative max-w-[1680px] lg:pt-32 md:px-10 mx-auto pt-16 items-center justify-between">
-        {/* Left: Full-size Earth */}
         <div className="relative w-[40%] max-w-[600px]">
           <Earth />
         </div>
         {/* Right: Text Content */}
         <div className="text-right pr-4 md:pr-12 w-full max-w-5xl">
-          <h1 className="text-[32px] md:text-[48px] lg:text-[56px] font-semibold text-white leading-tight font-montserrat">
+          <h1 className="text-[32px] md:text-[48px] lg:text-[56px] font-semibold text-white leading-tight font-orbitron">
             Innovative Marketing, AI, and Technology Solutions for Unstoppable
             Growth
           </h1>
