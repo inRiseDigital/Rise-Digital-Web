@@ -1,6 +1,9 @@
 import Groq from "groq-sdk";
 
-const groq = new Groq({ apiKey: "" , dangerouslyAllowBrowser: true});
+const groq = new Groq({ 
+  apiKey: '',
+  dangerouslyAllowBrowser: true
+});
 
 
 export async function getGroqChatCompletion(question: string) {

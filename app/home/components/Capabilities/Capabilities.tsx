@@ -55,7 +55,7 @@ const Capabilities = (props: Props) => {
                                         </div>
                                     </div>
                                     <div className='overflow-hidden rounded-s-lg'>
-                                    <motion.img initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className="w-full h-auto " width="1208" height="764" loading="lazy" decoding="async" alt="" aria-hidden="true" src="https://cdn.prod.website-files.com/61845f7929f5aa517ebab941/6440f9477c2a321f0dd6ab61_How%20Artificial%20Intelligence%20(AI)%20Is%20Used%20In%20Biometrics.jpg" />
+                                    <motion.img initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className="w-full h-auto " width="1208" height="764" loading="lazy" decoding="async" alt="" aria-hidden="true" src="./technology/technology.png" />
                                     </div>
                                 </HoverCard>
                                 <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='0'>
