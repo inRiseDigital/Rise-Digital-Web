@@ -1,8 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import styles from "../../../styles";
-import { slideIn, staggerContainer, textVariant } from "../../../utils/motion"
+import styles from "../../../../styles";
+import { slideIn, staggerContainer, textVariant } from "../../../../utils/motion"
 
 const Hero = () => (
   <div className="relative max-w-[1750px] lg:pt-20 md:px-6 mx-auto pt-10 flex items-center justify-between">

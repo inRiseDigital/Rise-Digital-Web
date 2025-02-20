@@ -47,7 +47,7 @@ const StarsCanvas = () => (
       camera={{ position: [0, 0, 1] }}
       gl={{ preserveDrawingBuffer: true }}>
       <Suspense fallback={null}>
-        <Star /> {/* Now correctly inside Canvas */}
+        <Star /> 
       </Suspense>
     </Canvas>
   </div>
