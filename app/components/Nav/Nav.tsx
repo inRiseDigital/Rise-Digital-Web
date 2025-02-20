@@ -78,9 +78,9 @@ const NavItem: React.FC<NavItemProps> = ({ icon, text, isOpen, href, isActive, o
   <Link href={href} legacyBehavior>
     <a
       onClick={onClick}
-      className={`transition-colors rounded-xl p-2 ${
+      className={`transition-colors rounded-xl p-2 transform transition-transform duration-300 ${
         isOpen ? "flex items-center" : "flex flex-col items-center"
-      } ${isActive ? "bg-purple-700" : "hover:bg-gray-700"}`}
+      } ${isActive ? "bg-purple-700" : "hover:bg-gray-700"} hover:translate-y-[-5px]`}
     >
       <div className="flex items-center justify-center">{icon}</div>
       {isOpen && <span className="ml-2 text-sm">{text}</span>}
