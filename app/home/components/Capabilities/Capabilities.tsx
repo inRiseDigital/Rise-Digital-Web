@@ -3,6 +3,7 @@ import React, {useState} from 'react'
 import HoverCard from './HoverCard'
 import {motion} from "framer-motion"
 import Link from 'next/link'
+import Image from 'next/image'
 
 type Props = {}
 
@@ -22,10 +23,6 @@ const Capabilities = (props: Props) => {
         },
       };
     
-      const item = {
-        hidden: { opacity: 0, y:40 },
-        show: { opacity: 1, y:0},
-    };
     return (
         <div className='max-w-[1280px] mx-auto'>
             <div className='flex md:pl-10 space-x-3 md:space-x-10'>
@@ -75,7 +72,7 @@ const Capabilities = (props: Props) => {
                                     </div>
                                     </div>
                                     <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className='overflow-hidden rounded-s-lg'>
-                                        <img className="w-full h-auto" width="1209" height="890" loading="lazy" decoding="async" alt="" aria-hidden="true" src="https://www.berlinsbi.com/uploads/sites/2/2021/12/5-ways-msc-digital-marketing-will-advance-your-career.jpg" />
+                                        <Image className="w-full h-auto" width={1209} height={890} alt="" aria-hidden="true" src="https://www.berlinsbi.com/uploads/sites/2/2021/12/5-ways-msc-digital-marketing-will-advance-your-career.jpg" />
                                     </motion.div>
                                 </HoverCard>
                             </div>
