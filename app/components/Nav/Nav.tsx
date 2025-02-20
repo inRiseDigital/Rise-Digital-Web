@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Cpu, Brain, BadgeDollarSign } from "lucide-react";
+import { Home, Cpu, Brain, BadgeDollarSign, MessageCircle } from "lucide-react";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -14,6 +14,8 @@ const Nav = () => {
     if (pathname.includes("AI")) setActiveIcon("AI");
     else if (pathname.includes("home")) setActiveIcon("Home");
     else if (pathname.includes("marketing")) setActiveIcon("Marketing");
+    else if (pathname.includes("technology")) setActiveIcon("Technology");
+    else if (pathname.includes("contact")) setActiveIcon("Contact");
   }, [pathname]);
 
   const handleIconClick = (icon: string) => {
@@ -60,6 +62,14 @@ const Nav = () => {
           isActive={activeIcon === "Marketing"}
           onClick={() => handleIconClick("Marketing")}
         />
+        <NavItem
+          icon={<MessageCircle size={24} />}
+          text="Contact"
+          isOpen={isOpen}
+          href="/contact"
+          isActive={activeIcon === "Contact"}
+          onClick={() => handleIconClick("Contact")}
+        />
       </div>
     </nav>
   );
@@ -78,7 +88,8 @@ const NavItem: React.FC<NavItemProps> = ({ icon, text, isOpen, href, isActive, o
   <Link href={href} legacyBehavior>
     <a
       onClick={onClick}
-      className={`transition-colors rounded-xl p-2 transform transition-transform duration-300 ${
+      title={text} // Add the title attribute here
+      className={`transition-colors rounded-xl p-2 transform duration-300 ${
         isOpen ? "flex items-center" : "flex flex-col items-center"
       } ${isActive ? "bg-purple-700" : "hover:bg-gray-700"} hover:translate-y-[-5px]`}
     >
