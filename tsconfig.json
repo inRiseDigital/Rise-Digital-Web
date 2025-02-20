@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/Globe/globe.js", "app/components/Globe/globe.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/Globe/globe.js", "app/components/Globe/globe.js", "app/home/components/Expertise/Explore.jsx"],
   "exclude": ["node_modules"]
 }

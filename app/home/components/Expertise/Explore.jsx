@@ -9,17 +9,17 @@ import { fadeIn, staggerContainer } from '../../../../utils/motion';
 const exploreWorlds = [
   {
     id: 'world-1',
-    imgUrl: '/planet-01.png',
+    imgUrl: '/home/education.jpg',
     title: 'Education',
   },
   {
     id: 'world-2',
-    imgUrl: '/planet-02.png',
+    imgUrl: '/home/governance.jpg',
     title: 'Government',
   },
   {
     id: 'world-3',
-    imgUrl: '/planet-03.png',
+    imgUrl: '/home/retail.png',
     title: 'Retail',
   },
   {
@@ -29,7 +29,7 @@ const exploreWorlds = [
   },
   {
     id: 'world-5',
-    imgUrl: '/planet-05.png',
+    imgUrl: '/home/health.jpg',
     title: 'Healthcare',
   },
 ];
