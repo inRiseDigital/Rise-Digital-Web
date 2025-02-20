@@ -115,8 +115,7 @@ const Hero = (props: Props) => {
         {/* Text Content */}
         <div className="pt-8 text-center px-4">
           <h1 className="text-[28px] md:text-[32px] font-shareTechMono text-white leading-tight">
-            Innovative Marketing, AI, and Technology Solutions for Unstoppable
-            Growth
+            Innovative Marketing, AI, and Technology Solutions for Unstoppable Growth
           </h1>
           <p className="text-[18px] md:text-[20px] leading-[24px] mt-4 text-[#7d8590] font-shareTechMono">
             {isClient ? (
