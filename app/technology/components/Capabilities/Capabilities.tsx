@@ -71,7 +71,7 @@ const Capabilities = (props: Props) => {
                                 </HoverCard>
                                 <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='-400px'>
                                     <div className='md:flex flex-col  flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32 '>
-                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>AI & Machine Learning</span> AI Solutions That Redefine Possibilities.</p>
+                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Cybersecurity</span> AI Solutions That Redefine Possibilities.</p>
                                     </div>
                                     <div className='overflow-hidden rounded-s-lg'>
                                     <motion.img initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className="w-full h-auto " width="1208" height="764" loading="lazy" decoding="async" alt="" aria-hidden="true" src="https://cdn.prod.website-files.com/61845f7929f5aa517ebab941/6440f9477c2a321f0dd6ab61_How%20Artificial%20Intelligence%20(AI)%20Is%20Used%20In%20Biometrics.jpg" />

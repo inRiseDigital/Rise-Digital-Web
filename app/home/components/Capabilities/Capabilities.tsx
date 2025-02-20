@@ -91,7 +91,7 @@ const Capabilities = (props: Props) => {
                                 </div>
                             </div>
                             <div className='overflow-hidden rounded-s-lg'>
-                                <motion.img initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className="w-full h-auto " width="600" height="350" loading="lazy" decoding="async" alt="" aria-hidden="true" src="/home/marketing.avif" />
+                                <motion.img initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className="w-full h-auto " width="600" height="250" loading="lazy" decoding="async" alt="" aria-hidden="true" src="/home/marketing.png" />
                             </div>
                         </HoverCard>
                     </div>

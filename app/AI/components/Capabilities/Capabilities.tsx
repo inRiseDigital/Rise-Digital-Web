@@ -40,7 +40,7 @@ const Capabilities = (props: Props) => {
                                         <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Intelligent Automation</span> Automate repetitive tasks with AI-driven workflows that enhance accuracy and efficiency. From data entry to customer service, our intelligent automation solutions reduce costs, minimize errors, and boost productivity.</p>
                                     </div>
                                     <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className='overflow-hidden rounded-s-lg'>
-                                        <Image className="w-full h-auto" width={1209} height={890} loading="lazy" alt="" aria-hidden="true" src="" />
+                                        <Image className="w-full h-auto" width={1209} height={890} loading="lazy" alt="" aria-hidden="true" src="/ai/intelligentautomation.png" />
                                     </motion.div>
                                 </HoverCard>
                             </div>
