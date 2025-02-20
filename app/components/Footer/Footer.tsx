@@ -9,7 +9,7 @@ const Footer = (props: Props) => {
         <div className='flex flex-col lg:flex-row py-10 mb-8 space-x-6 px-4'>
             <div className='mb-12 px-2'>
               <a href="/" className="color-fg-default d-inline-block" aria-label="Go to Rise Digital">
-                <img src="/logo-footer.png" alt="Footer Logo" width="200" height="200"/>
+                <img src="/logo-lg.png" alt="Footer Logo" width="200" height="200"/>
               </a>
               <div className='text-white'>
                 <h2 className='mt-6 font-semibold'>Subscribe to our newsletter</h2>

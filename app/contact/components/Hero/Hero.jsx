@@ -18,10 +18,10 @@ const Hero = () => (
         className="flex flex-col justify-center items-center relative z-10"
       >
         <h1 className="text-white font-bold text-[64px] leading-[80px] text-center">
-          Strategies That Speak. Marketing That Converts.
+          Let’s Collaborate to Build Your Digital Future
         </h1>
         <h2 className="text-[#c7c7c7] font-normal text-[20px] leading-[32px] text-center mt-4 mb-8">
-          Empowering brands with innovative, data-driven marketing solutions that deliver measurable results.
+          Share your vision, and let’s work together to create exceptional solutions.
         </h2>
       </motion.div>
 
