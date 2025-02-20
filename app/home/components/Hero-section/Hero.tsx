@@ -147,9 +147,9 @@ const Hero = (props: Props) => {
                   src=""
                 />
                 <div className="pr-3">
-                  <div className="font-medium text-white text-[14px] leading-5">
+                  <a href="#capabilities" className="font-medium text-white text-[14px] leading-5 hover:text-gray-300 transition-colors">
                     Explore Our Services
-                  </div>
+                  </a>
                 </div>
                 <div className="ml-auto">
                   <svg
