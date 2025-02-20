@@ -1,8 +1,14 @@
+"use client";
 import  Hero  from './components/Hero/Hero';
-import About from './components/About';
 import Capabilities from './components/Capabilities/Capabilities';
-import Footer from './components/Footer/Footer';
+import Footer from '../components/Footer/Footer';
 import Nav from '../components/Nav/Nav'
+import dynamic from 'next/dynamic';
+
+const Model = dynamic(
+  () => import("../components/Bot/Bot").then((mod) => mod.Model),
+  { ssr: false }
+);
 
 export default function AI() {
   return (
@@ -25,6 +31,12 @@ export default function AI() {
         <Footer />
       </div>
       <Nav />
+      <div
+        className="fixed bottom-4 right-4 z-50 pointer-events-none"
+        onClick={() => (window.location.href = "/")}
+      >
+        <Model />
+      </div>
     </>
   );
 }

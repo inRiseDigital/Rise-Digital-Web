@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import styles from '../../../../styles';
 import { fadeIn, staggerContainer } from '../../../../utils/motion';
@@ -57,15 +58,18 @@ const ExploreCard = ({
         isExpanded ? 'lg:flex-[3.5] flex-[10]' : 'lg:flex-[0.5] flex-[2]'
       } flex items-center justify-center min-w-[170px] h-[700px] transition-[flex] duration-[0.7s] ease-out-flex cursor-pointer`}
     >
-      <img
+
+      <Image
         src={imgUrl}
         alt={title}
-        className="absolute w-full h-full object-cover rounded-[24px]"
+        layout="fill"
+        objectFit="cover"
+        className="rounded-[24px]"
       />
       
       {/* If expanded, show horizontal title; otherwise, show vertical title */}
       {isExpanded ? (
-        <div className="absolute bottom-0 p-8 flex justify-start w-full flex-col bg-[rgba(0,0,0,0.5)] rounded-b-[24px]">
+        <div>
           <div
             className={`${styles.flexCenter} w-[60px] h-[60px] rounded-[24px] glassmorphism mb-[16px]`}
           />
