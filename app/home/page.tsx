@@ -6,7 +6,6 @@ import Footer from './components/Footer/Footer';
 import Clients from './components/Clients/Clients';
 import Tools from "./components/Tools/Tools"
 import Nav from './components/Nav/Nav';
-import GetStarted from './components/Contact/GetStarted';
 
 export default function Home() {
   
@@ -37,7 +36,6 @@ export default function Home() {
             <div id='security' className='home-campaign-productivity px-4 pt-8 pb-16 overflow-hidden'>
               <Contact />
             </div>
-            <GetStarted/>
           </div>
         </div>
         <Footer/>

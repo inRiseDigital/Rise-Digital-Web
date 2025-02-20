@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import HoverCard from "./ContactCard";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
-
 import FadeIn from "../../lib/variants";
 
 type Props = {};
@@ -13,7 +12,7 @@ type Props = {};
  *
  * @returns A JSX element representing the contact section.
  */
-const Capabilities = (props: Props) => {
+const Contact = (props: Props) => {
   const [hovered, setHovered] = useState<boolean>(false);
 
   return (
@@ -144,4 +143,4 @@ const Capabilities = (props: Props) => {
   );
 };
 
-export default Capabilities;
+export default Contact;
