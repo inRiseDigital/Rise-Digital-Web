@@ -79,14 +79,6 @@ const Capabilities = (props: Props) => {
                                 </HoverCard>
                             </div>
                         </div>
-                        <HoverCard backgroundColor='#ffa28b' direction='' left=''>
-                            <div className='md:flex flex-col md:space-y-20 flex-1 py-20 p-10  justify-between'>
-                                <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-medium'>Technology</span> Innovative Technology Solutions for a Connected World</p>
-                            </div>
-                            <div className='overflow-hidden rounded-s-lg'>
-                                <motion.img initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className="w-full h-auto " width="600" height="350" loading="lazy" decoding="async" alt="" aria-hidden="true" src="https://imageio.forbes.com/specials-images/imageserve/6200b0dddcf32d3be937fa84/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds" />
-                            </div>
-                        </HoverCard>
                     </div>
                 </div>                
             </div>

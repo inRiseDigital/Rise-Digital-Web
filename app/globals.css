@@ -175,3 +175,7 @@ html{  scroll-behavior: smooth;}
     transform: translateY(-20px);
   }
 }
+
+canvas {
+  background: transparent !important;
+}
