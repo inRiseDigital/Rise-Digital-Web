@@ -5,6 +5,72 @@ type Props = {}
 const Footer = (props: Props) => {
   return (
     <div className='footer relative pt-14 break-words '>
+      <div className='max-w-[1280px] mx-auto relative z-[2] overflow-hidden'>
+        <div className='flex flex-col lg:flex-row py-10 mb-8 space-x-6 px-4'>
+            <div className='mb-12 px-2'>
+              <a href="/" className="color-fg-default d-inline-block" aria-label="Go to Rise Digital">
+                <img src="/logo-footer.png" alt="Footer Logo" width="200" height="200"/>
+              </a>
+              <div className='text-white'>
+                <h2 className='mt-6 font-semibold'>Subscribe to our newsletter</h2>
+                <p className="text-[14px] text-[#7d8590] mb-6 ">Get product updates, company news, and more.</p>
+                <div className="flex flex-col space-y-4">
+                  <input
+                    type="text"
+                    placeholder="Phone Number"
+                    required
+                    className="w-full border-b border-white/25 bg-transparent py-3 outline-none transition-all placeholder:text-white/10 focus:border-blue/25 text-white"
+                  />
+                  <a href="" className='px-4 py-2 text-[14px] font-semibold border-[0.5px] border-gray-400 rounded-lg text-center'>Subscribe</a>
+                </div>
+              </div>
+            </div>
+            <div className='lg:flex w-full justify-between grid md:grid-cols-4 grid-cols-2 gap-6'>
+              <div className='text-[#7d8590]'>
+                <h2 className='font-medium mb-4 font-mono'>Services</h2>
+                <ul className='text-[14px]'>
+                    <li className='mb-4'><a href="">AI</a></li>
+                    <li className='mb-4'><a href="">Marketing</a></li>
+                    <li className='mb-4'><a href="">Team</a></li>
+
+                </ul>
+              </div>
+              <div className='text-[#7d8590]'>
+                <h2 className='font-medium mb-4 font-mono'>Platform</h2>
+                <ul className='text-[14px]'>
+                    <li className='mb-4'><a href="">Developer API</a></li>
+                    <li className='mb-4'><a href="">Partners</a></li>
+                    <li className='mb-4'><a href="">Electron</a></li>
+                    <li className='mb-4'><a href="">GitHub Desktop</a></li>
+                </ul>
+              </div>
+              <div className='text-[#7d8590]'>
+                <h2 className='font-medium mb-4 font-mono'>Product</h2>
+                <ul className='text-[14px]'>
+                    <li className='mb-4'><a href="">Docs</a></li>
+                    <li className='mb-4'><a href="">Community Forum</a></li>
+                    <li className='mb-4'><a href="">Professional Services</a></li>
+                    <li className='mb-4'><a href="">Premium Support</a></li>
+                    <li className='mb-4'><a href="">Skill</a></li>
+                    <li className='mb-4'><a href="">Status</a></li>
+                    <li className='mb-4'><a href="">Contact GitHub</a></li>
+                </ul>
+              </div>
+              <div className='text-[#7d8590]'>
+                <h2 className='font-medium mb-4 font-mono'>Company</h2>
+                <ul className='text-[14px]'>
+                    <li className='mb-4'><a href="">About</a></li>
+                    <li className='mb-4'><a href="">Blog</a></li>
+                    <li className='mb-4'><a href="">Careers</a></li>
+                    <li className='mb-4'><a href="">Press</a></li>
+                    <li className='mb-4'><a href="">Inclusion</a></li>
+                    <li className='mb-4'><a href="">Social Impact</a></li>
+                    <li className='mb-4'><a href="">Shop</a></li>
+                </ul>
+              </div>
+            </div>
+        </div>
+      </div>
       <div className='bg-[#161b22]'>
         <div className='max-w-[1280px] mx-auto text-[12px] md:flex flex-row-reverse py-6 justify-between items-center px-4'>
           <ul className='flex items-center max-md:mb-4  '>

@@ -5,7 +5,7 @@ import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Clients from './components/Clients/Clients';
 import Tools from "./components/Tools/Tools"
-import Nav from './components/Nav/Nav';
+import Nav from '../components/Nav/Nav'
 
 export default function Home() {
   
@@ -21,11 +21,11 @@ export default function Home() {
             <div className='hero-section px-3 '>
               <Hero/>
             </div>
-            <div id='tools' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
-              <Tools />
-            </div>
             <div id='clients' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
               <Clients />
+            </div>
+            <div id='tools' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
+              <Tools />
             </div>
             <div id='capabilities' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
               <Capabilities/>

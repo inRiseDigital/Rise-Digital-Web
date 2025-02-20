@@ -1,7 +1,8 @@
 import  Hero  from './components/Hero/Hero';
-import About from './components/About';
 import Capabilities from './components/Capabilities/Capabilities';
 import Footer from './components/Footer/Footer';
+import Nav from '../components/Nav/Nav'
+
 
 export default function AI() {
   return (
@@ -23,6 +24,7 @@ export default function AI() {
         </div>
         <Footer />
       </div>
+      <Nav />
     </>
   );
 }
