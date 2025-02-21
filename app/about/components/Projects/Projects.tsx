@@ -1,7 +1,6 @@
 "use client";
 
 import { FaLocationArrow } from "react-icons/fa6";
-import Image from 'next/image';
 
 import { PinContainer } from "./Pin";
 import { motion } from "framer-motion";
@@ -92,15 +91,13 @@ const Projects = () => {
                       className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                       style={{ backgroundColor: "#13162D" }}
                     >
-                      <Image src="/bg.png" alt="bgimg" layout="fill" objectFit="cover" />
-                    <Image
+                      <img src="/bg.png" alt="bgimg" />
+                    </div>
+                    <img
                       src={item.img}
                       alt="cover"
-                      layout="fill"
-                      objectFit="contain"
                       className="z-10 absolute bottom-0"
                     />
-                    </div>
                   </div>
 
                   <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
@@ -127,7 +124,7 @@ const Projects = () => {
                             transform: `translateX(-${5 * index + 2}px)`,
                           }}
                         >
-                          <Image src={icon} alt="icon5" className="p-2" width={32} height={32} />
+                          <img src={icon} alt="icon5" className="p-2" />
                         </div>
                       ))}
                     </div>
