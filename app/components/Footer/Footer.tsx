@@ -100,13 +100,13 @@ const Footer = () => {
               <h2 className="font-medium mb-4 font-mono">Company</h2>
               <ul className="text-[14px]">
                 <li className="mb-4">
-                  <a href="">About</a>
+                  <a href="/about">About</a>
                 </li>
                 <li className="mb-4">
                   <a href="">Blog</a>
                 </li>
                 <li className="mb-4">
-                  <a href="">Careers</a>
+                  <a href="/careers">Careers</a>
                 </li>
                 <li className="mb-4">
                   <a href="">Press</a>

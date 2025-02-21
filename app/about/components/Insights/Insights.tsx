@@ -9,7 +9,7 @@ import InsightCard from "./InsightCard";
 
 const insights = [
   {
-    imgUrl: "/planet-06.png",
+    imgUrl: "/about/spirituality.png",
     title: "Spirituality – Nurturing the Mind and Soul",
     subtitle:
       "We promote a balanced life by integrating meditation and mindfulness practices into daily work routines.",
