@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { Send, Phone, MapPin } from "lucide-react";
 
 type Props = {};
-
 type Direction = "up" | "down" | "left" | "right";
 
 const FadeIn = (direction: Direction, delay: number) => {
@@ -55,9 +54,9 @@ const Contact = (props: Props) => {
       </div>
       <div className="flex justify-between items-center">
         <div className="flex flex-col items-center max-lg:mt-10">
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10 w-full ">
-            <HoverCard backgroundColor="#ffa28b" direction="" left="">
-              <div className="md:flex flex-col md:space-y-20 flex-1 py-0 p-10  justify-between">
+          <div className="flex flex-wrap items-center justify-between gap-4 w-full">
+            <HoverCard backgroundColor="#ffa28b" direction="left" left="0">
+              <div className="md:flex flex-col md:space-y-20 flex-1 py-0 p-10 justify-between">
                 <div className="px6 container flex flex-col justify-between py-1 text-lg md:flex-row">
                   <motion.div
                     variants={FadeIn("right", 0.2)}
@@ -113,7 +112,7 @@ const Contact = (props: Props) => {
                         onMouseEnter={() => setHovered(true)}
                         onMouseLeave={() => setHovered(false)}
                         href=""
-                        className="flex items-center text-white font-bold justify-center space-x-2 text-[20px]  border-[1px] border-neutral-500 px-4 py-3 rounded-md"
+                        className="flex items-center text-white font-bold justify-center space-x-2 text-[20px] border-[1px] border-neutral-500 px-4 py-3 rounded-md"
                       >
                         Submit Your Inquiry
                         <Send
@@ -129,65 +128,72 @@ const Contact = (props: Props) => {
                 </div>
               </div>
             </HoverCard>
-            <HoverCard backgroundColor="#ffa28b" direction="" left="">
-              <div className="md:flex flex-col md:space-y-20 flex-1 py-0 p-10  justify-between">
-                <div className="px6 container flex flex-col justify-between py-1 text-lg md:flex-row">
-                  <motion.div
-                    variants={FadeIn("right", 0.2)}
-                    initial="hidden"
-                    whileInView={"show"}
-                    viewport={{ once: true, amount: 0.8 }}
-                    className="flex flex-col gap-8 p-10"
-                  >
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-full bg-[#939aff] p-4">
-                        <Send size={24} color="white" />
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-medium text-white">
-                          Email
-                        </h4>
-                        <a
-                          href="mailto:info@risedigital.com"
-                          className="text-gray-400 hover:text-[#939aff]"
-                        >
-                          info@risedigital.com
-                        </a>
-                      </div>
-                    </div>
 
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-full bg-[#939aff] p-4">
-                        <Phone size={24} color="white" />
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-medium text-white">
-                          Phone
-                        </h4>
-                        <a
-                          href="tel:+1234567890"
-                          className="text-gray-400 hover:text-[#939aff]"
-                        >
-                          +1 (234) 567-890
-                        </a>
-                      </div>
+            <HoverCard backgroundColor="#ffa28b" direction="right" left="auto">
+              <div className="md:flex flex-col md:space-y-5 flex-1 py-0 p-6 justify-between">
+                {" "}
+                {/* Changed space-y-10 to space-y-5 */}
+                <div className="px6 container flex flex-col justify-between py-1 text-lg md:flex-row"></div>
+                <motion.div
+                  variants={FadeIn("right", 0.2)}
+                  initial="hidden"
+                  whileInView={"show"}
+                  viewport={{ once: true, amount: 0.8 }}
+                  className="flex flex-col gap-8 p-6"
+                >
+                  <h1 className="text-[40px] font-bold uppercase leading-[3rem] text-white">
+                    let&apos;s work <br />{" "}
+                    <span className="under-line">together</span>
+                  </h1>
+                  <div className="flex items-center gap-4">
+                    <div className="rounded-full bg-[#939aff] p-4">
+                      <Send size={24} color="white" />
                     </div>
+                    <div>
+                      <h4 className="text-xl font-medium text-white">Email</h4>
+                      <a
+                        href="mailto:info@risedigital.com"
+                        className="text-gray-400 hover:text-[#939aff]"
+                      >
+                        info@risedigital.com
+                      </a>
+                    </div>
+                  </div>
 
-                    <div className="flex items-center gap-4">
-                      <div className="rounded-full bg-[#939aff] p-4">
-                        <MapPin size={24} color="white" />
-                      </div>
-                      <div>
-                        <h4 className="text-xl font-medium text-white">
-                          Location
-                        </h4>
-                        <p className="text-gray-400">
-                          123 Business Street, New York, NY 10001
-                        </p>
-                      </div>
+                  <div className="flex items-center gap-4">
+                    <div className="rounded-full bg-[#939aff] p-4">
+                      <Phone size={24} color="white" />
                     </div>
-                  </motion.div>
-                </div>
+                    <div>
+                      <h4 className="text-xl font-medium text-white">Phone</h4>
+                      <a
+                        href="tel:+1234567890"
+                        className="text-gray-400 hover:text-[#939aff]"
+                      >
+                        +1 (234) 567-890
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-4">
+                    <div className="rounded-full bg-[#939aff] p-4">
+                      <MapPin size={24} color="white" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-medium text-white">
+                        Location
+                      </h4>
+                      <a
+                        href="https://maps.google.com/?q=123+Business+Street+New+York+NY+10001"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-[#939aff]"
+                      >
+                        123 Business Street, New York, NY 10001
+                      </a>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             </HoverCard>
           </div>

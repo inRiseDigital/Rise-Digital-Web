@@ -5,6 +5,8 @@ import Capabilities from './components/Capabilities/Capabilities';
 import Footer from '../components/Footer/Footer';
 import Nav from '../components/Nav/Nav'
 import dynamic from 'next/dynamic';
+import Contact from './components/Contact/Contact';
+import Projects from './components/Projects/Projects';
 
 const Model = dynamic(
   () => import("../components/Bot/Bot").then((mod) => mod.Model),
@@ -27,6 +29,12 @@ export default function AI() {
             </div>
             <div id='Capabilities' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
               <Capabilities />
+            </div>
+            <div id='Projects' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
+              <Projects />
+            </div>
+            <div id='Contact' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
+              <Contact />
             </div>
           </div>
         </div>
