@@ -31,7 +31,7 @@ const Nav = () => {
     >
       <div className="flex flex-col items-center gap-4 p-2">
         <NavItem
-          icon={<Home size={24} />}
+          icon={<Home size={30} />}
           text="Home"
           isOpen={isOpen}
           href="/home"
@@ -39,7 +39,7 @@ const Nav = () => {
           onClick={() => handleIconClick("Home")}
         />
         <NavItem
-          icon={<Brain size={24} />}
+          icon={<Brain size={30} />}
           text="AI"
           isOpen={isOpen}
           href="/AI"
@@ -47,7 +47,7 @@ const Nav = () => {
           onClick={() => handleIconClick("AI")}
         />
         <NavItem
-          icon={<Cpu size={24} />}
+          icon={<Cpu size={30} />}
           text="Technology"
           isOpen={isOpen}
           href="/technology"
@@ -55,7 +55,7 @@ const Nav = () => {
           onClick={() => handleIconClick("Technology")}
         />
         <NavItem
-          icon={<BadgeDollarSign size={24} />}
+          icon={<BadgeDollarSign size={30} />}
           text="Marketing"
           isOpen={isOpen}
           href="/marketing"
@@ -63,7 +63,7 @@ const Nav = () => {
           onClick={() => handleIconClick("Marketing")}
         />
         <NavItem
-          icon={<MessageCircle size={24} />}
+          icon={<MessageCircle size={30} />}
           text="Contact"
           isOpen={isOpen}
           href="/contact"

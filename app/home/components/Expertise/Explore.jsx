@@ -6,31 +6,36 @@ import { motion } from 'framer-motion';
 import styles from '../../../../styles';
 import { fadeIn, staggerContainer } from '../../../../utils/motion';
 
-const exploreWorlds = [
+const exploreExpertise = [
   {
     id: 'Education',
     imgUrl: '/home/education.jpg',
     title: 'Education',
+    hoveredText: 'Hovered Text for Education',
   },
   {
     id: 'Government',
     imgUrl: '/home/governance.jpg',
     title: 'Government',
+    hoveredText: 'Hovered Text for Government',
   },
   {
     id: 'Retail',
     imgUrl: '/home/retail.png',
     title: 'Retail',
+    hoveredText: 'Hovered Text for Retail',
   },
   {
     id: 'Finance',
     imgUrl: '/home/finance.png',
     title: 'Finance',
+    hoveredText: 'Hovered Text for Finance',
   },
   {
     id: 'Healthcare',
     imgUrl: '/home/health.jpg',
     title: 'Healthcare',
+    hoveredText: 'Hovered Text for Healthcare',
   },
 ];
 
@@ -43,9 +48,8 @@ const ExploreCard = ({
   handleClick,
   hovered,
   handleHover,
+  hoveredText,
 }) => {
-  // If any card is hovered, expand only that card.
-  // Otherwise, the active card is expanded.
   const isExpanded = hovered ? id === hovered : id === active;
 
   return (
@@ -58,7 +62,6 @@ const ExploreCard = ({
         isExpanded ? 'lg:flex-[3.5] flex-[10]' : 'lg:flex-[0.5] flex-[2]'
       } flex items-center justify-center min-w-[170px] h-[700px] transition-[flex] duration-[0.7s] ease-out-flex cursor-pointer`}
     >
-
       <Image
         src={imgUrl}
         alt={title}
@@ -66,8 +69,18 @@ const ExploreCard = ({
         objectFit="cover"
         className="rounded-[24px]"
       />
-      
-      {/* If expanded, show horizontal title; otherwise, show vertical title */}
+
+      {hovered === id && (
+        <>
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-400 bg-opacity-30 text-white p-2 rounded glassmorphism">
+            {hoveredText}
+          </div>
+          <h2 className="absolute bottom-4 left-4 font-semibold sm:text-[32px] text-[24px] text-white">
+            {title}
+          </h2>
+        </>
+      )}
+
       {isExpanded ? (
         <div>
           <div
@@ -100,10 +113,10 @@ const Explore = () => {
         className={`${styles.innerWidth} mx-auto flex flex-col`}
       >
         <div className="mt-[50px] flex lg:flex-row flex-col min-h-[70vh] gap-5">
-          {exploreWorlds.map((world, index) => (
+          {exploreExpertise.map((area, index) => (
             <ExploreCard
-              key={world.id}
-              {...world}
+              key={area.id}
+              {...area}
               index={index}
               active={active}
               handleClick={setActive}
