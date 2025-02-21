@@ -3,6 +3,7 @@
 import  Hero  from './components/Hero/Hero';
 import Capabilities from './components/Capabilities/Capabilities';
 import Footer from '../components/Footer/Footer';
+import Projects from './components/Projects/Projects';
 import Nav from '../components/Nav/Nav'
 import dynamic from 'next/dynamic';
 
@@ -27,6 +28,9 @@ export default function AI() {
             </div>
             <div id='Capabilities' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
               <Capabilities />
+            </div>
+            <div id='Projects' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
+              <Projects />
             </div>
           </div>
         </div>

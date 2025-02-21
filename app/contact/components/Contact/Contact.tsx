@@ -2,32 +2,32 @@
 import React, { useState } from "react";
 import HoverCard from "./ContactCard";
 import { motion } from "framer-motion";
-import { Send } from "lucide-react";
+import { Send, Phone, MapPin } from "lucide-react";
 
 type Props = {};
 
-type Direction = 'up' | 'down' | 'left' | 'right';
+type Direction = "up" | "down" | "left" | "right";
 
 const FadeIn = (direction: Direction, delay: number) => {
   return {
     hidden: {
-      y: direction === 'up' ? 80 : direction === 'down' ? -80 : 0,
+      y: direction === "up" ? 80 : direction === "down" ? -80 : 0,
       opacity: 0,
-      x: direction === 'left' ? 80 : direction === 'right' ? -80 : 0
+      x: direction === "left" ? 80 : direction === "right" ? -80 : 0,
     },
     show: {
       y: 0,
       x: 0,
       opacity: 1,
       transition: {
-        type: 'tween',
+        type: "tween",
         duration: 1.2,
         delay: delay,
-        ease: [0.25, 0.25, 0.25, 0.75]
-      }
-    }
-  }
-}
+        ease: [0.25, 0.25, 0.25, 0.75],
+      },
+    },
+  };
+};
 
 const Contact = (props: Props) => {
   const [hovered, setHovered] = useState<boolean>(false);
@@ -118,7 +118,7 @@ const Contact = (props: Props) => {
                         Submit Your Inquiry
                         <Send
                           className={`ml-2 transition ease-in duration-150 ${
-                          hovered ? "translate-x-2" : "-translate-x-0"
+                            hovered ? "translate-x-2" : "-translate-x-0"
                           }`}
                           size={20}
                           color="currentColor"
@@ -126,6 +126,67 @@ const Contact = (props: Props) => {
                       </a>
                     </div>
                   </motion.form>
+                </div>
+              </div>
+            </HoverCard>
+            <HoverCard backgroundColor="#ffa28b" direction="" left="">
+              <div className="md:flex flex-col md:space-y-20 flex-1 py-0 p-10  justify-between">
+                <div className="px6 container flex flex-col justify-between py-1 text-lg md:flex-row">
+                  <motion.div
+                    variants={FadeIn("right", 0.2)}
+                    initial="hidden"
+                    whileInView={"show"}
+                    viewport={{ once: true, amount: 0.8 }}
+                    className="flex flex-col gap-8 p-10"
+                  >
+                    <div className="flex items-center gap-4">
+                      <div className="rounded-full bg-[#939aff] p-4">
+                        <Send size={24} color="white" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-medium text-white">
+                          Email
+                        </h4>
+                        <a
+                          href="mailto:info@risedigital.com"
+                          className="text-gray-400 hover:text-[#939aff]"
+                        >
+                          info@risedigital.com
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                      <div className="rounded-full bg-[#939aff] p-4">
+                        <Phone size={24} color="white" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-medium text-white">
+                          Phone
+                        </h4>
+                        <a
+                          href="tel:+1234567890"
+                          className="text-gray-400 hover:text-[#939aff]"
+                        >
+                          +1 (234) 567-890
+                        </a>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-4">
+                      <div className="rounded-full bg-[#939aff] p-4">
+                        <MapPin size={24} color="white" />
+                      </div>
+                      <div>
+                        <h4 className="text-xl font-medium text-white">
+                          Location
+                        </h4>
+                        <p className="text-gray-400">
+                          123 Business Street, New York, NY 10001
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
                 </div>
               </div>
             </HoverCard>

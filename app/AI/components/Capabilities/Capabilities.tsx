@@ -4,9 +4,8 @@ import HoverCard from './HoverCard'
 import {motion} from "framer-motion"
 import Image from 'next/image'
 
-type Props = {}
 
-const Capabilities = (props: Props) => {
+const Capabilities = () => {
     return (
         <div className='max-w-[1280px] mx-auto'>
             <motion.div initial={{height:0}} whileInView={{height:'160px'}} transition={{delay:0.2}}   className="md:ml-10 ml-3 h-[160px] mt-[-20px] w-[3px] rounded-md bg-transparent"></motion.div>
