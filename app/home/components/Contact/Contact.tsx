@@ -26,10 +26,10 @@ const Contact = () => {
                                             Ready to Dominate Your Industry?
                                         </h2>
                                         <p className="mb-4 md:text-xl text-[16px] text-[#7d8590] px-4 mx-auto">
-                                            Whether  scaling your startup or just learning how
-                                            to code, GitHub is your home. Join the  largest
+                                            Whether you're scaling your startup or just learning how
+                                            to code, GitHub is your home. Join the world's largest
                                             developer platform to build the innovations that empower
-                                            humanity. &nbsp;build from&nbsp;here.
+                                            humanity. Let's&nbsp;build from&nbsp;here.
                                         </p>
                                         <div className="flex items-center justify-center lg:space-x-5 max-lg:space-y-3 max-lg:flex-col max-lg:w-full max-lg:mt-5">
                                             <a
