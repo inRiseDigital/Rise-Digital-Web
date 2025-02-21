@@ -1,4 +1,4 @@
-"use client";  // ✅ Add this at the top
+"use client";  
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
