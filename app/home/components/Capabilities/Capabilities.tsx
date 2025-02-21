@@ -61,7 +61,7 @@ const Capabilities = (props: Props) => {
                                                 <span className='text-white font-semibold'>Artificial Intelligence</span> AI Solutions That Redefine Possibilities.
                                             </p>
                                             <div>
-                                                <Link href="/AI" passHref legacyBehavior>
+                                                <Link href="/ai" passHref legacyBehavior>
                                                     <a
                                                         onMouseEnter={() => setHovered1(true)}
                                                         onMouseLeave={() => setHovered1(false)}

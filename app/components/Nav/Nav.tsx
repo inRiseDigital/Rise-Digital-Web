@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Cpu, Brain, BadgeDollarSign, MessageCircle } from "lucide-react";
+import { Home, Cpu, Brain, BadgeDollarSign, MessageCircle, EqualApproximately } from "lucide-react";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -13,6 +13,7 @@ const Nav = () => {
   useEffect(() => {
     if (pathname.includes("AI")) setActiveIcon("AI");
     else if (pathname.includes("home")) setActiveIcon("Home");
+    else if (pathname.includes("about")) setActiveIcon("About");
     else if (pathname.includes("marketing")) setActiveIcon("Marketing");
     else if (pathname.includes("technology")) setActiveIcon("Technology");
     else if (pathname.includes("contact")) setActiveIcon("Contact");
@@ -39,10 +40,18 @@ const Nav = () => {
           onClick={() => handleIconClick("Home")}
         />
         <NavItem
+          icon={<EqualApproximately size={30} />}
+          text="About Us"
+          isOpen={isOpen}
+          href="/about"
+          isActive={activeIcon === "About"}
+          onClick={() => handleIconClick("About")}
+        />
+        <NavItem
           icon={<Brain size={30} />}
           text="AI"
           isOpen={isOpen}
-          href="/AI"
+          href="/ai"
           isActive={activeIcon === "AI"}
           onClick={() => handleIconClick("AI")}
         />
@@ -91,7 +100,7 @@ const NavItem: React.FC<NavItemProps> = ({ icon, text, isOpen, href, isActive, o
       title={text} // Add the title attribute here
       className={`transition-colors rounded-xl p-2 transform duration-300 ${
         isOpen ? "flex items-center" : "flex flex-col items-center"
-      } ${isActive ? "bg-purple-700" : "hover:bg-gray-700"} hover:translate-y-[-5px]`}
+      } ${isActive ? "bg-purple-700" : "hover:bg-gray-700"} ${!isActive && "hover:translate-y-[-5px]"}`}
     >
       <div className="flex items-center justify-center">{icon}</div>
       {isOpen && <span className="ml-2 text-sm">{text}</span>}

@@ -1,9 +1,7 @@
 "use client";
 
 import  Hero  from './components/Hero/Hero';
-import Capabilities from './components/Capabilities/Capabilities';
 import Footer from '../components/Footer/Footer';
-import Projects from './components/Projects/Projects';
 import Nav from '../components/Nav/Nav'
 import dynamic from 'next/dynamic';
 import Insights from './components/Insights/Insights';

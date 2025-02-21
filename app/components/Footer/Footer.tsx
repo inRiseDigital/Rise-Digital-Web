@@ -43,7 +43,7 @@ const Footer = () => {
               <h2 className="font-medium mb-4 font-mono">Services</h2>
               <ul className="text-[14px]">
                 <li className="mb-4">
-                  <a href="/AI">AI</a>
+                  <a href="/ai">AI</a>
                 </li>
                 <li className="mb-4">
                   <a href="/marketing">Marketing</a>

@@ -5,28 +5,26 @@ import { motion } from "framer-motion";
 import styles from "../../../../styles";
 import { staggerContainer } from "../../../../utils/motion";
 import InsightCard from "./InsightCard";
-import { TitleText } from "./TitleText";
-import { TypingText } from "./TypingText";
-import HoverCard from "./HoverCard";
+
 
 const insights = [
   {
     imgUrl: "/planet-06.png",
-    title: "The launch of the Metaverse makes Elon musk ketar-ketir",
+    title: "Spirituality – Nurturing the Mind and Soul",
     subtitle:
-      "Magna etiam tempor orci eu lobortis elementum nibh tellus molestie. Diam maecenas sed enim ut sem viverra alique.",
+      "We promote a balanced life by integrating meditation and mindfulness practices into daily work routines.",
   },
   {
     imgUrl: "/planet-07.png",
-    title: "7 tips to easily master the madness of the Metaverse",
+    title: "AI Technology – Driving the Digital Transformation",
     subtitle:
-      "Vitae congue eu consequat ac felis donec. Et magnis dis parturient montes nascetur ridiculus mus. Convallis tellus id interdum",
+      "Rise Digital is the AI powerhouse of Rise Tech Village, delivering cutting-edge AI solutions, technology, and marketing services.",
   },
   {
     imgUrl: "/planet-08.png",
-    title: "With one platform you can explore the whole world virtually",
+    title: "Agriculture – Sustainability and Innovation",
     subtitle:
-      "Quam quisque id diam vel quam elementum. Viverra nam libero justo laoreet sit amet cursus sit. Mauris in aliquam sem",
+      "We integrate AI-driven smart agriculture to optimize farming, increase yields, and enhance sustainability.",
   },
 ];
 
@@ -49,7 +47,7 @@ const Insights = () => (
                     className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
                     style={{ transitionDelay: "300ms" }}
                 >
-                    <p className="text-[#939aff]">Core AI Services</p>
+                    <p className="text-[#939aff]">The Rise Tech Village: A Hub of Innovation</p>
                     <span className="text-[28px] md:text-[32px] leading-[36px]">
                         AI solution for every business need
                     </span>

@@ -19,10 +19,10 @@ const Hero = () => (
         className="flex flex-col justify-center items-center relative z-10"
       >
         <h1 className="text-white font-bold text-[64px] leading-[80px] text-center">
-        AI Solutions That Redefine Possibilities
+          Welcome to Rise Digital – Pioneering the Future of AI
         </h1>
         <h2 className="text-[#c7c7c7] font-normal text-[20px] leading-[32px] text-center mt-4 mb-8">
-        Empowering businesses with intelligent tools, predictive analytics, and automation to unlock new growth opportunities
+          We are shaping the future by providing cutting-edge AI solutions that transform industries, enhance human lives, and drive sustainability.
         </h2>
       </motion.div>
 

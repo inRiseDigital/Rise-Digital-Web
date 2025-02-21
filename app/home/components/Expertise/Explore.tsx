@@ -11,33 +11,45 @@ const exploreExpertise = [
     id: 'Education',
     imgUrl: '/home/education.jpg',
     title: 'Education',
-    hoveredText: 'Hovered Text for Education',
+    hoveredText: 'Transform learning with AI-powered personalized education, automated grading, and intelligent tutoring systems.',
   },
   {
     id: 'Government',
     imgUrl: '/home/governance.jpg',
     title: 'Government',
-    hoveredText: 'Hovered Text for Government',
+    hoveredText: 'Optimize public services with AI-driven security, smart citizen engagement, and automated administrative processes.',
   },
   {
     id: 'Retail',
     imgUrl: '/home/retail.png',
     title: 'Retail',
-    hoveredText: 'Hovered Text for Retail',
+    hoveredText: 'Enhance customer experience with AI-driven recommendations, automated inventory management, and smart customer support.',
   },
   {
     id: 'Finance',
     imgUrl: '/home/finance.png',
     title: 'Finance',
-    hoveredText: 'Hovered Text for Finance',
+    hoveredText: 'Secure and streamline financial operations with AI-powered fraud detection, risk assessment, and intelligent financial forecasting.',
   },
   {
     id: 'Healthcare',
     imgUrl: '/home/health.jpg',
     title: 'Healthcare',
-    hoveredText: 'Hovered Text for Healthcare',
+    hoveredText: 'Revolutionize patient care with AI-assisted diagnostics, predictive analytics, and automated medical data processing.',
   },
 ];
+
+interface ExploreCardProps {
+  id: string;
+  imgUrl: string;
+  title: string;
+  index: number;
+  active: string;
+  handleClick: (id: string) => void;
+  hovered: string | null;
+  handleHover: (id: string | null) => void;
+  hoveredText: string;
+}
 
 const ExploreCard = ({
   id,
@@ -49,7 +61,7 @@ const ExploreCard = ({
   hovered,
   handleHover,
   hoveredText,
-}) => {
+}: ExploreCardProps) => {
   const isExpanded = hovered ? id === hovered : id === active;
 
   return (
@@ -58,9 +70,7 @@ const ExploreCard = ({
       onMouseEnter={() => handleHover(id)}
       onMouseLeave={() => handleHover(null)}
       onClick={() => handleClick(id)}
-      className={`relative ${
-        isExpanded ? 'lg:flex-[3.5] flex-[10]' : 'lg:flex-[0.5] flex-[2]'
-      } flex items-center justify-center min-w-[170px] h-[700px] transition-[flex] duration-[0.7s] ease-out-flex cursor-pointer`}
+      className={`relative ${isExpanded ? 'lg:flex-[3.5] flex-[10]' : 'lg:flex-[0.5] flex-[2]'} flex items-center justify-center`}
     >
       <Image
         src={imgUrl}
@@ -71,14 +81,14 @@ const ExploreCard = ({
       />
 
       {hovered === id && (
-        <>
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-400 bg-opacity-30 text-white p-2 rounded glassmorphism">
-            {hoveredText}
-          </div>
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-400 bg-opacity-30 text-white p-2 rounded">
+            <div className="absolute inset-0 flex items-center justify-center bg-gray-400 bg-opacity-30 text-white p-4 rounded text-lg">
+              {hoveredText}
+            </div>
           <h2 className="absolute bottom-4 left-4 font-semibold sm:text-[32px] text-[24px] text-white">
             {title}
           </h2>
-        </>
+        </div>
       )}
 
       {isExpanded ? (
@@ -101,12 +111,12 @@ const ExploreCard = ({
 
 const Explore = () => {
   const [active, setActive] = useState('world-2');
-  const [hovered, setHovered] = useState(null);
+  const [hovered, setHovered] = useState<string | null>(null);
 
   return (
     <section className={`${styles.paddings}`} id="explore">
       <motion.div
-        variants={staggerContainer}
+        variants={staggerContainer()}
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.25 }}
@@ -131,4 +141,5 @@ const Explore = () => {
 };
 
 export default Explore;
+
 
