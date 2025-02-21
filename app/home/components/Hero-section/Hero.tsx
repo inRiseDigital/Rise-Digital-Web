@@ -109,7 +109,7 @@ const Hero = (props: Props) => {
         </div>
         {/* Text Content */}
         <div className="pt-8 text-center px-4">
-          <h1 className="text-[28px] md:text-[32px] font-shareTechMono text-white leading-tight">
+          <h1 className="text-[28px] md:text-[32px] font-shareTechMono text-white leading-tight font-montserrat">
             Innovative Marketing, AI, and Technology Solutions for Unstoppable
             Growth
           </h1>

@@ -73,7 +73,7 @@ const HoverCard: React.FC<Props> = ({children, backgroundColor, direction, left}
             mixBlendMode: 'soft-light',
             left: left,
             willChange: 'transform',
-            transition: 'transform 0.2s cubic-bezier',
+            transition: 'transform 0.3s cubic-bezier',
             }}
         ></div>
         </div>

@@ -66,9 +66,9 @@ const Projects = () => {
               className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
               style={{ transitionDelay: "300ms" }}
             >
-              <p className="text-[#939aff]">Core AI Services</p>
+              <p className="text-[#939aff]">Experience Technology in Action</p>
               <span className="text-[28px] md:text-[32px] leading-[36px]">
-                AI solution for every business need
+                See how our cutting-edge solutions bring ideas to life, enabling seamless functionality and innovation.
               </span>
             </h3>
           </motion.h3>
