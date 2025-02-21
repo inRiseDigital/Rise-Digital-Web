@@ -5,20 +5,34 @@ import { GLTF as GLTFThree } from "three/examples/jsm/loaders/GLTFLoader";
 import { useRef } from "react";
 import * as THREE from "three";
 
+import { useEffect, useState } from "react";
+
 export function Model(): JSX.Element {
-  // Adjust these values as needed:
-  const fixedScale = 3; 
-  const canvasSize = 250; // px
+  const [canvasSize, setCanvasSize] = useState(250);
+  const fixedScale = 3;
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setCanvasSize(150); // Adjust size for mobile view
+      } else {
+        setCanvasSize(250); // Default size for larger screens
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Set initial size
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <Canvas
-      // Make the canvas a fixed size (e.g., 250x250), no background box
       style={{
         width: `${canvasSize}px`,
         height: `${canvasSize}px`,
         background: "transparent",
       }}
-      // Turn on alpha so that the canvas background is transparent
       gl={{ alpha: true }}
       camera={{
         position: [0, 0, 10 * fixedScale],

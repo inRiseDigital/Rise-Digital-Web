@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, KeyboardEvent } from "react";
+import Image from "next/image";
 import { AutosizeTextarea } from "./components/ui/autosize-textarea";
 import { Button } from "./components/ui/button";
 import { ScrollArea } from "./components/ui/scroll-area";
@@ -72,21 +73,26 @@ export default function Chat() {
     <main className="h-screen flex flex-col bg-muted/50">
       {/* Chat Header */}
       <div className="p-3 relative">
-        {/* The logo is always centered */}
-        <img
+        <Image
           src="/chatUI/rise_digital.png"
+          width={256}
+          height={64}
           className="w-64 mx-auto"
           alt="Chat Logo"
         />
 
         {/* Mobile version: Button is rendered below the logo */}
         <div className="mt-4 sm:hidden flex justify-center">
-        <CustomButton />
+          <a href="/home" rel="noreferrer">
+            <CustomButton />
+          </a>
         </div>
 
         {/* Desktop version: Button is positioned absolutely on the right */}
         <div className="hidden sm:block absolute right-0 top-1/2 transform -translate-y-1/2">
-          <CustomButton />
+          <a href="/home"  rel="noreferrer">
+            <CustomButton />
+          </a>
         </div>
       </div>
 
@@ -151,9 +157,11 @@ export default function Chat() {
                   className="h-10 w-10 p-0 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-purple-500 hover:to-blue-500 text-white 
              rounded-full flex items-center justify-center transition-all transform hover:scale-110 shadow-lg hover:shadow-xl"
                 >
-                  <img
+                  <Image
                     src="/chatUI/send-icon.svg"
                     alt="Send"
+                    width={32}
+                    height={32}
                     className="h-8 w-8"
                   />
                 </Button>
