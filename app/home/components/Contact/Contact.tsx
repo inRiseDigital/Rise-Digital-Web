@@ -17,7 +17,7 @@ const Contact = () => {
                         <div className="flex justify-between items-center">
                             <div className="flex justify-between md:space-x-10 max-md:flex-col">
                                 <HoverCard
-                                    backgroundColor="#ffa28b"
+                                    backgroundColor="#a55eea"
                                     direction="flex-col"
                                     left="-400px"
                                 >
@@ -68,7 +68,7 @@ const Contact = () => {
                                     </div>
                                 </HoverCard>
                                 <HoverCard
-                                    backgroundColor="#ffa28b"
+                                    backgroundColor="#a55eea"
                                     direction="flex-col"
                                     left="0"
                                 >

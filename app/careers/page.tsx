@@ -2,6 +2,7 @@
 
 import Footer from '../components/Footer/Footer';
 import Nav from '../components/Nav/Nav'
+import Hero from './components/Hero/Hero';
 import dynamic from 'next/dynamic';
 
 
@@ -22,7 +23,7 @@ export default function AI() {
         <div>
           <div className='overflow-hidden'>
             <div className='hero-section px-3 '>
-              
+            <Hero/>
             </div>
             <div id='Capabilities' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
               
