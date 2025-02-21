@@ -40,7 +40,7 @@ const Capabilities = (props: Props) => {
                     <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10">
                         <div className='flex justify-between items-center'>
                             <div className='flex justify-between md:space-x-10 max-md:flex-col'>
-                                <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='-400px'>
+                                <HoverCard backgroundColor='#a55eea' direction='flex-col' left='-400px'>
                                     <div className='md:flex flex-col  flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32 '>
                                         <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Artificial Intelligence</span> AI Solutions That Redefine Possibilities.</p>
                                         <div>
@@ -58,7 +58,7 @@ const Capabilities = (props: Props) => {
                                         <motion.img initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className="w-full h-auto " width="1208" height="764" loading="lazy" decoding="async" alt="" aria-hidden="true" src="./home/ai.jpg" />
                                     </div>
                                 </HoverCard>
-                                <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='0'>
+                                <HoverCard backgroundColor='#a55eea' direction='flex-col' left='0'>
                                     <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32 '>
                                         <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Marketing</span> Strategies That Speak. Marketing That Converts.</p>
                                     <div>
@@ -77,7 +77,7 @@ const Capabilities = (props: Props) => {
                                 </HoverCard>
                             </div>
                         </div>
-                        <HoverCard backgroundColor='#ffa28b' direction='' left=''>
+                        <HoverCard backgroundColor='#a55eea' direction='' left=''>
                             <div className='md:flex flex-col md:space-y-20 flex-1 py-20 p-10  justify-between'>
                                 <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-medium'>Technology</span> Innovative Technology Solutions for a Connected World</p>
                                 <div>
