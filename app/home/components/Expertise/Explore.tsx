@@ -29,7 +29,7 @@ const exploreExpertise = [
     id: 'Finance',
     imgUrl: '/home/finance.png',
     title: 'Finance',
-    hoveredText: 'Secure and streamline financial operations with AI-powered fraud detection, risk assessment, and intelligent financial forecasting.',
+    hoveredText: 'Secure and streamline financial operations with AI-powered fraud detection, risk assessment, and intelligent financial forecasting.',
   },
   {
     id: 'Healthcare',
@@ -66,7 +66,7 @@ const ExploreCard = ({
 
   return (
     <motion.div
-      variants={fadeIn('right', 'spring', index * 0.5, 0.75)}
+      variants={fadeIn('right', 'spring', index * 0.5, 1.5)} // Increased duration to 1.5
       onMouseEnter={() => handleHover(id)}
       onMouseLeave={() => handleHover(null)}
       onClick={() => handleClick(id)}
@@ -141,5 +141,4 @@ const Explore = () => {
 };
 
 export default Explore;
-
 
