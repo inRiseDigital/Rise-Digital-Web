@@ -7,6 +7,7 @@ import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
 import * as THREE from "three";
 
+
 const Star = (props: any) => {
   const ref = useRef<THREE.Group>(null!);
   const [sphere] = useState(() =>
