@@ -5,7 +5,7 @@ import Footer from '../components/Footer/Footer';
 import Nav from '../components/Nav/Nav'
 import dynamic from 'next/dynamic';
 import Contact from "./components/Contact/Contact";
-
+import About from "./components/About/About";
 
 const Model = dynamic(
   () => import("../components/Bot/Bot").then((mod) => mod.Model),
@@ -25,6 +25,9 @@ export default function AI() {
           <div className='overflow-hidden'>
             <div className='hero-section px-3 '>
               <Hero/>
+            </div>
+            <div id='About' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
+              <About />
             </div>
             <div id='Contact' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
               <Contact />
