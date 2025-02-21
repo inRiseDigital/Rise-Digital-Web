@@ -70,7 +70,9 @@ const Clients = (props: Props) => {
               style={{ transitionDelay: "300ms" }}
             >
               <p className="text-[#939aff] font-poppins">Our Clients</p>
-              <span className="text-[28px] md:text-[32px] leading-[36px]">Trust with Reliability and Excellence</ span>
+              <span className="text-[28px] md:text-[32px] leading-[36px]">
+                Trust with Reliability and Excellence
+              </span>
             </h3>
           </motion.h3>
         </div>
@@ -79,7 +81,12 @@ const Clients = (props: Props) => {
         <div className="flex flex-col items-center max-lg:mt-10">
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10">
             {companies.map((company) => (
-              <div key={company.id} className="flex md:max-w-60 max-w-32 gap-2">
+              <motion.div
+                key={company.id}
+                className="flex md:max-w-60 max-w-32 gap-2"
+                whileHover={{ scale: 1.5 }}
+                transition={{ duration: 0.3 }}
+              >
                 <Image
                   src={company.img}
                   alt={company.name}
@@ -94,7 +101,7 @@ const Clients = (props: Props) => {
                   className="md:w-24 w-20"
                   height={company.id === 4 || company.id === 5 ? 100 : 150}
                 />
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
