@@ -11,7 +11,7 @@ const Nav = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname.includes("AI")) setActiveIcon("AI");
+    if (pathname.toLowerCase().includes("ai")) setActiveIcon("AI");
     else if (pathname.includes("home")) setActiveIcon("Home");
     else if (pathname.includes("about")) setActiveIcon("About");
     else if (pathname.includes("marketing")) setActiveIcon("Marketing");

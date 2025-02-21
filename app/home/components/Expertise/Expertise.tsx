@@ -12,7 +12,7 @@ const Expertise = (props: Props) => {
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.6, type: 'tween' }}
+          transition={{ delay: 0.9, type: 'tween', duration: 0.002 }} // Reduced duration
           className='md:w-10/12 mb-24'
         >
           <h3
