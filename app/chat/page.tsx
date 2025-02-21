@@ -6,7 +6,8 @@ import { AutosizeTextarea } from "./components/ui/autosize-textarea";
 import { Button } from "./components/ui/button";
 import { ScrollArea } from "./components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
-import { CustomButton } from "./components/ui/CustomButton"; // <-- Import the custom button
+import { CustomButton } from "./components/ui/CustomButton";
+import { GlassCard } from "./components/ui/GlassCard"; // GlassCard component
 
 interface Message {
   message: string;
@@ -31,6 +32,8 @@ export default function Chat() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [userInput, setUserInput] = useState("");
   const [conversation, setConversation] = useState<Message[]>([]);
+  const [hovered, setHovered] = useState(false);
+  const [hovered1, setHovered1] = useState(false);
 
   // Scroll to the top when messages update
   useEffect(() => {
@@ -81,16 +84,16 @@ export default function Chat() {
           alt="Chat Logo"
         />
 
-        {/* Mobile version: Button is rendered below the logo */}
+        {/* Mobile version: Button rendered below the logo */}
         <div className="mt-4 sm:hidden flex justify-center">
           <a href="/home" rel="noreferrer">
             <CustomButton />
           </a>
         </div>
 
-        {/* Desktop version: Button is positioned absolutely on the right */}
-        <div className="hidden sm:block absolute right-0 top-1/2 transform -translate-y-1/2">
-          <a href="/home"  rel="noreferrer">
+        {/* Desktop version: Button positioned absolutely on the right */}
+        <div className="hidden sm:block absolute right-0 left-3/4 top-1/3 transform -translate-y-1/3">
+          <a href="/home" rel="noreferrer">
             <CustomButton />
           </a>
         </div>
@@ -106,28 +109,52 @@ export default function Chat() {
               {conversation.map((msg, i) => (
                 <div
                   key={i}
-                  className={`flex items-end gap-2 ${
-                    msg.type === "user" ? "justify-end" : "justify-start"
-                  }`}
+                  className={`flex items-end gap-2 ${msg.type === "user" ? "justify-end" : "justify-start"
+                    }`}
                 >
-                  {/* Bot Avatar (Only for Bot Messages) */}
                   {msg.type === "bot" && (
                     <Avatar className="w-8 h-8 bg-gray-200">
                       <AvatarImage src="/avatar/02.png" />
                       <AvatarFallback>.ˍ.</AvatarFallback>
                     </Avatar>
                   )}
-                  <div
-                    className={`max-w-[65%] px-4 py-2 rounded-lg text-white text-sm ${
-                      msg.type === "bot" ? "bg-transparent" : "bg-transparent"
-                    }`}
-                  >
+                  <div className="max-w-[65%] px-4 py-2 rounded-lg text-white text-lg bg-transparent">
                     {msg.message}
                   </div>
+                  {msg.type === "user" && (
+                    <Avatar className="w-8 h-8 bg-gray-200">
+                      <AvatarImage src="/avatar/02.png" />
+                      <AvatarFallback>.ˍ.</AvatarFallback>
+                    </Avatar>
+                  )}
                 </div>
               ))}
             </div>
           </ScrollArea>
+
+          {/* Display Glassmorphism Prompt Cards only if conversation is empty */}
+          {conversation.length === 0 && (
+            <div className="flex flex-col sm:flex-row gap-4 p-4 justify-center items-center">
+              <GlassCard
+                title="AI Services"
+                description="Boost your business with AI-driven solutions."
+                className="w-full sm:w-1/3"
+                onClick={() => setUserInput("Tell me more about AI Services.")}
+              />
+              <GlassCard
+                title="Marketing Insights"
+                description="Scale your brand with data-driven strategies."
+                className="w-full sm:w-1/3"
+                onClick={() => setUserInput("Tell me more about Marketing Insights.")}
+              />
+              <GlassCard
+                title="Tech Consulting"
+                description="Optimize your tech stack for performance."
+                className="w-full sm:w-1/3"
+                onClick={() => setUserInput("Tell me more about Tech Consulting.")}
+              />
+            </div>
+          )}
         </div>
       </div>
 
@@ -155,7 +182,7 @@ export default function Chat() {
                 <Button
                   onClick={sendMessage}
                   className="h-10 w-10 p-0 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-purple-500 hover:to-blue-500 text-white 
-             rounded-full flex items-center justify-center transition-all transform hover:scale-110 shadow-lg hover:shadow-xl"
+                  rounded-full flex items-center justify-center transition-all transform hover:scale-110 shadow-lg hover:shadow-xl"
                 >
                   <Image
                     src="/chatUI/send-icon.svg"
