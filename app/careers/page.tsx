@@ -4,6 +4,7 @@ import Footer from '../components/Footer/Footer';
 import Nav from '../components/Nav/Nav'
 import Hero from './components/Hero/Hero';
 import dynamic from 'next/dynamic';
+import OpenVacancies from './components/OpenVacancies/openVacancies';
 
 
 const Model = dynamic(
@@ -26,7 +27,7 @@ export default function AI() {
             <Hero/>
             </div>
             <div id='Capabilities' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
-              
+              <OpenVacancies></OpenVacancies>
             </div>
             <div id='Projects' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
               
