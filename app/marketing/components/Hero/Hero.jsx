@@ -17,7 +17,7 @@ const Hero = () => (
         variants={textVariant(1.1)}
         className="flex flex-col justify-center items-center relative z-10"
       >
-        <h1 className="text-white font-bold text-[64px] leading-[80px] text-center">
+        <h1 className="text-white font-bold text-[64px] leading-[80px] text-center font-heading4">
           Strategies That Speak. Marketing That Converts.
         </h1>
         <h2 className="text-[#c7c7c7] font-normal text-[20px] leading-[32px] text-center mt-4 mb-8">

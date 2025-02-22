@@ -24,6 +24,7 @@ module.exports = {
         heading1: ["Anton", fontFamily.sans],
         heading2: ["Phudu", "serif"],
         heading3: ["Grechen Fuemen", fontFamily.sans],
+        heading4: ["DM Serif Display", fontFamily.sans],
       },
     },
   },

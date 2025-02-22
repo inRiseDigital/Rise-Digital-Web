@@ -8,32 +8,19 @@ import { ScrollArea } from "./components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
 import { CustomButton } from "./components/ui/CustomButton";
 import { GlassCard } from "./components/ui/GlassCard"; // GlassCard component
+import {ChatBot} from "./api/api";
 
 interface Message {
   message: string;
   type: "bot" | "user";
 }
 
-// Dummy async function to simulate a chat completion API call
-async function getGroqChatCompletion(
-  userInput: string
-): Promise<{ choices: { message: { content: string } }[] }> {
-  await new Promise((resolve) => setTimeout(resolve, 500));
-  return {
-    choices: [
-      {
-        message: { content: `Echo: ${userInput}` },
-      },
-    ],
-  };
-}
 
 export default function Chat() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [userInput, setUserInput] = useState("");
   const [conversation, setConversation] = useState<Message[]>([]);
-  const [hovered, setHovered] = useState(false);
-  const [hovered1, setHovered1] = useState(false);
+
 
   // Scroll to the top when messages update
   useEffect(() => {
@@ -52,13 +39,19 @@ export default function Chat() {
       setUserInput("");
 
       try {
-        const response = await getGroqChatCompletion(userInput);
-        setTimeout(() => {
+        const response = await ChatBot(userInput);
+
+        if (response) {
           addMessage({
-            message: response.choices[0].message.content || "",
+            message: response || "",
             type: "bot",
           });
-        }, 500);
+        } else {
+          addMessage({
+            message: response || "",
+            type: "bot",
+          });
+        }
       } catch (error) {
         console.error("Error getting chat completion:", error);
       }
@@ -104,33 +97,39 @@ export default function Chat() {
       {/* Chat Messages Container */}
       <div className="flex-1 flex justify-center overflow-hidden">
         <div className="w-full sm:w-3/5 flex flex-col">
-          <ScrollArea ref={scrollRef} className="flex-1 overflow-y-auto">
+            <ScrollArea ref={scrollRef} className="flex-1 overflow-y-auto">
             <div className="flex flex-col gap-2 p-4">
               {conversation.map((msg, i) => (
-                <div
-                  key={i}
-                  className={`flex items-end gap-2 ${msg.type === "user" ? "justify-end" : "justify-start"
-                    }`}
-                >
-                  {msg.type === "bot" && (
-                    <Avatar className="w-8 h-8 bg-gray-200">
-                      <AvatarImage src="/avatar/02.png" />
-                      <AvatarFallback>.ˍ.</AvatarFallback>
-                    </Avatar>
-                  )}
-                  <div className="max-w-[65%] px-4 py-2 rounded-lg text-white text-lg bg-transparent">
-                    {msg.message}
-                  </div>
-                  {msg.type === "user" && (
-                    <Avatar className="w-8 h-8 bg-gray-200">
-                      <AvatarImage src="/avatar/02.png" />
-                      <AvatarFallback>.ˍ.</AvatarFallback>
-                    </Avatar>
-                  )}
-                </div>
+              <div
+              key={i}
+              className={`flex items-end gap-2 ${msg.type === "user" ? "justify-end" : "justify-start"
+              }`}
+              >
+              {msg.type === "bot" && (
+              <Avatar className="w-8 h-8 bg-gray-200">
+                <AvatarImage src="/avatar/02.png" />
+                <AvatarFallback>.ˍ.</AvatarFallback>
+              </Avatar>
+              )}
+              <div className="max-w-[65%] px-4 py-2 rounded-lg text-white text-lg bg-transparent">
+              {msg.message.split(' ').map((word, index) => 
+                word.startsWith('**') && word.endsWith('**') ? (
+                <strong key={index}>{word.slice(2, -2)} </strong>
+                ) : (
+                <span key={index}>{word} </span>
+                )
+              )}
+              </div>
+              {msg.type === "user" && (
+              <Avatar className="w-8 h-8 bg-gray-200">
+                <AvatarImage src="/avatar/02.png" />
+                <AvatarFallback>.ˍ.</AvatarFallback>
+              </Avatar>
+              )}
+              </div>
               ))}
             </div>
-          </ScrollArea>
+            </ScrollArea>
 
           {/* Display Glassmorphism Prompt Cards only if conversation is empty */}
           {conversation.length === 0 && (

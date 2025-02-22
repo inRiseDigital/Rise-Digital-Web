@@ -4,7 +4,6 @@ import HoverCard from "./ContactCard";
 import { motion } from "framer-motion";
 import { Send, Phone, MapPin } from "lucide-react";
 
-type Props = {};
 type Direction = "up" | "down" | "left" | "right";
 
 const FadeIn = (direction: Direction, delay: number) => {
@@ -28,7 +27,7 @@ const FadeIn = (direction: Direction, delay: number) => {
   };
 };
 
-const Contact = (props: Props) => {
+const Contact = () => {
   const [hovered, setHovered] = useState<boolean>(false);
 
   return (
@@ -47,7 +46,7 @@ const Contact = (props: Props) => {
               className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
               style={{ transitionDelay: "300ms" }}
             >
-              <p className="text-[#939aff]">Tell Us About Your Project</p>
+              <p className="text-[#939aff] font-heading2">Tell Us About Your Project</p>
             </h3>
           </motion.h3>
         </div>

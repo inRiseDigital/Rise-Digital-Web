@@ -1,19 +1,12 @@
-import Groq from "groq-sdk";
-
-const groq = new Groq({ 
-  apiKey: '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',
-  dangerouslyAllowBrowser: true
-});
+import axios from "axios";
 
 
-export async function getGroqChatCompletion(question: string) {
-  return groq.chat.completions.create({
-    messages: [
-      {
-        role: "user",
-        content: question,
-      },
-    ],
-    model: "llama-3.3-70b-versatile",
+export async function ChatBot(question: string) {
+  const response = await axios.post("http://127.0.0.1:8000/chat", { message: question }, {
+    headers: {
+      'Content-Type': 'application/json'
+    }
   });
+
+  return response.data.response;
 }

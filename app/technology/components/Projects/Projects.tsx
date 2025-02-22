@@ -66,7 +66,7 @@ const Projects = () => {
               className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
               style={{ transitionDelay: "300ms" }}
             >
-              <p className="text-[#939aff]">Experience Technology in Action</p>
+              <p className="text-[#939aff] font-heading2">Experience Technology in Action</p>
               <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">
                 See how our cutting-edge solutions bring ideas to life, enabling seamless functionality and innovation.
               </span>
