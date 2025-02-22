@@ -67,7 +67,7 @@ const Projects = () => {
               style={{ transitionDelay: "300ms" }}
             >
               <p className="text-[#939aff]">Experience the Power of AI in Action</p>
-              <span className="text-[28px] md:text-[32px] leading-[36px]">
+              <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">
               Our advanced AI algorithms bring your data to life. Watch as complex patterns transform into actionable strategies
               </span>
             </h3>

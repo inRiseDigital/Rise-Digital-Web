@@ -22,7 +22,7 @@ const Clients = () => {
                         >
                             <p className="text-[#939aff]">About Us</p>
                             <span className="text-[28px] md:text-[32px] leading-[36px]">
-                                Located in the captivating hills of Bellwood, Kandy, Sri Lanka, Rise Tech Village is more than just a technology hub—it is a revolution in sustainable living and AI-driven development. Our village is designed around three core pillars:
+                                At Rise Digital, we are pioneering the future by delivering cutting-edge AI solutions that transform industries, enhance human lives, and drive sustainability. As the AI powerhouse of Rise Tech Village, under the umbrella of CodeGen, we are committed to ethical innovation, ensuring that artificial intelligence seamlessly integrates with human progress.
                             </span>
                         </motion.h3>
                     </div>

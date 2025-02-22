@@ -67,7 +67,7 @@ const Projects = () => {
               style={{ transitionDelay: "300ms" }}
             >
               <p className="text-[#939aff]">Experience Technology in Action</p>
-              <span className="text-[28px] md:text-[32px] leading-[36px]">
+              <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">
                 See how our cutting-edge solutions bring ideas to life, enabling seamless functionality and innovation.
               </span>
             </h3>

@@ -1,3 +1,7 @@
+const { title } = require('process');
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -17,10 +21,9 @@ module.exports = {
         'sssm':'380px'
       },
       fontFamily: {
-        shareTechMono: ["Share Tech Mono", 'monospace'],
-        fingerPaint: ['Finger Paint', 'cursive'],
-        orbitron: ['Orbitron', 'sans-serif'],
-        shareTechMono: ['Share Tech Mono', 'monospace'],
+        heading1: ["Anton", fontFamily.sans],
+        heading2: ["Phudu", "serif"],
+        heading3: ["Grechen Fuemen", fontFamily.sans],
       },
     },
   },

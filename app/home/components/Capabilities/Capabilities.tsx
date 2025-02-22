@@ -40,7 +40,7 @@ const Capabilities = (props: Props) => {
                             style={{ transitionDelay: '300ms' }}
                         >
                             <p className="text-[#939aff]">Your Strategic Digital Partner</p>
-                            <span className="text-[28px] md:text-[32px] leading-[36px]">
+                            <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">
                                 Design, Marketing, AI Solutions, Technology
                             </span>
                         </h3>

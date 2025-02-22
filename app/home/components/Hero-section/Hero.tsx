@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import Earth from "./Earth1";
 import Earth2 from "./Earth2";
-import { motion } from "framer-motion";
 import Image from "next/image";
 
 const Typewriter = dynamic(() => import("typewriter-effect"), { ssr: false });
@@ -28,11 +27,11 @@ const Hero = (props: Props) => {
         </div>
         {/* Right: Text Content */}
         <div className="text-right pr-4 md:pr-12 w-full max-w-5xl">
-          <h1 className="text-[32px] md:text-[48px] lg:text-[56px] font-semibold text-white leading-tight font-montserrat">
+          <h1 className="text-[32px] md:text-[48px] lg:text-[56px] font-semibold text-white leading-tight font-heading1">
             Innovative Marketing, AI, and Technology Solutions for Unstoppable
             Growth
           </h1>
-          <p className="text-[24px] md:text-[28px] lg:text-[32px] leading-[30px] md:leading-[36px] lg:leading-[44px] mt-4 text-[#7d8590] font-poppins">
+          <p className="text-[24px] md:text-[28px] lg:text-[32px] leading-[30px] md:leading-[36px] lg:leading-[44px] mt-4 text-[#7d8590] font-heading3">
             {isClient ? (
               <Typewriter
                 options={{
@@ -109,11 +108,11 @@ const Hero = (props: Props) => {
         </div>
         {/* Text Content */}
         <div className="pt-8 text-center px-4">
-          <h1 className="text-[28px] md:text-[32px] font-shareTechMono text-white leading-tight font-montserrat">
+          <h1 className="text-[28px] md:text-[32px] font-shareTechMono text-white leading-tight font-heading1">
             Innovative Marketing, AI, and Technology Solutions for Unstoppable
             Growth
           </h1>
-          <p className="text-[18px] md:text-[20px] leading-[24px] mt-4 text-[#7d8590] font-shareTechMono">
+          <p className="text-[18px] md:text-[20px] leading-[24px] mt-4 text-[#7d8590] font-heading3">
             {isClient ? (
               <Typewriter
                 options={{

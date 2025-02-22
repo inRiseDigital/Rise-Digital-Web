@@ -105,7 +105,7 @@ const Tools = () => {
           style={{ transitionDelay: '300ms' }}
         >
           <p className="text-[#939aff]">Technologies We Work With</p>
-          <span className="text-[28px] md:text-[32px] leading-[36px]">World Class Brands</span>
+          <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">World Class Brands</span>
         </h3>
       </motion.h3>
     </div>

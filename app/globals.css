@@ -1,8 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Share+Tech+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&family=Orbitron:wght@400..900&family=Share+Tech+Mono&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Phudu:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Grechen+Fuemen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 
 
 
@@ -180,4 +184,10 @@ html{  scroll-behavior: smooth;}
 
 canvas {
   background: transparent !important;
+}
+
+.grechen-fuemen-regular {
+  font-family: "Grechen Fuemen", serif;
+  font-weight: 400;
+  font-style: normal;
 }

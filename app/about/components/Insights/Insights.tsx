@@ -48,7 +48,7 @@ const Insights = () => (
                     style={{ transitionDelay: "300ms" }}
                 >
                     <p className="text-[#939aff]">The Rise Tech Village: A Hub of Innovation</p>
-                    <span className="text-[28px] md:text-[32px] leading-[36px]">
+                    <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">
                         AI solution for every business need
                     </span>
                 </motion.h3>

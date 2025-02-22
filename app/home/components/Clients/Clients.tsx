@@ -70,7 +70,7 @@ const Clients = (props: Props) => {
               style={{ transitionDelay: "300ms" }}
             >
               <p className="text-[#939aff] font-poppins">Our Clients</p>
-              <span className="text-[28px] md:text-[32px] leading-[36px]">
+              <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">
                 Trust with Reliability and Excellence
               </span>
             </h3>

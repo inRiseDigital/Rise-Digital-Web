@@ -45,7 +45,7 @@ const Capabilities = (props: Props) => {
               style={{ transitionDelay: '300ms' }}
             >
               <p className="text-[#939aff]">Core Marketing Services</p>
-              <span className="text-[28px] md:text-[32px] leading-[36px]">
+              <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">
                 Comprehensive Marketing Solutions for Every Goal
               </span>
             </h3>
