@@ -9,7 +9,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
 import { CustomButton } from "./components/ui/CustomButton";
 import { GlassCard } from "./components/ui/GlassCard"; // GlassCard component
 import {ChatBot} from "./api/api";
-import ReactMarkdown from "react-markdown";
 
 interface Message {
   message: string;
@@ -98,7 +97,7 @@ export default function Chat() {
       {/* Chat Messages Container */}
       <div className="flex-1 flex justify-center overflow-hidden">
         <div className="w-full sm:w-3/5 flex flex-col">
-            <ScrollArea ref={scrollRef} className="flex-1 overflow-y-auto">
+          <ScrollArea ref={scrollRef} className="flex-1 overflow-y-auto">
             <div className="flex flex-col gap-2 p-4">
               {conversation.map((msg, i) => (
               <div
@@ -112,11 +111,15 @@ export default function Chat() {
                 <AvatarFallback>.ˍ.</AvatarFallback>
               </Avatar>
               )}
-                <div className="max-w-[65%] px-4 py-2 rounded-lg text-white text-lg bg-transparent">
-                <ReactMarkdown>
-                  {msg.message}
-                </ReactMarkdown>
-                </div>
+              <div className="max-w-[65%] px-4 py-2 rounded-lg text-white text-lg bg-transparent">
+              {msg.message.split(' ').map((word, index) => 
+                word.startsWith('**') && word.endsWith('**') ? (
+                <strong key={index}>{word.slice(2, -2)} </strong>
+                ) : (
+                <span key={index}>{word} </span>
+                )
+              )}
+              </div>
               {msg.type === "user" && (
               <Avatar className="w-8 h-8 bg-gray-200">
                 <AvatarImage src="/avatar/02.png" />
@@ -126,7 +129,7 @@ export default function Chat() {
               </div>
               ))}
             </div>
-            </ScrollArea>
+          </ScrollArea>
 
           {/* Display Glassmorphism Prompt Cards only if conversation is empty */}
           {conversation.length === 0 && (
@@ -134,23 +137,24 @@ export default function Chat() {
               <GlassCard
                 title="AI Services"
                 description="Boost your business with AI-driven solutions."
-                className="w-full sm:w-1/3"
+                className="w-full sm:w-1/3 hover:shadow-[0_0_20px_rgba(165,94,234,0.7)] transition-shadow duration-300"
                 onClick={() => setUserInput("Tell me more about AI Services.")}
               />
               <GlassCard
                 title="Marketing Insights"
                 description="Scale your brand with data-driven strategies."
-                className="w-full sm:w-1/3"
+                className="w-full sm:w-1/3 hover:shadow-[0_0_20px_rgba(165,94,234,0.7)] transition-shadow duration-300"
                 onClick={() => setUserInput("Tell me more about Marketing Insights.")}
               />
               <GlassCard
                 title="Tech Consulting"
                 description="Optimize your tech stack for performance."
-                className="w-full sm:w-1/3"
+                className="w-full sm:w-1/3 hover:shadow-[0_0_20px_rgba(165,94,234,0.7)] transition-shadow duration-300"
                 onClick={() => setUserInput("Tell me more about Tech Consulting.")}
               />
             </div>
           )}
+
         </div>
       </div>
 
