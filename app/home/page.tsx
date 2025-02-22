@@ -22,7 +22,7 @@ export default function Home() {
       <div className=" ">
         <div className="relative z-40">
           <div className="absolute"></div>
-        </div>
+          </div>
         <div>
           <div className="overflow-hidden">
             <div className="relative min-h-screen w-screen overflow-x-hidden">

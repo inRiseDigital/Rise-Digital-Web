@@ -98,7 +98,7 @@ const NavItem: React.FC<NavItemProps> = ({ icon, text, isOpen, href, isActive, o
     <a
       onClick={onClick}
       title={text} // Add the title attribute here
-      className={`transition-colors rounded-xl p-2 transform duration-300 ${
+      className={`relative z-50 transition-colors rounded-xl p-2 transform duration-300${
         isOpen ? "flex items-center" : "flex flex-col items-center"
       } ${isActive ? "bg-purple-700" : "hover:bg-gray-700"} ${!isActive && "hover:translate-y-[-5px]"}`}
     >
