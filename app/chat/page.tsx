@@ -9,6 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
 import { CustomButton } from "./components/ui/CustomButton";
 import { GlassCard } from "./components/ui/GlassCard"; // GlassCard component
 import {ChatBot} from "./api/api";
+import ReactMarkdown from "react-markdown";
 
 interface Message {
   message: string;
@@ -111,15 +112,11 @@ export default function Chat() {
                 <AvatarFallback>.ˍ.</AvatarFallback>
               </Avatar>
               )}
-              <div className="max-w-[65%] px-4 py-2 rounded-lg text-white text-lg bg-transparent">
-              {msg.message.split(' ').map((word, index) => 
-                word.startsWith('**') && word.endsWith('**') ? (
-                <strong key={index}>{word.slice(2, -2)} </strong>
-                ) : (
-                <span key={index}>{word} </span>
-                )
-              )}
-              </div>
+                <div className="max-w-[65%] px-4 py-2 rounded-lg text-white text-lg bg-transparent">
+                <ReactMarkdown>
+                  {msg.message}
+                </ReactMarkdown>
+                </div>
               {msg.type === "user" && (
               <Avatar className="w-8 h-8 bg-gray-200">
                 <AvatarImage src="/avatar/02.png" />

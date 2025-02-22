@@ -1,6 +1,5 @@
 "use client";
 
-import Hero from "./components/Hero-section/Hero";
 import Capabilities from "./components/Capabilities/Capabilities";
 import Expertise from "./components/Expertise/Expertise";
 import Footer from "../components/Footer/Footer";
@@ -10,6 +9,7 @@ import Nav from "../components/Nav/Nav";
 import Contact from "./components/Contact/Contact";
 import dynamic from "next/dynamic";
 import About from "./components/About/About";
+import Hero from "./components/Hero-section/Hero";
 
 const Model = dynamic(
   () => import("../components/Bot/Bot").then((mod) => mod.Model),
@@ -25,7 +25,7 @@ export default function Home() {
         </div>
         <div>
           <div className="overflow-hidden">
-            <div className="hero-section px-3 ">
+            <div className="relative min-h-screen w-screen overflow-x-hidden">
               <Hero />
             </div>
             <div
