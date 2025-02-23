@@ -2,9 +2,10 @@
 
 import { FaLocationArrow } from "react-icons/fa6";
 import Image from 'next/image';
-
 import { PinContainer } from "./Pin";
 import { motion } from "framer-motion";
+import { heading1 } from "../../../../fonts/font";
+
 
 // spell-checker: disable
 const projects = [
@@ -66,7 +67,7 @@ const Projects = () => {
               className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
               style={{ transitionDelay: "300ms" }}
             >
-              <p className="text-[#939aff] font-heading2">Interactive Marketing Stories That Inspire</p>
+              <p className={`text-[#939aff] ${heading1.className}`}>Interactive Marketing Stories That Inspire</p>
               <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">
               Our team creates visually stunning, data-driven stories to amplify your brand&apos;s message across digital platforms.
               </span>

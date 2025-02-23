@@ -5,6 +5,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Variants } from "framer-motion";
+import { title } from "../../../../fonts/font";
+
+
 
 
 const Typewriter = dynamic(() => import("typewriter-effect"), { ssr: false });
@@ -54,15 +57,14 @@ const HeroContent = () => {
       {/* Content Section - Will appear second on mobile */}
       <div className="h-full w-full flex flex-col gap-5 justify-center m-auto text-start order-last lg:order-first">
         <motion.div
-          className="flex flex-col gap-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto font-heading1"
-        >
+          className={`flex flex-col gap-6 text-6xl font-bold text-white max-w-[600px] w-auto h-auto ${title.className} tracking-wider`}>
           <span>
-            Growth Innovative
+            Innovative 
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
               {" "}
-              Marketing, AI, and Technology{" "}
+              Marketing,  AI,  and  Tech {" "}
             </span>
-            Solutions for Unstoppable
+             Solutions  for  Unstoppable  Growth
           </span>
           <p className="text-[24px] md:text-[28px] lg:text-[32px] leading-[30px] md:leading-[36px] lg:leading-[44px] mt-4 text-[#7d8590] font-heading3">
             {isClient ? (

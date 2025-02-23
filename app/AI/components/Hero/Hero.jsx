@@ -1,9 +1,10 @@
 'use client';
-
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from "../../../../styles";
 import { slideIn, staggerContainer, textVariant } from "../../../../utils/motion"
+import { pageTitle } from "../../../../fonts/font";
+
 
 const Hero = () => (
   <div className="relative max-w-[1750px] lg:pt-20 md:px-6 mx-auto pt-10 flex items-center justify-between">
@@ -18,10 +19,10 @@ const Hero = () => (
         variants={textVariant(1.1)}
         className="flex flex-col justify-center items-center relative z-10"
       >
-        <h1 className="text-white font-bold text-[64px] leading-[80px] text-center font-heading4">
+        <h1 className={`text-white font-bold text-[64px] leading-[80px] text-center font-heading4 ${pageTitle.className}`}>
         AI Solutions That Redefine Possibilities
         </h1>
-        <h2 className="text-[#c7c7c7] font-normal text-[20px] leading-[32px] text-center mt-4 mb-8">
+        <h2 className={`text-[#c7c7c7] font-normal text-[20px] leading-[32px] text-center mt-4 mb-8 `}>
         Empowering businesses with intelligent tools, predictive analytics, and automation to unlock new growth opportunities
         </h2>
       </motion.div>

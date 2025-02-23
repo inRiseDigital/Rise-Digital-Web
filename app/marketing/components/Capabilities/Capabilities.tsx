@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import HoverCard from './HoverCard'
 import { motion } from "framer-motion"
 import Link from 'next/link'
+import { heading1 } from "../../../../fonts/font";
+
 
 type Props = {}
 
@@ -44,7 +46,7 @@ const Capabilities = (props: Props) => {
               className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
               style={{ transitionDelay: '300ms' }}
             >
-              <p className="text-[#939aff] font-heading2">Core Marketing Services</p>
+              <p className={`text-[#939aff] ${heading1.className}`}>Core Marketing Services</p>
               <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">
                 Comprehensive Marketing Solutions for Every Goal
               </span>

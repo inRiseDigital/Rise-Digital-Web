@@ -4,6 +4,8 @@ import HoverCard from "./HoverCard";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { heading1 } from "../../../../fonts/font";
+
 
 const Contact = () => {
     const [hovered, setHovered] = useState<boolean>(false);
@@ -34,7 +36,7 @@ const Contact = () => {
                                                 className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
                                                 style={{ transitionDelay: '300ms' }}
                                             >
-                                                <p className="text-[#939aff] font-heading2">Ready to Dominate Your Industry?</p>
+                                                <p className={`text-[#939aff] ${heading1.className}`}>Ready to Dominate Your Industry?</p>
 
                                             </h3>
                                         </motion.h3>
@@ -96,7 +98,7 @@ const Contact = () => {
                                                 className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
                                                 style={{ transitionDelay: '300ms' }}
                                             >
-                                                <p className="text-[#939aff] font-heading2">Careers</p>
+                                                <p className={`text-[#939aff] ${heading1.className}`}>Careers</p>
 
                                             </h3>
                                         </motion.h3>

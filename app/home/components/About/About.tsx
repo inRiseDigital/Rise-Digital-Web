@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import Image from "next/image";
+import { heading1, heading2 } from "../../../../fonts/font";
 
 const Clients = () => {
     const [hovered, setHovered] = useState<boolean>(false)
@@ -20,9 +21,9 @@ const Clients = () => {
                             className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
                             style={{ transitionDelay: '300ms' }}
                         >
-                            <p className="text-[#939aff] font-heading2">About Us</p>
-                            <span className="text-[28px] md:text-[32px] leading-[36px]">
-                                At Rise Digital, we are shaping the future by providing cutting-edge AI solutions that transform industries, enhance human lives, and drive sustainability. As part of Rise Tech Village, under the umbrella of CodeGen, we are committed to innovation, ethical technology, and a future where AI seamlessly integrates with human progress.
+                            <p className={`text-[#939aff] ${heading1.className}`} >About Us</p>
+                            <span className={`text-[28px] md:text-[32px] leading-[36px] ${heading2.className}`}>
+                                At Rise Digital, we are shaping the future by providing cutting-edge AI solutions that transform industries, enhance human lives, and drive sustainability.
                             </span>
                         </motion.h3>
                         <a 

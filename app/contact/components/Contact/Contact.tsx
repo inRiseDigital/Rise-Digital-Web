@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import HoverCard from "./ContactCard";
 import { motion } from "framer-motion";
 import { Send, Phone, MapPin } from "lucide-react";
+import { heading1 } from "../../../../fonts/font";
+
 
 type Direction = "up" | "down" | "left" | "right";
 
@@ -46,7 +48,7 @@ const Contact = () => {
               className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
               style={{ transitionDelay: "300ms" }}
             >
-              <p className="text-[#939aff] font-heading2">Tell Us About Your Project</p>
+              <p className={`text-[#939aff] ${heading1.className}`}>Tell Us About Your Project</p>
             </h3>
           </motion.h3>
         </div>

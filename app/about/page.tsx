@@ -7,6 +7,7 @@ import dynamic from 'next/dynamic';
 import Insights from './components/Insights/Insights';
 import About from './components/About/About';
 
+
 const Model = dynamic(
   () => import("../components/Bot/Bot").then((mod) => mod.Model),
   { ssr: false }
