@@ -7,20 +7,29 @@ import { Button } from "./components/ui/button";
 import { ScrollArea } from "./components/ui/scroll-area";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
 import { CustomButton } from "./components/ui/CustomButton";
-import { GlassCard } from "./components/ui/GlassCard"; // GlassCard component
-import {ChatBot} from "./api/api";
+import { GlassCard } from "./components/ui/GlassCard";
+import { ChatBot } from "./api/api";
+import WelcomeMessage from "./components/WelcomeMessage"; // Adjust path as needed
 
 interface Message {
   message: string;
   type: "bot" | "user";
 }
 
-
 export default function Chat() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const [userInput, setUserInput] = useState("");
   const [conversation, setConversation] = useState<Message[]>([]);
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    window.addEventListener("resize", handleResize);
+    handleResize();
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   // Scroll to the top when messages update
   useEffect(() => {
@@ -40,18 +49,10 @@ export default function Chat() {
 
       try {
         const response = await ChatBot(userInput);
-
-        if (response) {
-          addMessage({
-            message: response || "",
-            type: "bot",
-          });
-        } else {
-          addMessage({
-            message: response || "",
-            type: "bot",
-          });
-        }
+        addMessage({
+          message: response || "",
+          type: "bot",
+        });
       } catch (error) {
         console.error("Error getting chat completion:", error);
       }
@@ -100,61 +101,150 @@ export default function Chat() {
           <ScrollArea ref={scrollRef} className="flex-1 overflow-y-auto">
             <div className="flex flex-col gap-2 p-4">
               {conversation.map((msg, i) => (
-              <div
-              key={i}
-              className={`flex items-end gap-2 ${msg.type === "user" ? "justify-end" : "justify-start"
-              }`}
-              >
-              {msg.type === "bot" && (
-              <Avatar className="w-8 h-8 bg-gray-200">
-                <AvatarImage src="/avatar/02.png" />
-                <AvatarFallback>.ˍ.</AvatarFallback>
-              </Avatar>
-              )}
-              <div className="max-w-[65%] px-4 py-2 rounded-lg text-white text-lg bg-transparent">
-              {msg.message.split(' ').map((word, index) => 
-                word.startsWith('**') && word.endsWith('**') ? (
-                <strong key={index}>{word.slice(2, -2)} </strong>
-                ) : (
-                <span key={index}>{word} </span>
-                )
-              )}
-              </div>
-              {msg.type === "user" && (
-              <Avatar className="w-8 h-8 bg-gray-200">
-                <AvatarImage src="/avatar/02.png" />
-                <AvatarFallback>.ˍ.</AvatarFallback>
-              </Avatar>
-              )}
-              </div>
+                <div
+                  key={i}
+                  className={`flex items-end gap-2 ${
+                    msg.type === "user" ? "justify-end" : "justify-start"
+                  }`}
+                >
+                  {msg.type === "bot" && (
+                    <Avatar className="w-8 h-8 bg-gray-200">
+                      <AvatarImage src="/avatar/02.png" />
+                      <AvatarFallback>.ˍ.</AvatarFallback>
+                    </Avatar>
+                  )}
+                  <div className="max-w-[65%] px-4 py-2 rounded-lg text-white text-lg bg-transparent">
+                    {msg.message.split(" ").map((word, index) =>
+                      word.startsWith("**") && word.endsWith("**") ? (
+                        <strong key={index}>{word.slice(2, -2)} </strong>
+                      ) : (
+                        <span key={index}>{word} </span>
+                      )
+                    )}
+                  </div>
+                  {msg.type === "user" && (
+                    <Avatar className="w-8 h-8 bg-gray-200">
+                      <AvatarImage src="/avatar/02.png" />
+                      <AvatarFallback>.ˍ.</AvatarFallback>
+                    </Avatar>
+                  )}
+                </div>
               ))}
             </div>
           </ScrollArea>
 
-          {/* Display Glassmorphism Prompt Cards only if conversation is empty */}
+          {/* Display prompt content if conversation is empty */}
           {conversation.length === 0 && (
-            <div className="flex flex-col sm:flex-row gap-4 p-4 justify-center items-center">
-              <GlassCard
-                title="AI Services"
-                description="Boost your business with AI-driven solutions."
-                className="w-full sm:w-1/3 hover:shadow-[0_0_20px_rgba(165,94,234,0.7)] transition-shadow duration-300"
-                onClick={() => setUserInput("Tell me more about AI Services.")}
-              />
-              <GlassCard
-                title="Marketing Insights"
-                description="Scale your brand with data-driven strategies."
-                className="w-full sm:w-1/3 hover:shadow-[0_0_20px_rgba(165,94,234,0.7)] transition-shadow duration-300"
-                onClick={() => setUserInput("Tell me more about Marketing Insights.")}
-              />
-              <GlassCard
-                title="Tech Consulting"
-                description="Optimize your tech stack for performance."
-                className="w-full sm:w-1/3 hover:shadow-[0_0_20px_rgba(165,94,234,0.7)] transition-shadow duration-300"
-                onClick={() => setUserInput("Tell me more about Tech Consulting.")}
-              />
-            </div>
-          )}
+            <>
+              {/* Welcome Message Component */}
+              <WelcomeMessage />
 
+              <div className="flex flex-col sm:flex-row gap-4 p-4 justify-center items-center">
+                {isMobile ? (
+                  // Mobile: Render three small buttons in one row with related icons
+                  <div className="flex flex-row gap-3 items-center justify-center">
+                    <button
+                      className="flex items-center gap-2 px-4 py-2 text-sm rounded-full bg-white/10 text-white hover:bg-white/20 transition"
+                      onClick={() =>
+                        setUserInput("Tell me more about AI Services.")
+                      }
+                    >
+                      {/* AI Icon */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 8c-1.1 0-2 .9-2 2 0 .22.03.43.08.63l-.71.71A3 3 0 009 13h6a3 3 0 00-1.67-2.66l-.71-.71c.05-.2.08-.41.08-.63 0-1.1-.9-2-2-2zM12 3v2m0 14v2m9-9h-2M5 12H3"
+                        />
+                      </svg>
+                      AI Services
+                    </button>
+                    <button
+                      className="flex items-center gap-2 px-4 py-2 text-sm rounded-full bg-white/10 text-white hover:bg-white/20 transition"
+                      onClick={() =>
+                        setUserInput("Tell me more about Marketing Insights.")
+                      }
+                    >
+                      {/* Marketing Icon */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 10h4v11H3zM9 3h4v18H9zM15 14h4v7h-4z"
+                        />
+                      </svg>
+                      Marketing
+                    </button>
+                    <button
+                      className="flex items-center gap-2 px-4 py-2 text-sm rounded-full bg-white/10 text-white hover:bg-white/20 transition"
+                      onClick={() =>
+                        setUserInput("Tell me more about Tech Consulting.")
+                      }
+                    >
+                      {/* Tech Icon */}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M16 18l6-6-6-6M8 6l-6 6 6 6"
+                        />
+                      </svg>
+                      Tech
+                    </button>
+                  </div>
+                ) : (
+                  // Desktop: Render GlassCards
+                  <>
+                    <GlassCard
+                      title="AI Services"
+                      description="Boost your business with AI-driven solutions."
+                      className="w-full sm:w-1/3 hover:shadow-[0_0_20px_rgba(165,94,234,0.7)] transition-shadow duration-300"
+                      onClick={() =>
+                        setUserInput("Tell me more about AI Services.")
+                      }
+                    />
+                    <GlassCard
+                      title="Marketing Insights"
+                      description="Scale your brand with data-driven strategies."
+                      className="w-full sm:w-1/3 hover:shadow-[0_0_20px_rgba(165,94,234,0.7)] transition-shadow duration-300"
+                      onClick={() =>
+                        setUserInput("Tell me more about Marketing Insights.")
+                      }
+                    />
+                    <GlassCard
+                      title="Tech Consulting"
+                      description="Optimize your tech stack for performance."
+                      className="w-full sm:w-1/3 hover:shadow-[0_0_20px_rgba(165,94,234,0.7)] transition-shadow duration-300"
+                      onClick={() =>
+                        setUserInput("Tell me more about Tech Consulting.")
+                      }
+                    />
+                  </>
+                )}
+              </div>
+            </>
+          )}
         </div>
       </div>
 
