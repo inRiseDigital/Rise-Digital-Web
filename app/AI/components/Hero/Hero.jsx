@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from "../../../../styles";
 import { slideIn, staggerContainer, textVariant } from "../../../../utils/motion"
-import { pageTitle } from "../../../../fonts/font";
+import { pageTitle, subtitle } from "../../../../fonts/font";
 
 
 const Hero = () => (
@@ -22,7 +22,7 @@ const Hero = () => (
         <h1 className={`text-white font-bold text-[64px] leading-[80px] text-center font-heading4 ${pageTitle.className}`}>
         AI Solutions That Redefine Possibilities
         </h1>
-        <h2 className={`text-[#c7c7c7] font-normal text-[20px] leading-[32px] text-center mt-4 mb-8 `}>
+        <h2 className={`text-[#c7c7c7] font-normal text-[20px] leading-[32px] text-center mt-4 mb-8 ${subtitle.className} `}>
         Empowering businesses with intelligent tools, predictive analytics, and automation to unlock new growth opportunities
         </h2>
       </motion.div>

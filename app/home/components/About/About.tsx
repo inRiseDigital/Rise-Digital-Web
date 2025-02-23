@@ -22,7 +22,7 @@ const Clients = () => {
                             style={{ transitionDelay: '300ms' }}
                         >
                             <p className={`text-[#939aff] ${heading1.className}`} >About Us</p>
-                            <span className={`text-[28px] md:text-[32px] leading-[36px] ${heading2.className}`}>
+                            <span className={`text-[20px] md:text-[30px] leading-[32px] ${heading2.className}`}>
                                 At Rise Digital, we are shaping the future by providing cutting-edge AI solutions that transform industries, enhance human lives, and drive sustainability.
                             </span>
                         </motion.h3>

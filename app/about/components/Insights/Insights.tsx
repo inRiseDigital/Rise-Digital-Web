@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import styles from "../../../../styles";
 import { staggerContainer } from "../../../../utils/motion";
 import InsightCard from "./InsightCard";
-import { heading1 } from "../../../../fonts/font";
+import { heading1, heading2 } from "../../../../fonts/font";
 
 
 
@@ -50,7 +50,7 @@ const Insights = () => (
                     style={{ transitionDelay: "300ms" }}
                 >
                     <p className={`text-[#939aff] ${heading1.className}`}>The Rise Tech Village: A Hub of Innovation</p>
-                    <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">
+                    <span className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}>
                         AI solution for every business need
                     </span>
                 </motion.h3>

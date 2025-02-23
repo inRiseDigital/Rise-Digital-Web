@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import styles from "../../../../styles";
 import { slideIn, staggerContainer, textVariant } from "../../../../utils/motion"
-import { pageTitle } from "../../../../fonts/font";
+import { pageTitle, subtitle } from "../../../../fonts/font";
 
 
 const Hero = () => (
@@ -22,7 +22,7 @@ const Hero = () => (
         <h1 className={`text-white font-bold text-[64px] leading-[80px] text-center font-heading4 ${pageTitle.className}`}>
         Innovative Technology Solutions for a Connected World
         </h1>
-        <h2 className="text-[#c7c7c7] font-normal text-[20px] leading-[32px] text-center mt-4 mb-8">
+        <h2 className={`text-[#c7c7c7] font-normal text-[20px] leading-[32px] text-center mt-4 mb-8 ${subtitle.className}`}>
         Transform your business with scalable, secure, and cutting-edge technology built to adapt and grow
         </h2>
       </motion.div>

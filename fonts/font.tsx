@@ -2,11 +2,11 @@ import localFont from "next/font/local";
 
 
 export const title = localFont({
-  src: "./Conthrax-SemiBold.otf",
+  src: "./Revamped.otf",
 });
 
 export const subtitle = localFont({
-  src: "./Magnetar.otf",
+  src: "./JMH Typewriter-Thin.otf",
 });
 
 export const pageTitle = localFont({
@@ -19,5 +19,10 @@ export const heading1 = localFont({
 });
 
 export const heading2 = localFont({
-  src: "./Conthrax-SemiBold.otf",
+  src: "./JMH Typewriter-Thin.otf",
+});
+
+
+export const body = localFont({
+  src: "./monofonto rg.otf",
 });

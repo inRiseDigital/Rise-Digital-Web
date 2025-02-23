@@ -3,7 +3,7 @@
 import React from "react";
 import ToolDataProvider from "./ToolDataProvider";
 import {motion} from "framer-motion"
-import { heading1 } from "../../../../fonts/font";
+import { heading1, heading2 } from "../../../../fonts/font";
 
 
   
@@ -88,7 +88,7 @@ const Tools = () => {
         <div className='max-w-[1280px] mx-auto'>
   <motion.div
     initial={{ height: 0 }}
-    whileInView={{ height: '160px' }}
+    whileInView={{ height: '100px' }}
     transition={{ delay: 0.2 }}
     className="md:ml-10 ml-3 h-[160px] mt-[-20px] w-[3px] rounded-md bg-transparent"
   ></motion.div>
@@ -107,7 +107,7 @@ const Tools = () => {
           style={{ transitionDelay: '300ms' }}
         >
           <p className={`text-[#939aff] ${heading1.className}`}>Technologies We Work With</p>
-          <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">World Class Brands</span>
+          <span className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}>World Class Brands</span>
         </h3>
       </motion.h3>
     </div>
@@ -134,7 +134,7 @@ const Tools = () => {
   </div>
   <motion.div
     initial={{ height: 0 }}
-    whileInView={{ height: '160px' }}
+    whileInView={{ height: '100px' }}
     transition={{ delay: 0.2 }}
     className="md:ml-10 ml-3 h-[160px] mt-[-20px] w-[3px] rounded-md bg-transparent"
   ></motion.div>

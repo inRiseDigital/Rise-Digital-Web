@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import HoverCard from "./ContactCard";
 import { motion } from "framer-motion";
 import { Send, Phone, MapPin } from "lucide-react";
-import { heading1 } from "../../../../fonts/font";
+import { heading1, heading2 } from "../../../../fonts/font";
 
 
 type Direction = "up" | "down" | "left" | "right";
@@ -66,7 +66,7 @@ const Contact = () => {
                     viewport={{ once: true, amount: 0.8 }}
                     className="mb-12 mr-6 flex items-center py-6"
                   >
-                    <h1 className="text-[40px] font-bold uppercase leading-[3rem] text-white">
+                    <h1 className={`text-[40px] font-bold uppercase leading-[3rem] text-white ${heading2.className}`}>
                       let&apos;s work <br />{" "}
                       <span className="under-line">together</span>
                     </h1>

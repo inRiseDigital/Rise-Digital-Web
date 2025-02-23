@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import HoverCard from './HoverCard'
 import {motion} from "framer-motion"
 import Link from 'next/link'
-import { heading1 } from "../../../../fonts/font";
+import { heading1, heading2 } from "../../../../fonts/font";
 
 
 type Props = {}
@@ -48,7 +48,7 @@ const Capabilities = (props: Props) => {
           style={{ transitionDelay: '300ms' }}
         >
           <p className={`text-[#939aff] ${heading1.className}`}>Core Technology Services</p>
-          <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">
+          <span className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}>
             Comprehensive Tech Solutions for Modern Businesses
           </span>
         </h3>

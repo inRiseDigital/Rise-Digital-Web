@@ -4,7 +4,7 @@ import { FaLocationArrow } from "react-icons/fa6";
 import Image from 'next/image';
 import { PinContainer } from "./Pin";
 import { motion } from "framer-motion";
-import { heading1 } from "../../../../fonts/font";
+import { heading1, heading2 } from "../../../../fonts/font";
 
 
 // spell-checker: disable
@@ -68,7 +68,7 @@ const Projects = () => {
               style={{ transitionDelay: "300ms" }}
             >
               <p className={`text-[#939aff] ${heading1.className}`}>Interactive Marketing Stories That Inspire</p>
-              <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">
+              <span className={`text-[28px] md:text-[32px] leading-[36px] ${heading2.className}`}>
               Our team creates visually stunning, data-driven stories to amplify your brand&apos;s message across digital platforms.
               </span>
             </h3>

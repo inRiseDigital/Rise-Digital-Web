@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import Image from "next/image";
-import { heading1 } from "../../../../fonts/font";
+import { heading1, heading2 } from "../../../../fonts/font";
 
 
 const Clients = () => {
@@ -23,7 +23,7 @@ const Clients = () => {
                             style={{ transitionDelay: '300ms' }}
                         >
                             <p className={`text-[#939aff] ${heading1.className}`}>About Us</p>
-                            <span className="text-[28px] md:text-[32px] leading-[36px]">
+                            <span className={`text-[28px] md:text-[32px] leading-[36px] ${heading2.className}`}>
                                 At Rise Digital, we don’t just provide AI solutions—we build the future. By merging AI, spirituality, and sustainability, we are creating a model for responsible technology that enhances lives and protects the planet.
                                 Are you ready to transform your business with AI? Let’s build something extraordinary together.
                             </span>

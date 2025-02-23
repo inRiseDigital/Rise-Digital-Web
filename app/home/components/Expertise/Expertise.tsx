@@ -2,7 +2,7 @@
 import React from 'react'
 import { motion } from "framer-motion"
 import Explore from "./Explore"
-import { heading1 } from "../../../../fonts/font";
+import { heading1, heading2 } from "../../../../fonts/font";
 
 
 
@@ -23,7 +23,7 @@ const Expertise = (props: Props) => {
             style={{ transitionDelay: '300ms' }}
           >
             <p className={`text-[#939aff] ${heading1.className}`}>Expertise Areas</p>
-            <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">Expansive Expertise Across Industries</span>
+            <span className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}>Expansive Expertise Across Industries</span>
           </h3>
         </motion.div>
       </motion.div>

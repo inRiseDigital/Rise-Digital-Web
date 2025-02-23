@@ -4,7 +4,7 @@ import HoverCard from './HoverCard'
 import { motion } from "framer-motion"
 import Link from 'next/link'
 import Image from 'next/image'
-import { heading1 } from "../../../../fonts/font";
+import { heading1, heading2, body } from "../../../../fonts/font";
 
 type Props = {}
 
@@ -41,7 +41,7 @@ const Capabilities = (props: Props) => {
                             style={{ transitionDelay: '300ms' }}
                         >
                             <p className={`text-[#939aff] ${heading1.className}`}>Your Strategic Digital Partner</p>
-                            <span className="text-[28px] md:text-[32px] leading-[36px] font-heading3">
+                            <span className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}>
                                 Design, Marketing, AI Solutions, Technology
                             </span>
                         </h3>
@@ -58,7 +58,7 @@ const Capabilities = (props: Props) => {
                                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                                     <HoverCard backgroundColor='#a55eea' direction='flex-col' left='-400px'>
                                         <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                                            <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                                            <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                                                 <span className='text-white font-semibold'>Artificial Intelligence</span> AI Solutions That Redefine Possibilities.
                                             </p>
                                             <div>
@@ -116,7 +116,7 @@ const Capabilities = (props: Props) => {
                                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                                     <HoverCard backgroundColor='#a55eea' direction='flex-col' left='0'>
                                         <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                                            <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                                            <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                                                 <span className='text-white font-semibold'>Marketing</span> Strategies That Speak. Marketing That Converts.
                                             </p>
                                             <div>
@@ -177,7 +177,7 @@ const Capabilities = (props: Props) => {
                         <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                             <HoverCard backgroundColor='#a55eea' direction='' left=''>
                                 <div className='md:flex flex-col md:space-y-20 flex-1 py-20 p-10 justify-between'>
-                                    <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                                    <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                                         <span className='text-white font-medium'>Technology</span> Innovative Technology Solutions for a Connected World
                                     </p>
                                     <div>

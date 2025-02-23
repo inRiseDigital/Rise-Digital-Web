@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import styles from "../../../../styles";
 import { slideIn, staggerContainer, textVariant } from "../../../../utils/motion"
-import { pageTitle } from "../../../../fonts/font";
+import { pageTitle, subtitle } from "../../../../fonts/font";
 
 const Hero = () => (
   <div className="relative max-w-[1750px] lg:pt-20 md:px-6 mx-auto pt-10 flex items-center justify-between">
@@ -21,7 +21,7 @@ const Hero = () => (
         <h1 className={`text-white font-bold text-[64px] leading-[80px] text-center font-heading4 ${pageTitle.className}`}>
           Strategies That Speak. Marketing That Converts.
         </h1>
-        <h2 className="text-[#c7c7c7] font-normal text-[20px] leading-[32px] text-center mt-4 mb-8">
+        <h2 className={`text-[#c7c7c7] font-normal text-[20px] leading-[32px] text-center mt-4 mb-8 ${subtitle.className}`}>
           Empowering brands with innovative, data-driven marketing solutions that deliver measurable results.
         </h2>
       </motion.div>
