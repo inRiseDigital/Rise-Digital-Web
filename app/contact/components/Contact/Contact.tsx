@@ -32,6 +32,56 @@ const FadeIn = (direction: Direction, delay: number) => {
 const Contact = () => {
   const [hovered, setHovered] = useState<boolean>(false);
 
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    company_name: "",
+    phone_number: "",
+    description: "",
+    email: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage("");
+
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/contact/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setMessage("Form submitted successfully!");
+        setFormData({
+          first_name: "",
+          last_name: "",
+          company_name: "",
+          phone_number: "",
+          description: "",
+          email: "",
+        });
+      } else {
+        setMessage("Failed to submit. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setMessage("An error occurred. Please try again.");
+    }
+
+    setLoading(false);
+  };
+
   return (
     <div className="max-w-[1280px] mx-auto">
       <div className="flex md:pl-10 space-x-3 md:space-x-10">
@@ -72,59 +122,75 @@ const Contact = () => {
                     </h1>
                   </motion.div>
                   <motion.form
+                    onSubmit={handleSubmit}
                     variants={FadeIn("left", 0.2)}
                     initial="hidden"
-                    whileInView={"show"}
+                    whileInView="show"
                     viewport={{ once: true, amount: 0.8 }}
                     className="flex max-w-3xl flex-1 flex-col items-start gap-y-8 rounded-md bg-secondary/80 p-10"
                   >
                     <input
                       type="text"
+                      name="first_name"
                       placeholder="First Name"
                       required
-                      className="w-full border-b border-white/25 bg-transparent py-3 outline-none transition-all placeholder:text-white/30 focus:border-blue/25 text-white"
+                      value={formData.first_name}
+                      onChange={handleChange}
+                      className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none placeholder:text-white/30"
                     />
                     <input
                       type="text"
+                      name="last_name"
                       placeholder="Last Name"
                       required
-                      className="w-full border-b border-white/25 bg-transparent py-3 outline-none transition-all placeholder:text-white/30 focus:border-blue/25 text-white"
+                      value={formData.last_name}
+                      onChange={handleChange}
+                      className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none placeholder:text-white/30"
                     />
                     <input
                       type="text"
-                      placeholder="Company Name "
+                      name="company_name"
+                      placeholder="Company Name"
                       required
-                      className="w-full border-b border-white/25 bg-transparent py-3 outline-none transition-all placeholder:text-white/30 focus:border-blue/25 text-white"
+                      value={formData.company_name}
+                      onChange={handleChange}
+                      className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none placeholder:text-white/30"
                     />
                     <input
                       type="text"
+                      name="phone_number"
                       placeholder="Phone Number"
                       required
-                      className="w-full border-b border-white/25 bg-transparent py-3 outline-none transition-all placeholder:text-white/30 focus:border-blue/25 text-white"
+                      value={formData.phone_number}
+                      onChange={handleChange}
+                      className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none placeholder:text-white/30"
                     />
                     <textarea
-                      name="message"
-                      id="message"
+                      name="description"
                       placeholder="Project Description"
-                      className="mb-12 w-full resize-none border-b border-white/25 bg-transparent py-12 outline-none transition-all placeholder:text-white/30 focus:border-blue/25 text-white"
+                      required
+                      value={formData.description}
+                      onChange={handleChange}
+                      className="mb-12 w-full resize-none border-b border-white/25 bg-transparent py-12 text-white outline-none placeholder:text-white/30"
                     ></textarea>
-                    <div className="lg:ml-5 flex items-center justify-center lg:space-x-5 max-lg:space-y-3 max-lg:flex-col max-lg:w-full max-lg:mt-5">
-                      <a
-                        onMouseEnter={() => setHovered(true)}
-                        onMouseLeave={() => setHovered(false)}
-                        href=""
-                        className="flex items-center text-white font-bold justify-center space-x-2 text-[20px] border-[1px] border-neutral-500 px-4 py-3 rounded-md"
-                      >
-                        Submit Your Inquiry
-                        <Send
-                          className={`ml-2 transition ease-in duration-150 ${
-                            hovered ? "translate-x-2" : "-translate-x-0"
+
+                    <button
+                      type="submit"
+                      onMouseEnter={() => setHovered(true)}
+                      onMouseLeave={() => setHovered(false)}
+                      disabled={loading}
+                      className="flex items-center text-white font-bold justify-center space-x-2 text-[20px] border-[1px] border-neutral-500 px-4 py-3 rounded-md"
+                    >
+                      {loading ? "Submitting..." : "Submit Your Inquiry"}
+                      <Send
+                        className={`ml-2 transition ease-in duration-150 ${hovered ? "translate-x-2" : "-translate-x-0"
                           }`}
-                          size={20}
-                          color="currentColor"
-                        />
-                      </a>
-                    </div>
+                        size={20}
+                        color="currentColor"
+                      />
+                    </button>
+
+                    {message && <p className="text-white">{message}</p>}
                   </motion.form>
                 </div>
               </div>
