@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import HoverCard from './HoverCard'
 import { motion } from "framer-motion"
 import Link from 'next/link'
-import { heading1, heading2} from "../../../../fonts/font";
+import { heading1, heading2, body } from "../../../../fonts/font";
 
 
 type Props = {}
@@ -64,7 +64,7 @@ const Capabilities = (props: Props) => {
                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                   <HoverCard backgroundColor='#a55eea' direction='flex-col' left='-400px'>
                     <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                      <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                      <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                         <span className='text-white font-semibold'>Go-to-Market Strategies</span> Launch your brand with confidence using AI-powered Go-to-Market strategies. We provide market research, competitor analysis, and tailored plans for product positioning, competitive pricing, and promotional strategies that ensure long-term growth and market relevance.
                       </p>
                     </div>
@@ -90,7 +90,7 @@ const Capabilities = (props: Props) => {
                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                   <HoverCard backgroundColor='#a55eea' direction='flex-col' left='0'>
                     <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                      <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                      <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                         <span className='text-white font-semibold'>Performance Marketing</span> Drive business growth with AI-driven performance marketing that optimizes ad placements and campaign targeting. We use data-backed insights and A/B testing to improve ROI, increase conversions, and turn leads into loyal customers.
                       </p>
                     </div>
@@ -121,7 +121,7 @@ const Capabilities = (props: Props) => {
                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                   <HoverCard backgroundColor='#a55eea' direction='flex-col' left='0'>
                     <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                      <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                      <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                         <span className='text-white font-semibold'>Data Engineering & BI</span> Transform your data into actionable insights with AI-enhanced data engineering and business intelligence. We integrate multiple data sources to deliver real-time analysis and dashboards for informed decision-making.
                       </p>
                     </div>
@@ -148,7 +148,7 @@ const Capabilities = (props: Props) => {
                 <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                   <HoverCard backgroundColor='#a55eea' direction='flex-col' left='-400px'>
                     <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                      <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                      <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                         <span className='text-white font-semibold'>Cybersecurity</span> Safeguard your digital assets with AI-driven cybersecurity solutions that detect threats and respond in real time. Our proactive security frameworks protect your business from evolving risks, ensuring data safety and compliance.
                       </p>
                     </div>

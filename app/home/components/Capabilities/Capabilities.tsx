@@ -119,6 +119,7 @@ const Capabilities = (props: Props) => {
                                             <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                                                 <span className='text-white font-semibold'>Marketing</span> Strategies That Speak. Marketing That Converts.
                                             </p>
+
                                             <div>
                                                 <Link href="/marketing" passHref legacyBehavior>
                                                     <a

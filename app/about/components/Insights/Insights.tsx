@@ -13,20 +13,16 @@ const insights = [
   {
     imgUrl: "/about/spirituality.png",
     title: "Spirituality – Nurturing the Mind and Soul",
-    subtitle:
-      "We promote a balanced life by integrating meditation and mindfulness practices into daily work routines.",
   },
   {
     imgUrl: "/planet-07.png",
     title: "AI Technology – Driving the Digital Transformation",
-    subtitle:
-      "Rise Digital is the AI powerhouse of Rise Tech Village, delivering cutting-edge AI solutions, technology, and marketing services.",
+
   },
   {
     imgUrl: "/planet-08.png",
     title: "Agriculture – Sustainability and Innovation",
-    subtitle:
-      "We integrate AI-driven smart agriculture to optimize farming, increase yields, and enhance sustainability.",
+
   },
 ];
 

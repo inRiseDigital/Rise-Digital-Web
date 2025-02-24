@@ -24,5 +24,5 @@ export const heading2 = localFont({
 
 
 export const body = localFont({
-  src: "./monofonto rg.otf",
+  src: "./LEMONMILK-Light.otf",
 });

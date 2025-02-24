@@ -4,7 +4,7 @@ import HoverCard from "./HoverCard";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { heading1 } from "../../../../fonts/font";
+import { heading1, body } from "../../../../fonts/font";
 
 
 const Contact = () => {
@@ -40,11 +40,8 @@ const Contact = () => {
 
                                             </h3>
                                         </motion.h3>
-                                        <p className="mb-4 md:text-xl text-[16px] text-[#7d8590] px-4 mx-auto">
-                                            Whether you&apos;re scaling your startup or just learning how
-                                            to code, GitHub is your home. Join the world&apos;s largest
-                                            developer platform to build the innovations that empower
-                                            humanity. Let&apos;s&nbsp;build from&nbsp;here.
+                                        <p className={`mb-4 md:text-xl text-[16px] text-[#7d8590] px-4 mx-auto ${body.className}`}>
+                                            Let’s innovate, automate, and elevate—AI is the future, and your future starts today!
                                         </p>
                                         <div className="flex items-center justify-center lg:space-x-5 max-lg:space-y-3 max-lg:flex-col max-lg:w-full max-lg:mt-5">
                                             <a
@@ -94,15 +91,17 @@ const Contact = () => {
                                             className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
                                             style={{ transitionDelay: '300ms' }}
                                         >
-                                            <h3
-                                                className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
-                                                style={{ transitionDelay: '300ms' }}
-                                            >
-                                                <p className={`text-[#939aff] ${heading1.className}`}>Careers</p>
-
-                                            </h3>
+                                            <a href="/careers" className="text-white">
+                                                <h3
+                                                    className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
+                                                    style={{ transitionDelay: '300ms' }}
+                                                >
+                                                    <p className={`text-[#939aff] ${heading1.className}`}>Careers</p>
+                                                </h3>
+                                            </a>
                                         </motion.h3>
-                                        <p className="mb-4 md:text-xl text-[16px] text-[#7d8590] px-4 mx-auto">
+
+                                        <p className={`mb-4 md:text-xl text-[16px] text-[#7d8590] px-4 mx-auto ${body.className}`}>
                                             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus, incidunt earum! Accusamus maxime nobis labore vero, impedit obcaecati.
                                         </p>
                                         <div className="flex items-center justify-center lg:space-x-5 max-lg:space-y-3 max-lg:flex-col max-lg:w-full max-lg:mt-5">

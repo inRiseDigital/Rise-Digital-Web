@@ -1,9 +1,9 @@
-"use client";  
+"use client";
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Cpu, Brain, BadgeDollarSign, MessageCircle, EqualApproximately } from "lucide-react";
+import { Home, Cpu, Brain, BadgeDollarSign, MessageCircle, EqualApproximately, CircleUserRound } from "lucide-react";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -17,6 +17,7 @@ const Nav = () => {
     else if (pathname.includes("marketing")) setActiveIcon("Marketing");
     else if (pathname.includes("technology")) setActiveIcon("Technology");
     else if (pathname.includes("contact")) setActiveIcon("Contact");
+    else if (pathname.includes("contact")) setActiveIcon("Contact");
   }, [pathname]);
 
   const handleIconClick = (icon: string) => {
@@ -26,9 +27,8 @@ const Nav = () => {
 
   return (
     <nav
-      className={`fixed left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white transition-all duration-300 rounded-2xl shadow-lg ${
-        isOpen ? "w-32" : "w-16"
-      }`}
+      className={`fixed left-4 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white transition-all duration-300 rounded-2xl shadow-lg ${isOpen ? "w-32" : "w-16"
+        }`}
     >
       <div className="flex flex-col items-center gap-4 p-2">
         <NavItem
@@ -79,6 +79,15 @@ const Nav = () => {
           isActive={activeIcon === "Contact"}
           onClick={() => handleIconClick("Contact")}
         />
+
+        <NavItem
+          icon={<CircleUserRound size={30} />}
+          text="Contact"
+          isOpen={isOpen}
+          href="/careers"
+          isActive={activeIcon === "Careers"}
+          onClick={() => handleIconClick("Careers")}
+        />
       </div>
     </nav>
   );
@@ -98,9 +107,8 @@ const NavItem: React.FC<NavItemProps> = ({ icon, text, isOpen, href, isActive, o
     <a
       onClick={onClick}
       title={text} // Add the title attribute here
-      className={`relative z-50 transition-colors rounded-xl p-2 transform duration-300${
-        isOpen ? "flex items-center" : "flex flex-col items-center"
-      } ${isActive ? "bg-purple-700" : "hover:bg-gray-700"} ${!isActive && "hover:translate-y-[-5px]"}`}
+      className={`relative z-50 transition-colors rounded-xl p-2 transform duration-300${isOpen ? "flex items-center" : "flex flex-col items-center"
+        } ${isActive ? "bg-purple-700" : "hover:bg-gray-700"} ${!isActive && "hover:translate-y-[-5px]"}`}
     >
       <div className="flex items-center justify-center">{icon}</div>
       {isOpen && <span className="ml-2 text-sm">{text}</span>}

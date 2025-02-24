@@ -82,31 +82,31 @@ const Contact = () => {
                       type="text"
                       placeholder="First Name"
                       required
-                      className="w-full border-b border-white/25 bg-transparent py-3 outline-none transition-all placeholder:text-white/10 focus:border-blue/25 text-white"
+                      className="w-full border-b border-white/25 bg-transparent py-3 outline-none transition-all placeholder:text-white/30 focus:border-blue/25 text-white"
                     />
                     <input
                       type="text"
                       placeholder="Last Name"
                       required
-                      className="w-full border-b border-white/25 bg-transparent py-3 outline-none transition-all placeholder:text-white/10 focus:border-blue/25 text-white"
+                      className="w-full border-b border-white/25 bg-transparent py-3 outline-none transition-all placeholder:text-white/30 focus:border-blue/25 text-white"
                     />
                     <input
                       type="text"
                       placeholder="Company Name "
                       required
-                      className="w-full border-b border-white/25 bg-transparent py-3 outline-none transition-all placeholder:text-white/10 focus:border-blue/25 text-white"
+                      className="w-full border-b border-white/25 bg-transparent py-3 outline-none transition-all placeholder:text-white/30 focus:border-blue/25 text-white"
                     />
                     <input
                       type="text"
                       placeholder="Phone Number"
                       required
-                      className="w-full border-b border-white/25 bg-transparent py-3 outline-none transition-all placeholder:text-white/10 focus:border-blue/25 text-white"
+                      className="w-full border-b border-white/25 bg-transparent py-3 outline-none transition-all placeholder:text-white/30 focus:border-blue/25 text-white"
                     />
                     <textarea
                       name="message"
                       id="message"
                       placeholder="Project Description"
-                      className="mb-12 w-full resize-none border-b border-white/25 bg-transparent py-12 outline-none transition-all placeholder:text-white/10 focus:border-blue/25 text-white"
+                      className="mb-12 w-full resize-none border-b border-white/25 bg-transparent py-12 outline-none transition-all placeholder:text-white/30 focus:border-blue/25 text-white"
                     ></textarea>
                     <div className="lg:ml-5 flex items-center justify-center lg:space-x-5 max-lg:space-y-3 max-lg:flex-col max-lg:w-full max-lg:mt-5">
                       <a
@@ -142,7 +142,7 @@ const Contact = () => {
                   viewport={{ once: true, amount: 0.8 }}
                   className="flex flex-col gap-8 p-6"
                 >
-                  <h1 className="text-[40px] font-bold uppercase leading-[3rem] text-white">
+                  <h1 className={`text-[40px] font-bold uppercase leading-[3rem] text-white ${heading2.className}`}>
                     let&apos;s work <br />{" "}
                     <span className="under-line">together</span>
                   </h1>

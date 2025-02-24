@@ -23,7 +23,7 @@ const Expertise = (props: Props) => {
             style={{ transitionDelay: '300ms' }}
           >
             <p className={`text-[#939aff] ${heading1.className}`}>Expertise Areas</p>
-            <span className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}>Expansive Expertise Across Industries</span>
+            <span className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}>Whatever you need we make it happen</span>
           </h3>
         </motion.div>
       </motion.div>

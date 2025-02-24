@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import HoverCard from './HoverCard'
 import {motion} from "framer-motion"
 import Link from 'next/link'
-import { heading1, heading2 } from "../../../../fonts/font";
+import { heading1, heading2, body } from "../../../../fonts/font";
 
 
 type Props = {}
@@ -64,7 +64,7 @@ const Capabilities = (props: Props) => {
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
               <HoverCard backgroundColor='#a55eea' direction='flex-col' left='-400px'>
                 <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                  <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                  <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                     <span className='text-white font-semibold'>Full-Stack Excellence</span> We deliver scalable, AI-integrated full-stack solutions that enhance user experience and efficiency. Our expertise spans from front-end design to back-end systems, driving innovation and business growth.
                   </p>
                 </div>
@@ -89,7 +89,7 @@ const Capabilities = (props: Props) => {
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
               <HoverCard backgroundColor='#a55eea' direction='flex-col' left='0'>
                 <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                  <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                  <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                     <span className='text-white font-semibold'>Cloud Computing</span> Empower your business with AI-powered cloud services offering flexibility, scalability, and security. We handle architecture, migration, and management to optimize performance, resource allocation, and threat detection.
                   </p>
                 </div>
@@ -120,7 +120,7 @@ const Capabilities = (props: Props) => {
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
               <HoverCard backgroundColor='#a55eea' direction='flex-col' left='0'>
                 <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                  <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                  <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                     <span className='text-white font-semibold'>Data Engineering & BI</span> Transform your data into actionable insights with AI-enhanced data engineering and business intelligence. We integrate multiple data sources to deliver real-time analysis and dashboards for informed decision-making.
                   </p>
                 </div>
@@ -147,7 +147,7 @@ const Capabilities = (props: Props) => {
             <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
               <HoverCard backgroundColor='#a55eea' direction='flex-col' left='-400px'>
                 <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                  <p className="text-xl md:text-2xl mb-6 font-medium text-[#7d8590]">
+                  <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                     <span className='text-white font-semibold'>Cybersecurity</span> Safeguard your digital assets with AI-driven cybersecurity solutions that detect threats and respond in real time. Our proactive security frameworks protect your business from evolving risks, ensuring data safety and compliance.
                   </p>
                 </div>

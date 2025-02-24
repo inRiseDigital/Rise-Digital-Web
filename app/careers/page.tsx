@@ -26,8 +26,8 @@ export default function AI() {
             <div className='hero-section px-3 '>
             <Hero/>
             </div>
-            <div id='Capabilities' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
-              <OpenVacancies></OpenVacancies>
+            <div id='OpenVacancies' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
+              <OpenVacancies/>
             </div>
             <div id='Projects' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
               

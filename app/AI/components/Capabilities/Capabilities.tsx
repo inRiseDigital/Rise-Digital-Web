@@ -3,7 +3,7 @@ import React from 'react'
 import HoverCard from './HoverCard'
 import {motion} from "framer-motion"
 import Image from 'next/image'
-import { heading1, heading2 } from "../../../../fonts/font";
+import { heading1, heading2, body } from "../../../../fonts/font";
 
 
 const Capabilities = () => {
@@ -28,7 +28,7 @@ const Capabilities = () => {
                             <div className='flex justify-between md:space-x-10 max-md:flex-col'>
                                 <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='-400px'>
                                     <div className='md:flex flex-col  flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32 '>
-                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Predictive Analytics</span> Stay ahead with AI-powered predictive analytics that forecast trends and future outcomes. Our machine learning models analyze data to optimize sales, inventory, and marketing decisions, ensuring proactive business growth.
+                                        <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}><span className='text-white font-semibold'>Predictive Analytics</span> Stay ahead with AI-powered predictive analytics that forecast trends and future outcomes. Our machine learning models analyze data to optimize sales, inventory, and marketing decisions, ensuring proactive business growth.
                                         </p>
                                     </div>
                                     <div className='overflow-hidden rounded-s-lg'>
@@ -37,7 +37,7 @@ const Capabilities = () => {
                                 </HoverCard>
                                 <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='0'>
                                     <div className='md:flex flex-col  flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32 '>
-                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Intelligent Automation</span> Automate repetitive tasks with AI-driven workflows that enhance accuracy and efficiency. From data entry to customer service, our intelligent automation solutions reduce costs, minimize errors, and boost productivity.</p>
+                                    <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}><span className='text-white font-semibold'>Intelligent Automation</span> Automate repetitive tasks with AI-driven workflows that enhance accuracy and efficiency. From data entry to customer service, our intelligent automation solutions reduce costs, minimize errors, and boost productivity.</p>
                                     </div>
                                     <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className='overflow-hidden rounded-s-lg'>
                                         <Image className="w-full h-auto" width={1209} height={890} loading="lazy" alt="" aria-hidden="true" src="/ai/intelligentautomation.png" />
@@ -49,7 +49,7 @@ const Capabilities = () => {
                             <div className='flex justify-between md:space-x-10 max-md:flex-col'>
                                 <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='0'>
                                     <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32 '>
-                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>Personalization at Scale</span> Deliver personalized experiences with AI that tailors recommendations and marketing messages. Our solutions analyze customer data to enhance engagement, increase conversions, and build lasting relationships.</p>
+                                    <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}><span className='text-white font-semibold'>Personalization at Scale</span> Deliver personalized experiences with AI that tailors recommendations and marketing messages. Our solutions analyze customer data to enhance engagement, increase conversions, and build lasting relationships.</p>
                                     </div>
                                     <motion.div initial={{y:20, opacity:0}} whileInView={{y:0, opacity:1}} transition={{type:'tween', duration:0.3}} className='overflow-hidden rounded-s-lg'>
                                         <Image className="w-full h-auto" width={1209} height={890} loading="lazy" alt="" aria-hidden="true" src="/ai/personalizationatscale.png" />
@@ -57,7 +57,7 @@ const Capabilities = () => {
                                 </HoverCard>
                                 <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='-400px'>
                                     <div className='md:flex flex-col  flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32 '>
-                                        <p className=" text-xl md:text-2xl mb-6 font-medium text-[#7d8590]"><span className='text-white font-semibold'>AI Chatbots</span> Enhance customer service with AI chatbots that provide instant, 24/7 support. These bots handle inquiries, recommend products, and resolve issues efficiently, improving satisfaction and reducing operational costs.
+                                    <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}><span className='text-white font-semibold'>AI Chatbots</span> Enhance customer service with AI chatbots that provide instant, 24/7 support. These bots handle inquiries, recommend products, and resolve issues efficiently, improving satisfaction and reducing operational costs.
                                         </p>
                                     </div>
                                     <div className='overflow-hidden rounded-s-lg'>
