@@ -164,7 +164,7 @@ export default function Chat() {
                           d="M12 8c-1.1 0-2 .9-2 2 0 .22.03.43.08.63l-.71.71A3 3 0 009 13h6a3 3 0 00-1.67-2.66l-.71-.71c.05-.2.08-.41.08-.63 0-1.1-.9-2-2-2zM12 3v2m0 14v2m9-9h-2M5 12H3"
                         />
                       </svg>
-                      AI Services
+                      AI
                     </button>
                     <button
                       className="flex items-center gap-2 px-4 py-2 text-sm rounded-full bg-white/10 text-white hover:bg-white/20 transition"
