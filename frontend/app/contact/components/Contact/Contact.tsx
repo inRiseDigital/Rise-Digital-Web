@@ -165,6 +165,15 @@ const Contact = () => {
                       onChange={handleChange}
                       className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none placeholder:text-white/30"
                     />
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="E-mail"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none placeholder:text-white/30"
+                    />
                     <textarea
                       name="description"
                       placeholder="Project Description"
