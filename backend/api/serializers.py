@@ -5,7 +5,7 @@ from .models import Contact, Vacancy, Document
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
-        fields = ['first_name', 'last_name', 'company_name', 'phone_number','description', 'email']
+        fields = ['first_name', 'last_name', 'company_name', 'phone_number', 'subject', 'description', 'email']
         
         
 class VacancySerializer(serializers.ModelSerializer):

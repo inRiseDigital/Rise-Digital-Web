@@ -10,3 +10,4 @@ load_dotenv(find_dotenv())
 
 def load_to_vector_database(file_path: str):
     pass
+    

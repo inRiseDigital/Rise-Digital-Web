@@ -2,7 +2,7 @@ from django.core.mail import send_mail
 
 
 
-def send_email(subject:str, message:str, from_email:str, to_email:str):
+def send_email(subject:str, message:str, from_email:str, to_email="pinildissanayaka@gmail.com"):
     send_mail(
         subject=subject,
         message=message,
