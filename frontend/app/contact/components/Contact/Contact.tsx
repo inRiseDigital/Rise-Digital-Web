@@ -37,6 +37,7 @@ const Contact = () => {
     last_name: "",
     company_name: "",
     phone_number: "",
+    subject:"",
     description: "",
     email: "",
   });
@@ -68,6 +69,7 @@ const Contact = () => {
           last_name: "",
           company_name: "",
           phone_number: "",
+          subject: "",
           description: "",
           email: "",
         });
@@ -171,6 +173,15 @@ const Contact = () => {
                       placeholder="E-mail"
                       required
                       value={formData.email}
+                      onChange={handleChange}
+                      className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none placeholder:text-white/30"
+                    />
+                    <input
+                      type="text"
+                      name="subject"
+                      placeholder="Subject"
+                      required
+                      value={formData.subject}
                       onChange={handleChange}
                       className="w-full border-b border-white/25 bg-transparent py-3 text-white outline-none placeholder:text-white/30"
                     />
