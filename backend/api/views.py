@@ -1,11 +1,11 @@
+from re import sub
 from django.shortcuts import render
 from rest_framework.views import APIView
 from .models import Contact, Vacancy
 from .serializers import ContactSerializer, VacancySerializer
 from rest_framework.response import Response
 from rest_framework import status
-from .services import send_email
-
+from django.core.mail import send_mail
 
 
 class ContactView(APIView):
