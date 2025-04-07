@@ -5,8 +5,6 @@ import ToolDataProvider from "./ToolDataProvider";
 import {motion} from "framer-motion"
 import { heading1, heading2 } from "../../../../fonts/font";
 
-
-  
 const Tool_data = [
 {
     tool_name: "Java Script",
@@ -82,64 +80,61 @@ const Tool_data = [
 }
 ];
 
-    
 const Tools = () => {
     return (
-        <div className='max-w-[1280px] mx-auto'>
-  <motion.div
-    initial={{ height: 0 }}
-    whileInView={{ height: '100px' }}
-    transition={{ delay: 0.2 }}
-    className="md:ml-10 ml-3 h-[160px] mt-[-20px] w-[3px] rounded-md bg-transparent"
-  ></motion.div>
-  <div className='flex md:pl-10 space-x-3 md:space-x-10'>
-    <div className='md:w-10/12 mb-24'>
-      <motion.h3
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ delay: 0.5, duration: 0.3 }}
-        viewport={{ once: false }}
-        className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
-        style={{ transitionDelay: '300ms' }}
-      >
-        <h3
-          className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
-          style={{ transitionDelay: '300ms' }}
+        <motion.div 
+            className='max-w-[1280px] mx-auto flex flex-col items-center'
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
         >
-          <p className={`text-[#939aff] ${heading1.className}`}>Technologies We Work With</p>
-          <span className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}>World Class Brands</span>
-        </h3>
-      </motion.h3>
-    </div>
-  </div>
-  <div className='flex justify-between items-center'>
-    <div className="flex flex-col items-center max-lg:mt-10">
-      <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10">
-        {Tool_data.map((image, index) => (
-          <motion.div
-            key={index}
-            whileHover={{ scale: 1.5 }}
-            transition={{ duration: 0.3 }}
-          >
-            <ToolDataProvider
-              src={image.Image}
-              width={image.width}
-              height={image.height}
-              index={index}
-            />
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  </div>
-  <motion.div
-    initial={{ height: 0 }}
-    whileInView={{ height: '100px' }}
-    transition={{ delay: 0.2 }}
-    className="md:ml-10 ml-3 h-[160px] mt-[-20px] w-[3px] rounded-md bg-transparent"
-  ></motion.div>
-</div>
+            <motion.div
+                initial={{ height: 0 }}
+                whileInView={{ height: '50px' }}
+                transition={{ delay: 0.2 }}
+                className="h-[160px] mt-[-20px] w-[3px] rounded-md bg-transparent"
+            ></motion.div>
 
+            <div className='w-full text-center mb-16'>
+                <motion.h3
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: 0.5, duration: 0.3 }}
+                    viewport={{ once: false }}
+                    className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white"
+                >
+                    <p className={`text-[#939aff] ${heading1.className}`}>Technologies We Work With</p>
+                    <span className={`text-[28px] md:text-[32px] leading-[36px] ${heading2.className}`}>World Class Brands</span>
+                </motion.h3>
+            </div>
+
+            <div className="w-full flex justify-center">
+                <div className="flex flex-wrap items-center justify-center gap-8 md:gap-16 max-w-[1000px]">
+                    {Tool_data.map((image, index) => (
+                        <motion.div
+                            key={index}
+                            whileHover={{ scale: 1.5 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <ToolDataProvider
+                                src={image.Image}
+                                width={image.width}
+                                height={image.height}
+                                index={index}
+                            />
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+
+            <motion.div
+                initial={{ height: 0 }}
+                whileInView={{ height: '100px' }}
+                transition={{ delay: 0.2 }}
+                className="h-[160px] mt-8 w-[3px] rounded-md bg-transparent"
+            ></motion.div>
+        </motion.div>
     );
 };
 

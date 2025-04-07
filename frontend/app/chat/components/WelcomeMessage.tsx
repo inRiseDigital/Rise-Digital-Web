@@ -16,7 +16,7 @@ const WelcomeMessage: React.FC = () => {
           ${title.className}
         `}
       >
-        Welcome to Rise Digital
+        Welcome to Rise AI
       </h1>
 
       <p

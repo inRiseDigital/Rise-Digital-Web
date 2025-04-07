@@ -19,22 +19,22 @@ const Model = dynamic(
 export default function Home() {
   return (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-col items-center">
         {/* Background layers or absolute positioned elements */}
         <div className="relative z-40">
           <div className="absolute inset-0"></div>
         </div>
 
-        <div className="overflow-hidden">
+        <div className="overflow-hidden w-full">
           {/* Hero Section */}
-          <div className="relative min-h-screen w-full overflow-x-hidden">
+          <div className="relative min-h-screen w-full overflow-x-hidden flex justify-center">
             <Hero />
           </div>
 
           {/* About Section */}
           <div
             id="about"
-            className="px-4 py-4 sm:px-8 md:px-16 overflow-hidden"
+            className="px-4 py-12 sm:px-8 md:px-16 overflow-hidden flex justify-center"
           >
             <About />
           </div>
@@ -42,7 +42,7 @@ export default function Home() {
           {/* Clients Section */}
           <div
             id="clients"
-            className="px-4 py-4 sm:px-8 md:px-16 overflow-hidden"
+            className="px-4 py-12 sm:px-8 md:px-16 overflow-hidden flex justify-center"
           >
             <Clients />
           </div>
@@ -50,7 +50,7 @@ export default function Home() {
           {/* Tools Section */}
           <div
             id="tools"
-            className="px-4 py-4 sm:px-8 md:px-16 overflow-hidden"
+            className="px-4 py-12 sm:px-8 md:px-16 overflow-hidden flex justify-center"
           >
             <Tools />
           </div>
@@ -58,7 +58,7 @@ export default function Home() {
           {/* Capabilities Section */}
           <div
             id="capabilities"
-            className="px-4 py-4 sm:px-8 md:px-16 overflow-hidden"
+            className="px-4 py-12 sm:px-8 md:px-16 overflow-hidden flex justify-center"
           >
             <Capabilities />
           </div>
@@ -66,7 +66,7 @@ export default function Home() {
           {/* Expertise Section */}
           <div
             id="expertise"
-            className="px-4 py-4 pb-8 sm:px-8 md:px-16 overflow-hidden"
+            className="px-4 py-12 sm:px-8 md:px-16 overflow-hidden flex justify-center"
           >
             <Expertise />
           </div>
@@ -74,15 +74,15 @@ export default function Home() {
           {/* Contact Section */}
           <div
             id="contact"
-            className="px-4 py-4 pb-8 sm:px-8 md:px-16 overflow-hidden"
+            className="px-4 py-12 sm:px-8 md:px-16 overflow-hidden flex justify-center"
           >
             <Contact />
           </div>
         </div>
 
-        <Footer />
+        
       </div>
-
+      <Footer />
       {/* Navigation overlay */}
       <Nav />
 

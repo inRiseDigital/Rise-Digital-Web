@@ -23,23 +23,24 @@ const ToolDataProvider = ({ src, width, height, index} : Props) => {
     }
 
     const animationDelay = 0.3
-        return (
-            <motion.div
-                ref={ref}
-                initial="hidden"
-                variants={imageVariants}
-                animate={inView ? "visible" : "hidden"}
-                custom={index}
-                transition={{delay: index * animationDelay}}
-            >
-                <Image
-                    src={src}
-                    width={width}
-                    height={height}
-                    alt='Tech image'
-                />
-            </motion.div>
-        )
+    return (
+        <motion.div
+            ref={ref}
+            initial="hidden"
+            variants={imageVariants}
+            animate={inView ? "visible" : "hidden"}
+            custom={index}
+            transition={{delay: index * animationDelay}}
+            className="flex items-center justify-center"
+        >
+            <Image
+                src={src}
+                width={width}
+                height={height}
+                alt='Tech image'
+            />
+        </motion.div>
+    )
 }
 
 export default ToolDataProvider

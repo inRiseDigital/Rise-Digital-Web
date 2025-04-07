@@ -7,24 +7,82 @@ import dynamic from "next/dynamic";
 import { Variants } from "framer-motion";
 import { title, subtitle } from "../../../../fonts/font";
 
+// Dynamically import Typewriter with no SSR to avoid hydration issues
 const Typewriter = dynamic(() => import("typewriter-effect"), { ssr: false });
+
+// Define proper interface for the ImageFadeOverlay component props
+interface ImageFadeOverlayProps {
+  variants?: Variants;
+  className: string;
+  initial?: string | object;
+  animate?: string | object;
+  custom?: Record<string, any>;
+}
+
+// Extracted fade effect components for better reusability
+const ImageFadeOverlay: React.FC<ImageFadeOverlayProps> = ({ 
+  variants, 
+  className, 
+  initial = "initial", 
+  animate = "animate", 
+  custom = {} 
+}) => (
+  <motion.div
+    initial={initial}
+    animate={animate}
+    variants={variants}
+    {...custom}
+    className={className}
+  />
+);
 
 const HeroContent = () => {
   const [isClient, setIsClient] = useState(false);
   const [hovered, setHovered] = useState<boolean>(false);
 
+  // Set client-side rendering flag
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  const variants: Variants = {
+  // Animation variants
+  const floatVariants: Variants = {
     float: {
       y: [-20, 20],
       transition: {
-        duration: 2,
+        duration: 2.5,
         repeat: Infinity,
         repeatType: "reverse",
         ease: "easeInOut"
+      }
+    }
+  };
+
+  const fadeVariants: Variants = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const bottomFadeVariants: Variants = {
+    initial: { 
+      opacity: 0,
+      height: "20%"
+    },
+    animate: { 
+      opacity: 1,
+      height: "65%",
+      transition: {
+        duration: 1.8,
+        ease: "easeOut",
+        delay: 0.2
       }
     }
   };
@@ -33,32 +91,59 @@ const HeroContent = () => {
     <motion.div
       initial="hidden"
       animate="visible"
-      className="flex flex-col lg:flex-row relative max-w-[1680px] lg:pt-32 pt-8 px-4 md:px-10 mx-auto items-center justify-between"
+      className="flex flex-col lg:flex-row relative w-full pt-4 lg:pt-16 px-6 md:px-12 xl:px-16 mx-auto items-center justify-between"
     >
       {/* Image Section */}
       <motion.div
-        variants={variants}
+        variants={floatVariants}
         animate="float"
-        className="w-full lg:w-1/2 h-full flex justify-center items-center order-first lg:order-last mb-8 lg:mb-0"
+        className="w-full lg:w-1/2 h-full flex justify-center lg:justify-end items-center order-first lg:order-last mb-8 lg:mb-0 lg:pr-6 xl:pr-12"
       >
-        <Image
-          src="/home/hero.png"
-          alt="work icons"
-          height={650}
-          width={650}
-          className="w-auto h-auto max-w-full"
-        />
+        <div className="relative w-full max-w-[750px] lg:max-w-[800px] xl:max-w-[900px]">
+          <Image
+            src="/home/hero.png"
+            alt="Rise Digital - Marketing, AI, and Tech Solutions"
+            height={1000}
+            width={900}
+            className="w-auto h-auto max-w-full object-contain min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px]"
+            style={{ background: 'transparent' }}
+            priority
+            quality={90}
+          />
+          
+          {/* Primary bottom gradient fade */}
+          <ImageFadeOverlay 
+            variants={bottomFadeVariants}
+            className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/75 via-black/50 to-transparent pointer-events-none"
+          />
+          
+          {/* Secondary bottom gradient fade - using custom properties for cleaner code */}
+          <ImageFadeOverlay 
+            className="absolute bottom-0 left-0 right-0 h-[20%] bg-gradient-to-t from-black/90 to-transparent pointer-events-none"
+            custom={{
+              initial: { opacity: 0 },
+              animate: { opacity: 1 },
+              transition: { duration: 1.8, delay: 0.8 }
+            }}
+          />
+          
+          {/* Radial gradient overlay */}
+          <ImageFadeOverlay 
+            variants={fadeVariants}
+            className="absolute inset-0 bg-gradient-radial from-transparent to-black/20 pointer-events-none opacity-60"
+          />
+        </div>
       </motion.div>
 
       {/* Text Section */}
-      <div className="w-full lg:w-1/2 flex flex-col gap-5 justify-center text-start order-last lg:order-first -mt-4">
+      <div className="w-full lg:w-1/2 flex flex-col gap-5 justify-center text-start order-last lg:order-first -mt-4 lg:pl-6 xl:pl-12">
         <motion.div
           className={`
             flex flex-col gap-6 
             font-bold text-white tracking-wider
             ${title.className}
-            text-3xl sm:text-4xl md:text-5xl lg:text-6xl
-            max-w-[600px] mx-auto lg:mx-0
+            text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
+            max-w-[700px] mx-auto lg:mx-0
           `}
         >
           <span>
@@ -68,45 +153,60 @@ const HeroContent = () => {
             </span>
             Solutions for Unstoppable Growth
           </span>
-          <p
+          <div
             className={`
               text-[#7d8590] font-heading3 
               ${subtitle.className}
               text-base sm:text-lg md:text-xl lg:text-2xl 
-              leading-6 sm:leading-8 md:leading-10 lg:leading-[44px]
+              h-[4.5rem] sm:h-[6rem] md:h-[7rem] lg:h-[8rem]
+              relative overflow-hidden
             `}
           >
-            {isClient ? (
-              <Typewriter
-                options={{
-                  strings: [
-                    "Partnering with forward-thinking brands to design and scale transformative digital solutions",
-                  ],
-                  autoStart: true,
-                  loop: true,
-                }}
-              />
-            ) : (
-              "Partnering with forward-thinking brands..."
-            )}
-          </p>
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full">
+                {isClient ? (
+                  <Typewriter
+                    options={{
+                      strings: [
+                        "Partnering with forward-thinking brands to design and scale transformative digital solutions",
+                      ],
+                      autoStart: true,
+                      loop: true,
+                      delay: 40,
+                      deleteSpeed: 20,
+                    }}
+                  />
+                ) : (
+                  "Partnering with forward-thinking brands..."
+                )}
+              </span>
+            </div>
+          </div>
+          
+          {/* CTA Button */}
           <div className="mt-4">
             <a
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
-              href=""
-              className="border border-neutral-600 copilot rounded-full inline-block"
+              href="#services"
+              className="border border-neutral-600 copilot rounded-full inline-block hover:bg-gradient-to-r hover:from-purple-900/20 hover:to-cyan-900/20 transition-all duration-300"
             >
               <div className="flex items-center p-3 px-5">
-                <Image
-                  className="w-11 h-11 flex-grow-0 flex-shrink-0 mr-4 sm:mr-6 scale-110"
-                  width={44}
-                  height={44}
-                  loading="lazy"
-                  alt=""
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className="w-11 h-11 flex-grow-0 flex-shrink-0 mr-4 sm:mr-6 text-purple-500"
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
                   aria-hidden="true"
-                  src=""
-                />
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M8 12h8"></path>
+                  <path d="M12 8v8"></path>
+                </svg>
                 <div className="pr-3 sm:pr-5">
                   <div className="font-medium text-white text-sm sm:text-[16px] leading-5">
                     Explore Our Services
@@ -122,6 +222,7 @@ const HeroContent = () => {
                     height="16"
                     viewBox="0 0 16 16"
                     fill="none"
+                    aria-hidden="true"
                   >
                     <path
                       fill="currentColor"
@@ -142,6 +243,12 @@ const HeroContent = () => {
             </a>
           </div>
         </motion.div>
+      </div>
+      
+      {/* Background Glow Effects */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-10 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-1/3 h-1/3 bg-purple-700 rounded-full filter blur-[120px]"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-1/4 h-1/4 bg-cyan-700 rounded-full filter blur-[120px]"></div>
       </div>
     </motion.div>
   );

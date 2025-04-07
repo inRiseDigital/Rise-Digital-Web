@@ -1,12 +1,31 @@
 'use client'
 import React from 'react'
 
-const GlowingButton: React.FC = () => {
+type GlowingButtonProps = {
+  vacancyTitle?: string
+  onClick?: () => void
+}
+
+const GlowingButton: React.FC<GlowingButtonProps> = ({ vacancyTitle, onClick }) => {
+  const handleClick = () => {
+    if (onClick) {
+      onClick()
+    } else {
+      // Default behavior - open email application with predefined subject
+      const subject = vacancyTitle ? `Application for ${vacancyTitle} position` : 'Job Application'
+      const mailtoLink = `mailto:careers@risedigital.io?subject=${encodeURIComponent(subject)}`
+      window.open(mailtoLink, '_blank')
+    }
+  }
+
   return (
-    <button className="group relative mt-2">
-      <span className="relative flex items-center justify-center rounded-lg bg-[#0f0123] bg-opacity-30 backdrop-blur-sm hover:bg-[#0f0123] hover:bg-opacity-40 px-4 py-2 leading-none text-sm text-white font-medium transition-all duration-300">
-        Apply Here
-      </span>
+    <button
+      onClick={handleClick}
+      className="px-6 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full text-white font-medium 
+      shadow-[0_0_15px_rgba(123,90,203,0.6)] hover:shadow-[0_0_25px_rgba(162,112,214,0.8)] 
+      transition-all duration-300 transform hover:scale-105"
+    >
+      Apply Here
     </button>
   )
 }
