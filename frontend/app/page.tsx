@@ -31,9 +31,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
-      <Nav />
       <div
         className="fixed bottom-4 right-4 z-50 pointer-events-none"
         onClick={() => (window.location.href = "/")}
