@@ -68,8 +68,8 @@ export default function Chat() {
 
   return (
     <main className="h-screen flex flex-col bg-muted/50">
-      {/* Chat Header */}
-      <div className="p-3 relative">
+      {/* Chat Header - Simplified without navbar */}
+      <div className="p-3">
         <Image
           src="/chatUI/rise_digital.png"
           width={256}
@@ -77,20 +77,6 @@ export default function Chat() {
           className="w-64 mx-auto"
           alt="Chat Logo"
         />
-
-        {/* Mobile version: Button rendered below the logo */}
-        <div className="mt-4 sm:hidden flex justify-center">
-          <a href="/home" rel="noreferrer">
-            <CustomButton />
-          </a>
-        </div>
-
-        {/* Desktop version: Button positioned absolutely on the right */}
-        <div className="hidden sm:block absolute right-0 left-3/4 top-1/3 transform -translate-y-1/3">
-          <a href="/home" rel="noreferrer">
-            <CustomButton />
-          </a>
-        </div>
       </div>
 
       <div className="shrink-0 bg-border h-[1px] w-full"></div>
@@ -146,7 +132,7 @@ export default function Chat() {
                     <button
                       className="flex items-center gap-2 px-4 py-2 text-sm rounded-full bg-white/10 text-white hover:bg-white/20 transition"
                       onClick={() =>
-                        setUserInput("Tell me more about AI Services.")
+                        setUserInput("Tell me more about AI Agents.")
                       }
                     >
                       {/* AI Icon */}
@@ -164,15 +150,15 @@ export default function Chat() {
                           d="M12 8c-1.1 0-2 .9-2 2 0 .22.03.43.08.63l-.71.71A3 3 0 009 13h6a3 3 0 00-1.67-2.66l-.71-.71c.05-.2.08-.41.08-.63 0-1.1-.9-2-2-2zM12 3v2m0 14v2m9-9h-2M5 12H3"
                         />
                       </svg>
-                      AI
+                      AI Agents
                     </button>
                     <button
                       className="flex items-center gap-2 px-4 py-2 text-sm rounded-full bg-white/10 text-white hover:bg-white/20 transition"
                       onClick={() =>
-                        setUserInput("Tell me more about Marketing Insights.")
+                        setUserInput("Tell me more about Smart Tech Platforms.")
                       }
                     >
-                      {/* Marketing Icon */}
+                      {/* Platform Icon */}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5"
@@ -187,15 +173,15 @@ export default function Chat() {
                           d="M3 10h4v11H3zM9 3h4v18H9zM15 14h4v7h-4z"
                         />
                       </svg>
-                      Marketing
+                      Tech
                     </button>
                     <button
                       className="flex items-center gap-2 px-4 py-2 text-sm rounded-full bg-white/10 text-white hover:bg-white/20 transition"
                       onClick={() =>
-                        setUserInput("Tell me more about Tech Consulting.")
+                        setUserInput("Tell me more about AI-Powered Marketing.")
                       }
                     >
-                      {/* Tech Icon */}
+                      {/* Marketing Icon */}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5"
@@ -210,34 +196,34 @@ export default function Chat() {
                           d="M16 18l6-6-6-6M8 6l-6 6 6 6"
                         />
                       </svg>
-                      Tech
+                      Marketing
                     </button>
                   </div>
                 ) : (
                   // Desktop: Render GlassCards
                   <>
                     <GlassCard
-                      title="AI Services"
-                      description="Boost your business with AI-driven solutions."
+                      title="AI Agents"
+                      description="More than bots—your new digital team. Scalable, trainable, context-aware. They listen, learn, act—and evolve."
                       className="w-full sm:w-1/3 hover:shadow-[0_0_20px_rgba(165,94,234,0.7)] transition-shadow duration-300"
                       onClick={() =>
-                        setUserInput("Tell me more about AI Services.")
+                        setUserInput("Tell me more about AI Agents.")
                       }
                     />
                     <GlassCard
-                      title="Marketing Insights"
-                      description="Scale your brand with data-driven strategies."
+                      title="Smart Tech Platforms"
+                      description="Invisible infrastructure, built with instinct. Seamless backend-to-frontend experiences. Built for performance, scaled with AI."
                       className="w-full sm:w-1/3 hover:shadow-[0_0_20px_rgba(165,94,234,0.7)] transition-shadow duration-300"
                       onClick={() =>
-                        setUserInput("Tell me more about Marketing Insights.")
+                        setUserInput("Tell me more about Smart Tech Platforms.")
                       }
                     />
                     <GlassCard
-                      title="Tech Consulting"
-                      description="Optimize your tech stack for performance."
+                      title="AI-Powered Marketing"
+                      description="Marketing that doesn't shout—it understands. Real-time engagement strategies. Campaigns that listen before they speak."
                       className="w-full sm:w-1/3 hover:shadow-[0_0_20px_rgba(165,94,234,0.7)] transition-shadow duration-300"
                       onClick={() =>
-                        setUserInput("Tell me more about Tech Consulting.")
+                        setUserInput("Tell me more about AI-Powered Marketing.")
                       }
                     />
                   </>
