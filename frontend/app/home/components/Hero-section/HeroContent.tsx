@@ -111,27 +111,7 @@ const HeroContent = () => {
             quality={90}
           />
           
-          {/* Primary bottom gradient fade */}
-          <ImageFadeOverlay 
-            variants={bottomFadeVariants}
-            className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/75 via-black/50 to-transparent pointer-events-none"
-          />
-          
-          {/* Secondary bottom gradient fade - using custom properties for cleaner code */}
-          <ImageFadeOverlay 
-            className="absolute bottom-0 left-0 right-0 h-[20%] bg-gradient-to-t from-black/90 to-transparent pointer-events-none"
-            custom={{
-              initial: { opacity: 0 },
-              animate: { opacity: 1 },
-              transition: { duration: 1.8, delay: 0.8 }
-            }}
-          />
-          
-          {/* Radial gradient overlay */}
-          <ImageFadeOverlay 
-            variants={fadeVariants}
-            className="absolute inset-0 bg-gradient-radial from-transparent to-black/20 pointer-events-none opacity-60"
-          />
+          {/* Gradient effects removed */}
         </div>
       </motion.div>
 
