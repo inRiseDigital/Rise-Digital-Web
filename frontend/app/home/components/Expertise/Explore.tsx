@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from '../../../../styles';
@@ -198,6 +198,27 @@ const ExploreCard = ({
 const Explore = () => {
   const [active, setActive] = useState('world-2');
   const [hovered, setHovered] = useState<string | null>(null);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
+  const handleClick = useCallback((id: string) => {
+    setHovered(id);
+    
+    // Navigate to the corresponding page based on the clicked card
+    switch(id) {
+      case 'ai-solutions':
+        window.location.href = '/ai';
+        break;
+      case 'marketing':
+        window.location.href = '/marketing';
+        break;
+      case 'technology':
+        window.location.href = '/technology';
+        break;
+      default:
+        // If no specific routing needed, just expand the card
+        setExpandedId(id === expandedId ? null : id);
+    }
+  }, [expandedId]);
 
   return (
     <motion.section
@@ -227,7 +248,7 @@ const Explore = () => {
               {...area}
               index={index}
               active={active}
-              handleClick={setActive}
+              handleClick={handleClick}
               hovered={hovered}
               handleHover={setHovered}
             />

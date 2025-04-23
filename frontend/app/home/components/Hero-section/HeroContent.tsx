@@ -102,7 +102,7 @@ const HeroContent = () => {
         <div className="relative w-full max-w-[750px] lg:max-w-[800px] xl:max-w-[900px]">
           <Image
             src="/home/hero.png"
-            alt="Rise Digital - Marketing, AI, and Tech Solutions"
+            alt="Rise AI - Marketing, AI, and Tech Solutions"
             height={1000}
             width={900}
             className="w-auto h-auto max-w-full object-contain min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px]"
@@ -147,11 +147,9 @@ const HeroContent = () => {
           `}
         >
           <span>
-            Innovative{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              Marketing, AI, and Tech{" "}
+              Where AI Becomes Your Sharpest Teammate
             </span>
-            Solutions for Unstoppable Growth
           </span>
           <div
             className={`
@@ -159,7 +157,7 @@ const HeroContent = () => {
               ${subtitle.className}
               text-base sm:text-lg md:text-xl lg:text-2xl 
               h-[4.5rem] sm:h-[6rem] md:h-[7rem] lg:h-[8rem]
-              relative overflow-hidden
+              relative overflow-hidden scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent
             `}
           >
             <div className="absolute inset-0 flex items-center">
@@ -168,7 +166,7 @@ const HeroContent = () => {
                   <Typewriter
                     options={{
                       strings: [
-                        "Partnering with forward-thinking brands to design and scale transformative digital solutions",
+                        "Not just smart. Strategic. Scalable. Soulful. Rise AI crafts digital minds that think, act, and grow with you.",
                       ],
                       autoStart: true,
                       loop: true,
@@ -177,7 +175,7 @@ const HeroContent = () => {
                     }}
                   />
                 ) : (
-                  "Partnering with forward-thinking brands..."
+                  "Not just smart. Strategic. Scalable. Soulful."
                 )}
               </span>
             </div>

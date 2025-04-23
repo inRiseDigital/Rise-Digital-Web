@@ -1,12 +1,19 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-import StarsCanvas from "./components/Background/Background"
+import dynamic from 'next/dynamic'
+import Nav from "./components/Nav/Nav"
+
+// Dynamically import StarsCanvas with SSR disabled to prevent hydration errors
+const StarsCanvas = dynamic(
+  () => import("./components/Background/Background").then((mod) => mod.default),
+  { ssr: false }
+)
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Rise Digital',
-  description: 'Rise Digital',
+  title: 'Rise AI',
+  description: 'Rise AI',
 }
 
 export default function RootLayout({
@@ -18,6 +25,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-[#030014] overflow-y-scroll overflow-x-hidden`}>
         <StarsCanvas />
+        <Nav />
         <div className="relative z-10"> 
           {children}
         </div>

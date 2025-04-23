@@ -27,9 +27,9 @@ const Clients = () => {
                             className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
                             style={{ transitionDelay: '300ms' }}
                         >
-                            <p className={`text-[#939aff] ${heading1.className}`} >About Us</p>
+                            <p className={`text-[#939aff] ${heading1.className}`} >Welcome to Rise AI</p>
                             <span className={`text-[20px] md:text-[30px] leading-[32px] ${heading2.className}`}>
-                                At Rise AI, we are shaping the future by providing cutting-edge AI solutions that transform industries, enhance human lives, and drive sustainability.
+                                "Not Just Digital—Dimensional." We don't just deliver services—we build intelligent ecosystems. Whether you're crafting the next unicorn startup or streamlining an enterprise workflow, Rise AI is your co-pilot in the age of artificial intelligence.
                             </span>
                         </motion.h3>
                         <motion.a

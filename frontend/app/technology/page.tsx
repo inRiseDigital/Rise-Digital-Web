@@ -1,11 +1,11 @@
 "use client";
 
-import  Hero  from './components/Hero/Hero';
+import Hero from './components/Hero/Hero';
 import Capabilities from './components/Capabilities/Capabilities';
 import Footer from '../components/Footer/Footer';
 import Nav from '../components/Nav/Nav'
 import dynamic from 'next/dynamic';
-import Projects from './components/Projects/Projects';
+import ScrollIndicator from "../components/ScrollNavigation/ScrollIndicator";
 
 const Model = dynamic(
   () => import("../components/Bot/Bot").then((mod) => mod.Model),
@@ -13,24 +13,26 @@ const Model = dynamic(
 );
 
 
-export default function AI() {
+export default function Technology() {
+  // Define sections for the ScrollIndicator - removed Projects
+  const sections = [
+    { id: "hero", label: "Home" },
+    { id: "Capabilities", label: "Services" }
+  ];
+  
   return (
     <>
-      <div className=' '>
+      <div className='technology-page'>
         <div className='relative z-50'>
-          <div className='absolute'>
-          </div>
+          <div className='absolute'></div>
         </div>
         <div>
           <div className='overflow-hidden'>
-            <div className='hero-section px-3 '>
+            <div id='hero' className='hero-section px-3'>
               <Hero/>
             </div>
             <div id='Capabilities' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
               <Capabilities />
-            </div>
-            <div id='Projects' className='home-campaign-productivity px-4 pt-8 overflow-hidden'>
-              <Projects />
             </div>
           </div>
         </div>
@@ -43,6 +45,9 @@ export default function AI() {
       >
         <Model />
       </div>
+      
+      {/* Scroll Indicator */}
+      <ScrollIndicator sections={sections} />
     </>
   );
 }

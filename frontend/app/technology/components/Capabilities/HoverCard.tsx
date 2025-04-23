@@ -6,6 +6,7 @@ type Props = {
     backgroundColor: string
     direction: string
     left: string
+    customClass?: string
 };
 
 const calc = (x: number, y: number): [number, number, number] => [
@@ -16,7 +17,7 @@ const calc = (x: number, y: number): [number, number, number] => [
 
 const trans = (x: number, y: number, s: number): string => `perspective(900px) rotateX(${-x}deg) rotateY(${-y}deg)`;
 
-const HoverCard: React.FC<Props> = ({children, backgroundColor, direction, left}) => {
+const HoverCard: React.FC<Props> = ({children, backgroundColor, direction, left, customClass = ''}) => {
     const [hovered, setIsHovered] = useState(false)
   const [springProps, set] = useSpring(() => ({
     xys: [0, 0, 1],
@@ -57,7 +58,7 @@ const HoverCard: React.FC<Props> = ({children, backgroundColor, direction, left}
 
   return (
     <animated.div
-      className="  overflow-hidden  mb-3 md:mb-8 rounded-xl"
+      className={`overflow-hidden mb-3 md:mb-8 rounded-xl ${customClass}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ transform: springProps.xys.to(trans) }}

@@ -8,6 +8,7 @@ import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
 import { Suspense, useEffect } from 'react';
 import Head from 'next/head';
+import ScrollIndicator from "../components/ScrollNavigation/ScrollIndicator";
 
 // Dynamically import the 3D model with client-side rendering only
 const Model = dynamic(
@@ -23,6 +24,13 @@ const LoadingFallback = () => (
 );
 
 export default function ContactPage() {
+  // Define sections for the ScrollIndicator
+  const sections = [
+    { id: "hero", label: "Home" },
+    { id: "About", label: "About" },
+    { id: "Contact", label: "Contact" }
+  ];
+
   // Scroll to section if URL contains hash
   useEffect(() => {
     const { hash } = window.location;
@@ -39,11 +47,11 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title>Contact Rise Digital | AI Solutions & Services</title>
-        <meta name="description" content="Get in touch with Rise Digital for AI solutions, consultation, and services. Let's transform your business with innovative technology." />
-        <meta name="keywords" content="contact, AI solutions, Rise Digital, technology consultation" />
-        <meta property="og:title" content="Contact Rise Digital" />
-        <meta property="og:description" content="Get in touch with Rise Digital for AI solutions and services." />
+        <title>Contact Rise AI | AI Solutions & Services</title>
+        <meta name="description" content="Get in touch with Rise AI for AI solutions, consultation, and services. Let's transform your business with innovative technology." />
+        <meta name="keywords" content="contact, AI solutions, Rise AI, technology consultation" />
+        <meta property="og:title" content="Contact Rise AI" />
+        <meta property="og:description" content="Get in touch with Rise AI for AI solutions and services." />
         <meta property="og:type" content="website" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
@@ -52,7 +60,7 @@ export default function ContactPage() {
         <Nav />
         
         <div className="overflow-hidden">
-          <section className="hero-section px-3">
+          <section id="hero" className="hero-section px-3">
             <Hero />
           </section>
           
@@ -72,6 +80,9 @@ export default function ContactPage() {
             <Model />
           </Suspense>
         </div>
+        
+        {/* Scroll Indicator */}
+        <ScrollIndicator sections={sections} />
       </main>
     </>
   );

@@ -7,76 +7,25 @@ import { heading1, heading2 } from "../../../../fonts/font";
 
 const Tool_data = [
 {
-    tool_name: "Java Script",
-    Image: "/home/js.png",
-    width: 65,
-    height: 65,
+    tool_name: "AI Agents",
+    Image: "/ai/chatbot.png",
+    width: 100,
+    height: 100,
+    description: "More than bots—your new digital team. Scalable, trainable, context-aware. They listen, learn, act—and evolve."
 },
 {
-    tool_name: "Python",
-    Image: "/home/python.png",
-    width: 65,
-    height: 65,
+    tool_name: "Smart Tech Platforms",
+    Image: "/ai/predictive analytics.png",
+    width: 100,
+    height: 100,
+    description: "Invisible infrastructure, built with instinct. Seamless backend-to-frontend experiences. Built for performance, scaled with AI."
 },
 {
-    tool_name: "Java",
-    Image: "/home/java.png",
-    width: 65,
-    height: 65,
-},
-{
-    tool_name: "Node js",
-    Image: "/home/node-js.png",
-    width: 65,
-    height: 65,
-},
-{
-    tool_name: "React",
-    Image: "/home/react.png",
-    width: 65,
-    height: 65,
-},
-{
-    tool_name: "Angular",
-    Image: "/home/angular.png",
-    width: 80,
-    height: 80,
-},
-{
-    tool_name: "Mongo db",
-    Image: "/home/mongodb.png",
-    width: 40,
-    height: 40,
-},
-{
-    tool_name: "Postger SQL",
-    Image: "/home/postger.png",
-    width: 70,
-    height: 70,
-},
-{
-    tool_name: "My SQL",
-    Image: "/home/mysql.png",
-    width: 70,
-    height: 70,
-},
-{
-    tool_name: "AWS",
-    Image: "/home/aws.png",
-    width: 70,
-    height: 70,
-},
-{
-    tool_name: "GCP",
-    Image: "/home/gcp.png",
-    width: 70,
-    height: 70,
-},
-{
-    tool_name: "Azure",
-    Image: "/home/azure.png",
-    width: 70,
-    height: 70,
+    tool_name: "AI-Powered Marketing",
+    Image: "/marketing/performance-marketing.png",
+    width: 100,
+    height: 100,
+    description: "Marketing that doesn't shout—it understands. Real-time engagement strategies. Campaigns that listen before they speak."
 }
 ];
 
@@ -104,8 +53,8 @@ const Tools = () => {
                     viewport={{ once: false }}
                     className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white"
                 >
-                    <p className={`text-[#939aff] ${heading1.className}`}>Technologies We Work With</p>
-                    <span className={`text-[28px] md:text-[32px] leading-[36px] ${heading2.className}`}>World Class Brands</span>
+                    <p className={`text-[#939aff] ${heading1.className}`}>Choose Your Power Source</p>
+                    <span className={`text-[28px] md:text-[32px] leading-[36px] ${heading2.className}`}>Our Core Services</span>
                 </motion.h3>
             </div>
 
@@ -122,6 +71,8 @@ const Tools = () => {
                                 width={image.width}
                                 height={image.height}
                                 index={index}
+                                tool_name={image.tool_name}
+                                description={image.description}
                             />
                         </motion.div>
                     ))}

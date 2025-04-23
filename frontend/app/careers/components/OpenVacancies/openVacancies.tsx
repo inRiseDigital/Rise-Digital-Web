@@ -1,9 +1,13 @@
 'use client'
 import React, { useState, useEffect } from 'react'
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaMapMarkerAlt, FaBriefcase, FaSearch, FaTimes, FaChevronDown } from 'react-icons/fa'
 import { title, heading1, heading2, subtitle, body } from '../../../../fonts/font'
 import { useRouter } from 'next/navigation'
+
+// Dynamically import HoverCard with SSR disabled
+const HoverCard = dynamic(() => import("./HoverCard"), { ssr: false });
 
 type Vacancy = {
   id: string

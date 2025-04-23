@@ -50,10 +50,10 @@ const Hero = () => {
             </motion.div>
           )}
           <h1 className={`text-white font-bold ${isMobile ? 'text-[30px] leading-[1.15] mx-1' : 'text-[28px] sm:text-[44px] md:text-[54px] lg:text-[64px] leading-[1.2] sm:leading-[1.25]'} text-center ${pageTitle.className} ${isMobile ? 'bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-100 to-white' : ''}`}>
-            Welcome to Rise Digital Pioneering the Future of AI
+            We Don't Just Build Tech, We Engineer Intelligence.
           </h1>
           <h2 className={`${isMobile ? 'text-[16px] leading-[1.6] px-2 mt-4 mb-6' : 'text-[14px] sm:text-[18px] md:text-[20px] leading-[1.5] sm:leading-[1.6] mt-2 sm:mt-3 md:mt-4 mb-4 sm:mb-6 md:mb-8'} text-[#c7c7c7] font-normal text-center font-sub ${subtitle.className}`}>
-            We are shaping the future by providing cutting-edge AI solutions that transform industries, enhance human lives, and drive sustainability.
+            At Rise AI, we're reimagining the digital world—one intelligent agent, one breakthrough solution at a time.
           </h2>
         </motion.div>
 

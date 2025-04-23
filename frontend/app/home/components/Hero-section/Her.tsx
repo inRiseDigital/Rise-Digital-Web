@@ -1,10 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import Earth from "./Earth1";
-import Earth2 from "./Earth2";
 import Image from "next/image";
 
+// Dynamically import components that use browser APIs
+const Earth = dynamic(() => import("./Earth1"), { ssr: false });
+const Earth2 = dynamic(() => import("./Earth2"), { ssr: false });
 const Typewriter = dynamic(() => import("typewriter-effect"), { ssr: false });
 
 type Props = {};

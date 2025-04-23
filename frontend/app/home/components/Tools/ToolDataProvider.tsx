@@ -10,9 +10,11 @@ interface Props {
     width: number;
     height: number;
     index: number;
+    description?: string;
+    tool_name?: string;
 }
 
-const ToolDataProvider = ({ src, width, height, index} : Props) => {
+const ToolDataProvider = ({ src, width, height, index, description, tool_name } : Props) => {
     const {ref, inView} = useInView({
         triggerOnce: true
     })
@@ -31,14 +33,21 @@ const ToolDataProvider = ({ src, width, height, index} : Props) => {
             animate={inView ? "visible" : "hidden"}
             custom={index}
             transition={{delay: index * animationDelay}}
-            className="flex items-center justify-center"
+            className="flex flex-col items-center justify-center max-w-[300px] text-center"
         >
             <Image
                 src={src}
                 width={width}
                 height={height}
-                alt='Tech image'
+                alt={tool_name || 'Service image'}
+                className="mb-4"
             />
+            {tool_name && (
+                <h3 className="text-xl font-bold text-[#939aff] mb-2">{tool_name}</h3>
+            )}
+            {description && (
+                <p className="text-white/80 text-sm">{description}</p>
+            )}
         </motion.div>
     )
 }

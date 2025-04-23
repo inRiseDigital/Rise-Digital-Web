@@ -10,6 +10,8 @@ import Nav from "../components/Nav/Nav";
 import Contact from "./components/Contact/Contact";
 import About from "./components/About/About";
 import Hero from "./components/Hero-section/Hero";
+import RiseAI from "./components/RiseAI/RiseAI";
+import ScrollIndicator from "../components/ScrollNavigation/ScrollIndicator";
 
 const Model = dynamic(
   () => import("../components/Bot/Bot").then((mod) => mod.Model),
@@ -17,6 +19,18 @@ const Model = dynamic(
 );
 
 export default function Home() {
+  // Define sections for the ScrollIndicator
+  const sections = [
+    { id: "hero", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "clients", label: "Clients" },
+    { id: "tools", label: "Tools" },
+    { id: "ai", label: "AI" },
+    { id: "capabilities", label: "Capabilities" },
+    { id: "expertise", label: "Expertise" },
+    { id: "contact", label: "Contact" }
+  ];
+
   return (
     <>
       <div className="flex flex-col items-center">
@@ -27,7 +41,10 @@ export default function Home() {
 
         <div className="overflow-hidden w-full">
           {/* Hero Section */}
-          <div className="relative min-h-screen w-full overflow-x-hidden flex justify-center">
+          <div 
+            id="hero"
+            className="relative min-h-screen w-full overflow-x-hidden flex justify-center"
+          >
             <Hero />
           </div>
 
@@ -53,6 +70,14 @@ export default function Home() {
             className="px-4 py-12 sm:px-8 md:px-16 overflow-hidden flex justify-center"
           >
             <Tools />
+          </div>
+
+          {/* Rise AI Section */}
+          <div
+            id="ai"
+            className="px-4 py-12 sm:px-8 md:px-16 overflow-hidden flex justify-center"
+          >
+            <RiseAI />
           </div>
 
           {/* Capabilities Section */}
@@ -93,6 +118,9 @@ export default function Home() {
       >
         <Model />
       </div>
+
+      {/* Scroll Indicator */}
+      <ScrollIndicator sections={sections} />
     </>
   );
 }

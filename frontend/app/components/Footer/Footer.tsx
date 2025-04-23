@@ -40,47 +40,47 @@ const Footer = () => {
           </div>
           <div className="lg:flex w-full lg:justify-around lg:w-4/5 lg:ml-20 grid md:grid-cols-3 grid-cols-2 gap-8">
             <div className="text-[#7d8590]">
-              <h2 className="font-medium mb-2 font-mono">Services</h2>
+              <h2 className="font-medium mb-2 font-mono">Think</h2>
               <ul className="text-[14px]">
                 <li className="mb-2 hover:text-white transition-colors">
-                  <Link href="/ai">AI</Link>
+                  <Link href="/ai">AI Agents</Link>
                 </li>
                 <li className="mb-2 hover:text-white transition-colors">
-                  <Link href="/marketing">Marketing</Link>
+                  <Link href="/technology">Predictive Platforms</Link>
                 </li>
                 <li className="mb-2 hover:text-white transition-colors">
-                  <Link href="/technology">Technology</Link>
+                  <Link href="/technology">Automation</Link>
                 </li>
               </ul>
             </div>
             <div className="text-[#7d8590]">
-              <h2 className="font-medium mb-2 font-mono">Product</h2>
+              <h2 className="font-medium mb-2 font-mono">Build</h2>
               <ul className="text-[14px]">
                 <li className="mb-2 hover:text-white transition-colors">
-                  <Link href="#">Documentation</Link>
+                  <Link href="/technology">Tech Stack</Link>
                 </li>
                 <li className="mb-2 hover:text-white transition-colors">
-                  <Link href="#">API</Link>
+                  <Link href="/technology">Custom Systems</Link>
                 </li>
                 <li className="mb-2 hover:text-white transition-colors">
-                  <Link href="#">Support</Link>
+                  <Link href="/technology">Cyber Safe</Link>
                 </li>
               </ul>
             </div>
             <div className="text-[#7d8590]">
-              <h2 className="font-medium mb-2 font-mono">Company</h2>
+              <h2 className="font-medium mb-2 font-mono">Connect</h2>
               <ul className="text-[14px]">
                 <li className="mb-2 hover:text-white transition-colors">
-                  <Link href="/about">About</Link>
+                  <Link href="https://twitter.com/RiseDigital">X</Link>
                 </li>
                 <li className="mb-2 hover:text-white transition-colors">
-                  <Link href="#">Blog</Link>
+                  <Link href="https://www.instagram.com/inrise_digital?igsh=am5jZGdkeDM4c2lz">Instagram</Link>
                 </li>
                 <li className="mb-2 hover:text-white transition-colors">
-                  <Link href="/careers">Careers</Link>
+                  <Link href="https://www.linkedin.com/company/104163548/admin/dashboard/">LinkedIn</Link>
                 </li>
                 <li className="mb-2 hover:text-white transition-colors">
-                  <Link href="#">Contact</Link>
+                  <Link href="https://www.youtube.com/@risedigital">YouTube</Link>
                 </li>
               </ul>
             </div>
@@ -131,7 +131,10 @@ const Footer = () => {
             </li>
           </ul>
           <ul className="flex items-center mb-2 sm:mb-0 text-[#7d8590] flex-wrap">
-            <li className="mr-2">© {new Date().getFullYear()} Rise Digital</li>
+            <li className="mr-3">© {new Date().getFullYear()} Rise AI</li>
+            <li className="mr-3"><Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link></li>
+            <li className="mr-3"><Link href="/terms" className="hover:text-white transition-colors">Terms</Link></li>
+            <li className="mr-3"><Link href="/cookies" className="hover:text-white transition-colors">Cookies</Link></li>
           </ul>
         </div>
       </div>
