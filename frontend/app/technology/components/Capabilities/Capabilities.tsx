@@ -214,7 +214,7 @@ const Capabilities = (props: Props) => {
                   whileTap={{ scale: 0.98 }}
                   className="relative group"
                 >
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-blue-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-500"></div>
+                 
                   <Link href="/contact" className="relative inline-flex items-center justify-center px-10 py-5 
                           font-medium text-white rounded-lg 
                           bg-gradient-to-r from-purple-600/90 to-blue-700/90 

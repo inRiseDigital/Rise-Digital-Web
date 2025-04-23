@@ -31,6 +31,52 @@ export default function Chat() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Hide the 3D model and navbar
+  useEffect(() => {
+    // Function to hide the 3D model and navbar
+    const hideElements = () => {
+      // Hide the 3D Bot model at the bottom right
+      const botModels = document.querySelectorAll('canvas');
+      botModels.forEach(model => {
+        if (model.parentElement && 
+            (model.parentElement.classList.contains('_bot-container') || 
+             model.parentElement.tagName === 'DIV')) {
+          model.parentElement.style.display = 'none';
+        }
+      });
+      
+      // Hide the navbar if it exists
+      const navbar = document.querySelector('nav');
+      if (navbar) {
+        navbar.style.display = 'none';
+      }
+    };
+
+    // Call once on mount
+    hideElements();
+    
+    // Set up a small delay to ensure elements are loaded
+    const timer = setTimeout(hideElements, 500);
+    
+    // Cleanup
+    return () => {
+      clearTimeout(timer);
+      
+      // Restore visibility when navigating away
+      const botModels = document.querySelectorAll('canvas');
+      botModels.forEach(model => {
+        if (model.parentElement) {
+          model.parentElement.style.display = '';
+        }
+      });
+      
+      const navbar = document.querySelector('nav');
+      if (navbar) {
+        navbar.style.display = '';
+      }
+    };
+  }, []);
+
   // Scroll to the top when messages update
   useEffect(() => {
     if (scrollRef.current) {
@@ -68,8 +114,8 @@ export default function Chat() {
 
   return (
     <main className="h-screen flex flex-col bg-muted/50">
-      {/* Chat Header - Simplified without navbar */}
-      <div className="p-3">
+      {/* Chat Header - Simplified with home button */}
+      <div className="p-3 relative">
         <Image
           src="/chatUI/rise_digital.png"
           width={256}
@@ -77,6 +123,33 @@ export default function Chat() {
           className="w-64 mx-auto"
           alt="Chat Logo"
         />
+        
+        {/* Home button - more stylish and elegant */}
+        <div className="absolute top-4 right-4">
+          <a 
+            href="/home"
+            className="flex items-center justify-center w-12 h-12 rounded-full 
+                    bg-gradient-to-br from-purple-500/30 to-blue-500/30 backdrop-blur-md
+                    border border-white/20 text-white shadow-[0_0_15px_rgba(147,154,255,0.5)]
+                    transition-all duration-300 hover:shadow-[0_0_20px_rgba(147,154,255,0.8)]
+                    hover:border-white/40 hover:scale-105 group"
+            aria-label="Go to home page"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              className="h-5 w-5 transition-transform duration-300 group-hover:scale-110" 
+              viewBox="0 0 24 24" 
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+          </a>
+        </div>
       </div>
 
       <div className="shrink-0 bg-border h-[1px] w-full"></div>
