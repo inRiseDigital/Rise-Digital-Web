@@ -59,6 +59,7 @@ const Capabilities = (props: Props) => {
                         <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10">
                             <div className='flex justify-between items-center'>
                                 <div className='flex justify-between md:space-x-10 max-md:flex-col'>
+                                    
                                     {/* Wrap each HoverCard with motion.div to apply hover scale effect (scale to 1.05) */}
                                     <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
                                         <HoverCard backgroundColor='#a55eea' direction='flex-col' left='-400px'>
@@ -225,7 +226,7 @@ const Capabilities = (props: Props) => {
                                             initial={{ y: 20, opacity: 0 }}
                                             whileInView={{ y: 0, opacity: 1 }}
                                             transition={{ type: 'tween', duration: 0.3 }}
-                                            className="w-full h-auto"
+                                            className="w-full h-auto" 
                                             width="600"
                                             height="250"
                                             loading="lazy"
@@ -252,8 +253,3 @@ const Capabilities = (props: Props) => {
 }
 
 export default Capabilities;
-
-
-
-
-
