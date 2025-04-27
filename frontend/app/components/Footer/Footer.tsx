@@ -9,10 +9,10 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row py-6 mb-4 space-x-4 px-4">
           <div className="mb-6 px-2 lg:w-1/3">
             <Image
-              src="/logo-lg.png"
+              src="/rise_digital_logo.png"
               alt="Footer Logo"
-              width={160}
-              height={160}
+              width={200}
+              height={200}
               className="mb-2"
             />
             <div className="text-white">

@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import Image from "next/image";
-import { heading1, heading2 } from "../../../../fonts/font";
+import { heading1, heading2, title } from "../../../../fonts/font";
 
 const Clients = () => {
     const [hovered, setHovered] = useState<boolean>(false);
@@ -20,17 +20,24 @@ const Clients = () => {
                 <div className='flex my-8 md:my-16 sm:my-12 relative md:items-center text-center flex-col'>
                     <div className='py-3 mb-2 flex flex-col justify-center items-center'>
                         <motion.h3
-                            initial={{ opacity: 0 }}
+                            initial={{ opacity: 0.5 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: 0.5, duration: 0.3 }}
                             viewport={{ once: false }}
                             className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
                             style={{ transitionDelay: '300ms' }}
                         >
-                            <p className={`text-[#939aff] ${heading1.className}`} >Welcome to Rise AI</p>
-                            <span className={`text-[20px] md:text-[30px] leading-[32px] ${heading2.className}`}>
-                                "Not Just Digital—Dimensional." We don't just deliver services—we build intelligent ecosystems. Whether you're crafting the next unicorn startup or streamlining an enterprise workflow, Rise AI is your co-pilot in the age of artificial intelligence.
-                            </span>
+                            <p className={`text-4xl md:text-5xl mb-10 text-[#939aff] ${title.className}`}>
+                            Welcome to Rise AI
+                            </p>
+
+                            <span className={`text-[20px] md:text-[24px] leading-[22px] text-justify ${heading1.className}`}>
+  "Not Just Digital—Dimensional." We don't just deliver services—we build intelligent ecosystems.
+  Whether you're crafting the next unicorn startup or streamlining an enterprise workflow,
+  Rise AI is your co-pilot in the age of artificial intelligence.
+</span>
+
+
                         </motion.h3>
                         <motion.a
                             onMouseEnter={() => setHovered(true)}

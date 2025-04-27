@@ -5,12 +5,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Variants } from "framer-motion";
-import { title, subtitle } from "../../../../fonts/font";
+import { title, subtitle, heading1 } from "../../../../fonts/font";
 
-// Dynamically import Typewriter with no SSR to avoid hydration issues
+// Dynamically import Typewriter with no SSR
 const Typewriter = dynamic(() => import("typewriter-effect"), { ssr: false });
 
-// Define proper interface for the ImageFadeOverlay component props
 interface ImageFadeOverlayProps {
   variants?: Variants;
   className: string;
@@ -19,13 +18,12 @@ interface ImageFadeOverlayProps {
   custom?: Record<string, any>;
 }
 
-// Extracted fade effect components for better reusability
-const ImageFadeOverlay: React.FC<ImageFadeOverlayProps> = ({ 
-  variants, 
-  className, 
-  initial = "initial", 
-  animate = "animate", 
-  custom = {} 
+const ImageFadeOverlay: React.FC<ImageFadeOverlayProps> = ({
+  variants,
+  className,
+  initial = "initial",
+  animate = "animate",
+  custom = {}
 }) => (
   <motion.div
     initial={initial}
@@ -38,14 +36,12 @@ const ImageFadeOverlay: React.FC<ImageFadeOverlayProps> = ({
 
 const HeroContent = () => {
   const [isClient, setIsClient] = useState(false);
-  const [hovered, setHovered] = useState<boolean>(false);
+  const [hovered, setHovered] = useState(false);
 
-  // Set client-side rendering flag
   useEffect(() => {
     setIsClient(true);
   }, []);
 
-  // Animation variants
   const floatVariants: Variants = {
     float: {
       y: [-20, 20],
@@ -59,24 +55,16 @@ const HeroContent = () => {
   };
 
   const fadeVariants: Variants = {
-    initial: {
-      opacity: 0,
-    },
+    initial: { opacity: 0 },
     animate: {
       opacity: 1,
-      transition: {
-        duration: 1.2,
-        ease: "easeInOut",
-      },
-    },
+      transition: { duration: 1.2, ease: "easeInOut" }
+    }
   };
 
   const bottomFadeVariants: Variants = {
-    initial: { 
-      opacity: 0,
-      height: "20%"
-    },
-    animate: { 
+    initial: { opacity: 0, height: "20%" },
+    animate: {
       opacity: 1,
       height: "65%",
       transition: {
@@ -106,12 +94,10 @@ const HeroContent = () => {
             height={1000}
             width={900}
             className="w-auto h-auto max-w-full object-contain min-h-[400px] sm:min-h-[500px] md:min-h-[600px] lg:min-h-[700px]"
-            style={{ background: 'transparent' }}
+            style={{ background: "transparent" }}
             priority
             quality={90}
           />
-          
-          {/* Gradient effects removed */}
         </div>
       </motion.div>
 
@@ -123,25 +109,29 @@ const HeroContent = () => {
             font-bold text-white tracking-wider
             ${title.className}
             text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
-            max-w-[700px] mx-auto lg:mx-0
+            max-w-[700px] w-full mx-auto lg:mx-0
           `}
         >
-          <span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              Where AI Becomes Your Sharpest Teammate
+          {/* Heading */}
+          <h3 className="text-left w-full">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 uppercase">
+              WHERE AI BECOMES YOUR SHARPEST TEAMMATE
             </span>
-          </span>
+          </h3>
+
+          {/* Typewriter Subtitle */}
           <div
             className={`
-              text-[#7d8590] font-heading3 
-              ${subtitle.className}
+              text-[#ffffff] 
+              ${heading1.className}
               text-base sm:text-lg md:text-xl lg:text-2xl 
               h-[4.5rem] sm:h-[6rem] md:h-[7rem] lg:h-[8rem]
               relative overflow-hidden scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent
             `}
           >
-            <div className="absolute inset-0 flex items-center">
-              <span className="w-full">
+            <div className="absolute inset-0 flex">
+              <p className="w-full">
+                {/* 
                 {isClient ? (
                   <Typewriter
                     options={{
@@ -157,10 +147,11 @@ const HeroContent = () => {
                 ) : (
                   "Not just smart. Strategic. Scalable. Soulful."
                 )}
-              </span>
+                */}
+                Not just smart. Strategic. Scalable. Soulful. Rise AI crafts digital minds that think, act, and grow with you.
+              </p>
             </div>
           </div>
-          
           {/* CTA Button */}
           <div className="mt-4">
             <a
@@ -222,7 +213,7 @@ const HeroContent = () => {
           </div>
         </motion.div>
       </div>
-      
+
       {/* Background Glow Effects */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-10 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-1/3 h-1/3 bg-purple-700 rounded-full filter blur-[120px]"></div>

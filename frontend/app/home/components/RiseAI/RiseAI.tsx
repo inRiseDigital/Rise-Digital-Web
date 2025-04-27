@@ -3,7 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import Image from 'next/image'
-import { heading1, heading2, body } from "../../../../fonts/font";
+import { heading1, heading2, subtitle, body } from "../../../../fonts/font";
 
 type Props = {}
 
@@ -296,7 +296,7 @@ const RiseAI = (props: Props) => {
         className="w-full mt-20"
       >
         <h2 className={`text-3xl md:text-4xl text-white mb-4 ${heading1.className}`}>
-          🌍 Industries We've Upgraded with AI
+          Industries We've Upgraded with AI
         </h2>
         <h3 className={`text-xl md:text-2xl text-blue-300 mb-10 ${heading2.className}`}>
           AI Solutions, Built for Your Industry's Rhythm
@@ -310,8 +310,8 @@ const RiseAI = (props: Props) => {
             transition={{ duration: 0.3 }}
             className="backdrop-blur-sm border border-purple-500/10 shadow-xl rounded-xl bg-purple-500/10 p-6"
           >
-            <div className="text-4xl mb-4">🛍️</div>
-            <h4 className="text-xl font-semibold text-white mb-3">Retail</h4>
+            {/* <div className="text-4xl mb-4">🛍️</div> */}
+            <h4 className="text-3xl font-semibold text-white mb-3">Retail</h4>
             <p className={`text-gray-300 ${body.className}`}>
               "From shelf to screen—predict what buyers want before they do."
             </p>
@@ -324,8 +324,8 @@ const RiseAI = (props: Props) => {
             transition={{ duration: 0.3 }}
             className="backdrop-blur-sm border border-blue-500/10 shadow-xl rounded-xl bg-blue-500/10 p-6"
           >
-            <div className="text-4xl mb-4">🏥</div>
-            <h4 className="text-xl font-semibold text-white mb-3">Healthcare</h4>
+            {/* <div className="text-4xl mb-4">🏥</div> */}
+            <h4 className="text-3xl font-semibold text-white mb-3">Healthcare</h4>
             <p className={`text-gray-300 ${body.className}`}>
               "Patient flows that save time. AI that saves lives."
             </p>
@@ -338,8 +338,8 @@ const RiseAI = (props: Props) => {
             transition={{ duration: 0.3 }}
             className="backdrop-blur-sm border border-indigo-500/10 shadow-xl rounded-xl bg-indigo-500/10 p-6"
           >
-            <div className="text-4xl mb-4">💰</div>
-            <h4 className="text-xl font-semibold text-white mb-3">Finance</h4>
+            {/* <div className="text-4xl mb-4">💰</div> */}
+            <h4 className="text-3xl font-semibold text-white mb-3">Finance</h4>
             <p className={`text-gray-300 ${body.className}`}>
               "Real-time fraud radar and smarter risk insights."
             </p>
@@ -352,8 +352,8 @@ const RiseAI = (props: Props) => {
             transition={{ duration: 0.3 }}
             className="backdrop-blur-sm border border-purple-600/10 shadow-xl rounded-xl bg-purple-600/10 p-6"
           >
-            <div className="text-4xl mb-4">📚</div>
-            <h4 className="text-xl font-semibold text-white mb-3">Education</h4>
+            {/* <div className="text-4xl mb-4">📚</div> */}
+            <h4 className="text-3xl font-semibold text-white mb-3">Education</h4>
             <p className={`text-gray-300 ${body.className}`}>
               "Classrooms that learn back. Tools that empower."
             </p>

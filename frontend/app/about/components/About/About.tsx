@@ -115,8 +115,8 @@ const About = () => {
                 >
                     <div className="absolute top-20 right-0 w-[200px] h-[200px] bg-blue-600/10 rounded-full blur-[100px] -z-10"></div>
                     
-                    <h2 className={`text-2xl md:text-3xl text-white mb-6 ${title.className} flex items-center gap-3`}>
-                        <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full text-white">📖</div> 
+                    <h2 className={`text-3xl md:text-4xl text-white mb-6 ${title.className} flex items-center gap-3`}>
+                        <div className="items-center justify-center w-8 h-8 text-white"></div> 
                         Our Story
                     </h2>
                     
@@ -144,7 +144,7 @@ const About = () => {
                             <div className="absolute -top-12 -right-12 w-24 h-24 bg-purple-500/20 rounded-full blur-[30px]"></div>
                             
                             <p className={`${body.className} mb-5 relative z-10`}>
-                                <span className="text-green-400 text-lg mr-2">🌿</span> Rooted in the heart of Sri Lanka, at Kandy's Bellwood Hills—inside the innovation hub of Rise Tech Village—we 
+                                <span className="text-green-400 text-lg"></span> Rooted in the heart of Sri Lanka, at Kandy's Bellwood Hills—inside the innovation hub of Rise Tech Village—we 
                                 carry the spirit of resilience, creativity, and brilliance that defines our nation.
                             </p>
                             <p className={`${body.className} relative z-10`}>
@@ -167,7 +167,7 @@ const About = () => {
                     className="mb-20 md:mb-28 px-4"
                 >
                     <h2 className={`text-2xl md:text-3xl text-white mb-8 ${title.className} flex items-center gap-3`}>
-                        <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full text-white">🔍</div>
+                        <div className="items-center justify-center w-8 h-8 text-white"></div>
                         What We Believe In
                     </h2>
                     
@@ -186,9 +186,9 @@ const About = () => {
                                 <div className="absolute -top-5 -right-5 w-16 h-16 bg-purple-600/10 rounded-full blur-xl"></div>
                                 
                                 <div className="flex items-center mb-4">
-                                    <div className="flex items-center justify-center w-10 h-10 text-xl bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-full border border-purple-500/30 mr-3">
+                                    {/* <div className="flex items-center justify-center w-10 h-10 text-xl bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-full border border-purple-500/30 mr-3">
                                         {belief.icon}
-                                    </div>
+                                    </div> */}
                                     <h3 className={`text-xl text-white ${heading2.className}`}>{belief.title}</h3>
                                 </div>
                                 <p className={`text-gray-300 ${body.className} leading-relaxed`}>{belief.description}</p>
@@ -205,7 +205,7 @@ const About = () => {
                     className="mb-20 md:mb-28 px-4"
                 >
                     <h2 className={`text-2xl md:text-3xl text-white mb-8 ${title.className} flex items-center gap-3`}>
-                        <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full text-white">🌐</div>
+                        <div className="items-center justify-center w-8 h-8 text-white"></div>
                         Our Impact (So Far)
                     </h2>
                     
@@ -238,7 +238,7 @@ const About = () => {
                     className="mb-20 md:mb-28 px-4"
                 >
                     <h2 className={`text-2xl md:text-3xl text-white mb-6 ${title.className} flex items-center gap-3`}>
-                        <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full text-white">🚀</div>
+                        <div className="items-center justify-center w-8 h-8 text-white"></div>
                         What's Next?
                     </h2>
                     
@@ -272,7 +272,7 @@ const About = () => {
                     className="mb-16 md:mb-24 px-4"
                 >
                     <h2 className={`text-2xl md:text-3xl text-white mb-8 ${title.className} flex items-center gap-3`}>
-                        <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full text-white">🔗</div>
+                        <div className="items-center justify-center w-8 h-8 text-white"></div>
                         Want to Join the Movement?
                     </h2>
                     

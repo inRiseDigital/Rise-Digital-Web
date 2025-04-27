@@ -81,7 +81,7 @@ const Capabilities = (props: Props) => {
                       <p className={`text-xl mb-6 font-medium text-gray-300 ${body.className}`}>
                         Front-end finesse + back-end power = seamless digital experience. Our full-stack AI-enhanced builds go beyond function—they anticipate user behavior, simplify complexity, and run like clockwork.
                       </p>
-                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>🧩 UX + UI + API + DB = Unified Engine</p>
+                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>UX + UI + API + DB = Unified Engine</p>
                     </div>
                   </HoverCard>
                 </motion.div>
@@ -106,7 +106,7 @@ const Capabilities = (props: Props) => {
                       <p className={`text-xl mb-6 font-medium text-gray-300 ${body.className}`}>
                         Elastic. Secure. Aware. Cloud services that think. From architecture to auto-scaling, we keep your systems light, tight, and smart—with built-in intelligence to handle scale and threats alike.
                       </p>
-                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>🧠 Bonus: Our clouds forecast more than weather—they predict usage, cost, and needs.</p>
+                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>Bonus: Our clouds forecast more than weather—they predict usage, cost, and needs.</p>
                     </div>
                   </HoverCard>
                 </motion.div>
@@ -133,7 +133,7 @@ const Capabilities = (props: Props) => {
                       <p className={`text-xl mb-6 font-medium text-gray-300 ${body.className}`}>
                         Make your data speak volumes. Multi-source integration, real-time dashboards, and AI-powered pipelines that turn raw numbers into next moves.
                       </p>
-                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>🧠 It's not big data. It's smart data.</p>
+                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>It's not big data. It's smart data.</p>
                     </div>
                   </HoverCard>
                 </motion.div>
@@ -158,7 +158,7 @@ const Capabilities = (props: Props) => {
                       <p className={`text-xl mb-6 font-medium text-gray-300 ${body.className}`}>
                         Defend before danger knocks. Real-time detection, adaptive firewalls, and predictive threat hunting. Our AI-based frameworks are your always-on security ops team.
                       </p>
-                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>🔒 Safety isn't a feature—it's the foundation.</p>
+                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>Safety isn't a feature—it's the foundation.</p>
                     </div>
                   </HoverCard>
                 </motion.div>
@@ -183,7 +183,7 @@ const Capabilities = (props: Props) => {
                       <p className={`text-xl mb-6 font-medium text-gray-300 ${body.className}`}>
                         From guesswork to precision. We train your systems to think. Whether it's pattern detection, auto-decisions, or smarter ops, our ML models push your productivity into a new dimension.
                       </p>
-                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>🧬 Think: Automation meets curiosity.</p>
+                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>Think: Automation meets curiosity.</p>
                     </div>
                   </HoverCard>
                 </motion.div>

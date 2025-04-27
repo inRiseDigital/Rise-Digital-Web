@@ -51,7 +51,7 @@ const Hero = () => {
           <h1 className={`text-white font-bold ${isMobile ? 'text-[32px] leading-[1.15] mx-1' : 'text-[28px] sm:text-[44px] md:text-[54px] lg:text-[64px] leading-[1.2] sm:leading-[1.25]'} text-center font-heading4 ${pageTitle.className} ${isMobile ? 'bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-100 to-white' : ''}`}>
             Innovative Technology Solutions for a Connected World
           </h1>
-          <h2 className={`${isMobile ? 'text-[24px] leading-[1.3] px-2 mt-4 mb-6' : 'text-[22px] sm:text-[28px] md:text-[32px] leading-[1.3] sm:leading-[1.35] mt-2 sm:mt-3 md:mt-4 mb-4 sm:mb-6 md:mb-8'} text-[#c7c7c7] font-bold text-center ${subtitle.className}`}>
+          <h2 className={`${isMobile ? 'text-[16px] leading-[1.6] px-2 mt-4 mb-6' : 'text-[14px] sm:text-[18px] md:text-[20px] leading-[1.5] sm:leading-[1.6] mt-2 sm:mt-3 md:mt-4 mb-4 sm:mb-6 md:mb-8'} text-[#c7c7c7] font-normal text-center ${subtitle.className}`}>
             Transform your business with scalable, secure, and cutting-edge technology built to adapt and grow
           </h2>
         </motion.div>

@@ -43,7 +43,7 @@ const Capabilities = (props: Props) => {
       transition={{ delay: delay, duration: 0.5 }}
       className="bg-gradient-to-br from-purple-600/20 to-blue-700/20 backdrop-blur-sm border border-purple-500/20 rounded-lg p-3 flex items-center gap-3 max-w-[220px]"
     >
-      <div className="text-purple-500 text-lg">{icon}</div>
+      {/* <div className="text-purple-500 text-lg">{icon}</div> */}
       <p className="text-white text-sm font-medium">{text}</p>
     </motion.div>
   );
@@ -92,146 +92,128 @@ const Capabilities = (props: Props) => {
           <div className="flex flex-col items-center max-lg:mt-10">
             <div className="flex flex-wrap items-center justify-center gap-4 md:gap-16 max-lg:mt-10">
               <div className='flex justify-between items-center'>
-                <div className='flex justify-between md:space-x-10 max-md:flex-col'>
-                  {/* First service card */}
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                    <Link href={serviceLinks.goToMarket}>
-                      <HoverCard backgroundColor='#a55eea' direction='flex-col' left='-400px'>
-                        <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                          <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
-                            <span className='text-white font-semibold'>Go-to-Market, But Smarter</span> Step into the spotlight with AI-crafted launch strategies that cut through the noise. We map your audience, dissect the competition, and craft a plan that hits fast and stays strong.
-                          </p>
-                          <div className="flex flex-wrap gap-2 md:gap-3 mb-4">
-                            <FeatureBadge text="Market Intel" icon="🔍" delay={0.1} />
-                            <FeatureBadge text="Positioning" icon="🎯" delay={0.2} />
-                            <FeatureBadge text="Smart Pricing" icon="💸" delay={0.3} />
-                            <FeatureBadge text="Viral-Ready Promotion" icon="📣" delay={0.4} />
-                          </div>
-                        </div>
-                        <div className='overflow-hidden rounded-s-lg'>
-                          <motion.img
-                            initial={{ y: 20, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            transition={{ type: 'tween', duration: 0.3 }}
-                            className="w-full h-auto"
-                            width="1208"
-                            height="764"
-                            loading="lazy"
-                            decoding="async"
-                            alt=""
-                            aria-hidden="true"
-                            src="https://cdn.prod.website-files.com/61845f7929f5aa517ebab941/6440f9477c2a321f0dd6ab61_How%20Artificial%20Intelligence%20(AI)%20Is%20Used%20In%20Biometrics.jpg"
-                          />
-                        </div>
-                      </HoverCard>
-                    </Link>
-                  </motion.div>
+               <div className="flex justify-center items-center flex-wrap gap-6 md:gap-8 mt-8 md:mt-10 px-4">
 
-                  {/* Second service card */}
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                    <Link href={serviceLinks.performance}>
-                      <HoverCard backgroundColor='#a55eea' direction='flex-col' left='0'>
-                        <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                          <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
-                            <span className='text-white font-semibold'>Performance Marketing That Performs</span> Run leaner, faster campaigns fueled by real-time machine learning. Our AI optimizes spend, targeting, and timing to keep results climbing.
-                          </p>
-                          <div className="flex flex-wrap gap-2 md:gap-3 mb-4">
-                            <FeatureBadge text="Live Data Feedback" icon="📊" delay={0.1} />
-                            <FeatureBadge text="Smart A/B Testing" icon="🧪" delay={0.2} />
-                            <FeatureBadge text="Adaptive Campaign Loops" icon="🔁" delay={0.3} />
-                          </div>
-                        </div>
-                        <motion.div
-                          initial={{ y: 20, opacity: 0 }}
-                          whileInView={{ y: 0, opacity: 1 }}
-                          transition={{ type: 'tween', duration: 0.3 }}
-                          className='overflow-hidden rounded-s-lg'
-                        >
-                          <img
-                            className="w-full h-auto"
-                            width="1209"
-                            height="890"
-                            loading="lazy"
-                            decoding="async"
-                            alt=""
-                            aria-hidden="true"
-                            src="https://www.berlinsbi.com/uploads/sites/2/2021/12/5-ways-msc-digital-marketing-will-advance-your-career.jpg"
-                          />
-                        </motion.div>
-                      </HoverCard>
-                    </Link>
-                  </motion.div>
-                </div>
-              </div>
-              <div className='flex justify-between items-center'>
-                <div className='flex justify-between md:space-x-10 max-md:flex-col'>
-                  {/* Third service card */}
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                    <Link href={serviceLinks.content}>
-                      <HoverCard backgroundColor='#a55eea' direction='flex-col' left='0'>
-                        <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                          <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
-                            <span className='text-white font-semibold'>Content That Captivates (and Converts)</span> Not just pretty words. AI-enhanced content that's laser-focused on what your audience actually wants. SEO meets storytelling. Clicks become conversions.
-                          </p>
-                          <div className="flex flex-wrap gap-2 md:gap-3 mb-4">
-                            <FeatureBadge text="Intent-Driven Blogs" icon="📈" delay={0.1} />
-                            <FeatureBadge text="Short-Form Magic" icon="🎥" delay={0.2} />
-                            <FeatureBadge text="NLP-Powered Copywriting" icon="🧠" delay={0.3} />
-                          </div>
-                        </div>
-                        <motion.div
-                          initial={{ y: 20, opacity: 0 }}
-                          whileInView={{ y: 0, opacity: 1 }}
-                          transition={{ type: 'tween', duration: 0.3 }}
-                          className='overflow-hidden rounded-s-lg'
-                        >
-                          <img
-                            className="w-full h-auto"
-                            width="1209"
-                            height="890"
-                            loading="lazy"
-                            decoding="async"
-                            alt=""
-                            aria-hidden="true"
-                            src="https://www.berlinsbi.com/uploads/sites/2/2021/12/5-ways-msc-digital-marketing-will-advance-your-career.jpg"
-                          />
-                        </motion.div>
-                      </HoverCard>
-                    </Link>
-                  </motion.div>
-                  {/* Fourth service card */}
-                  <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-                    <Link href={serviceLinks.automation}>
-                      <HoverCard backgroundColor='#a55eea' direction='flex-col' left='-400px'>
-                        <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
-                          <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
-                            <span className='text-white font-semibold'>Marketing on Autopilot</span> Automation with a heartbeat. Our systems personalize emails, segment your CRM, and scale campaigns—while you focus on the big picture.
-                          </p>
-                          <div className="flex flex-wrap gap-2 md:gap-3 mb-4">
-                            <FeatureBadge text="Drip Campaigns" icon="📩" delay={0.1} />
-                            <FeatureBadge text="Smart Segments" icon="👥" delay={0.2} />
-                            <FeatureBadge text="Auto-Scheduling with Soul" icon="📆" delay={0.3} />
-                          </div>
-                        </div>
-                        <div className='overflow-hidden rounded-s-lg'>
-                          <motion.img
-                            initial={{ y: 20, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            transition={{ type: 'tween', duration: 0.3 }}
-                            className="w-full h-auto"
-                            width="1208"
-                            height="764"
-                            loading="lazy"
-                            decoding="async"
-                            alt=""
-                            aria-hidden="true"
-                            src="https://cdn.prod.website-files.com/61845f7929f5aa517ebab941/6440f9477c2a321f0dd6ab61_How%20Artificial%20Intelligence%20(AI)%20Is%20Used%20In%20Biometrics.jpg"
-                          />
-                        </div>
-                      </HoverCard>
-                    </Link>
-                  </motion.div>
-                </div>
+  {/* Card 1: Go-to-Market */}
+  <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}
+    className="relative w-full sm:w-[380px] md:w-[460px] lg:w-[500px] h-[450px] sm:h-[430px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
+    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/85 to-black/80 z-10" />
+    <img
+      src="/Go-to-Market-But Smarter.jpg"
+      alt="Go-to-Market"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute bottom-0 p-4 sm:p-6 z-20 flex flex-col justify-end h-full">
+      <div>
+        <p className={`text-white text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 ${body.className}`}>
+          Go-to-Market, But Smarter
+        </p>
+        <p className="text-[#c2c2c2] text-sm sm:text-md mb-3 sm:mb-4">
+          Step into the spotlight with AI-crafted launch strategies that cut through the noise. We map your audience, dissect the competition, and craft a plan that hits fast and stays strong.
+        </p>
+        <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
+          <FeatureBadge text="Market Intel" icon="🔍" delay={0.1} />
+          <FeatureBadge text="Positioning" icon="🎯" delay={0.2} />
+          <FeatureBadge text="Smart Pricing" icon="💸" delay={0.3} />
+          <FeatureBadge text="Viral-Ready Promotion" icon="📣" delay={0.4} />
+        </div>
+        <p className="text-[#a0a0a0] text-xs sm:text-sm">
+          Launch faster. Scale smarter.
+        </p>
+      </div>
+    </div>
+  </motion.div>
+
+  {/* Repeat the same pattern for Card 2, 3, and 4 */}
+
+  {/* Card 2: Performance Marketing */}
+  <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}
+    className="relative w-full sm:w-[380px] md:w-[460px] lg:w-[500px] h-[450px] sm:h-[430px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
+    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/85 to-black/80 z-10" />
+    <img
+      src="/Performance Marketing That Performs.jpg"
+      alt="Performance Marketing"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute bottom-0 p-4 sm:p-6 z-20 flex flex-col justify-end h-full">
+      <div>
+        <p className={`text-white text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 ${body.className}`}>
+          Performance Marketing That Performs
+        </p>
+        <p className="text-[#c2c2c2] text-sm sm:text-md mb-3 sm:mb-4">
+          Run leaner, faster campaigns fueled by real-time machine learning. Our AI optimizes spend, targeting, and timing to keep results climbing.
+        </p>
+        <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
+          <FeatureBadge text="Live Data Feedback" icon="📊" delay={0.1} />
+          <FeatureBadge text="Smart A/B Testing" icon="🧪" delay={0.2} />
+          <FeatureBadge text="Adaptive Campaign Loops" icon="🔁" delay={0.3} />
+        </div>
+        <p className="text-[#a0a0a0] text-xs sm:text-sm">
+          Smarter spend. Bigger wins.
+        </p>
+      </div>
+    </div>
+  </motion.div>
+
+  {/* Card 3: Content Creation */}
+  <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}
+    className="relative w-full sm:w-[380px] md:w-[460px] lg:w-[500px] h-[450px] sm:h-[430px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
+    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/85 to-black/80 z-10" />
+    <img
+      src="/Content That Captivates and Converts.jpg"
+      alt="Content Creation"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute bottom-0 p-4 sm:p-6 z-20 flex flex-col justify-end h-full">
+      <div>
+        <p className={`text-white text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 ${body.className}`}>
+          Content That Captivates (and Converts)
+        </p>
+        <p className="text-[#c2c2c2] text-sm sm:text-md mb-3 sm:mb-4">
+          Not just pretty words. AI-enhanced content that's laser-focused on what your audience actually wants. SEO meets storytelling. Clicks become conversions.
+        </p>
+        <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
+          <FeatureBadge text="Intent-Driven Blogs" icon="📈" delay={0.1} />
+          <FeatureBadge text="Short-Form Magic" icon="🎥" delay={0.2} />
+          <FeatureBadge text="NLP-Powered Copywriting" icon="🧠" delay={0.3} />
+        </div>
+        <p className="text-[#a0a0a0] text-xs sm:text-sm">
+          Create. Connect. Convert.
+        </p>
+      </div>
+    </div>
+  </motion.div>
+
+  {/* Card 4: Marketing Automation */}
+  <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}
+    className="relative w-full sm:w-[380px] md:w-[460px] lg:w-[500px] h-[450px] sm:h-[430px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
+    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/85 to-black/80 z-10" />
+    <img
+      src="/Marketing on Autopilot.jpg"
+      alt="Marketing on Autopilot"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute bottom-0 p-4 sm:p-6 z-20 flex flex-col justify-end h-full">
+      <div>
+        <p className={`text-white text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 ${body.className}`}>
+          Marketing on Autopilot
+        </p>
+        <p className="text-[#c2c2c2] text-sm sm:text-md mb-3 sm:mb-4">
+          Automation with a heartbeat. Our systems personalize emails, segment your CRM, and scale campaigns—while you focus on the big picture.
+        </p>
+        <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
+          <FeatureBadge text="Drip Campaigns" icon="📩" delay={0.1} />
+          <FeatureBadge text="Smart Segments" icon="👥" delay={0.2} />
+          <FeatureBadge text="Auto-Scheduling with Soul" icon="📆" delay={0.3} />
+        </div>
+        <p className="text-[#a0a0a0] text-xs sm:text-sm">
+          Automate without losing the human touch.
+        </p>
+      </div>
+    </div>
+  </motion.div>
+</div>
+
               </div>
             </div>
           </div>
@@ -287,8 +269,8 @@ const Capabilities = (props: Props) => {
             transition={{ delay: 0.2, duration: 0.5 }}
             className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-xl border border-purple-500/20 p-6 backdrop-blur-sm"
           >
-            <div className="text-purple-400 text-4xl mb-4">🧠</div>
-            <h3 className={`text-white text-xl mb-3 ${heading2.className}`}>Customer Insights</h3>
+            {/* <div className="text-purple-400 text-4xl mb-4">🧠</div> */}
+            <h3 className={`text-white text-3xl mb-3 ${heading2.className}`}>Customer Insights</h3>
             <p className={`text-gray-300 ${body.className}`}>Deep dive into behavior, interests, and buying triggers.</p>
             
             {/* Example insights dashboard */}
@@ -316,8 +298,8 @@ const Capabilities = (props: Props) => {
             transition={{ delay: 0.3, duration: 0.5 }}
             className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-xl border border-purple-500/20 p-6 backdrop-blur-sm"
           >
-            <div className="text-purple-400 text-4xl mb-4">🎨</div>
-            <h3 className={`text-white text-xl mb-3 ${heading2.className}`}>Campaign Design</h3>
+            {/* <div className="text-purple-400 text-4xl mb-4">🎨</div> */}
+            <h3 className={`text-white text-3xl mb-3 ${heading2.className}`}>Campaign Design</h3>
             <p className={`text-gray-300 ${body.className}`}>Tailored down to the click. Built for the scroll.</p>
             
             {/* Example campaign visual */}
@@ -343,8 +325,8 @@ const Capabilities = (props: Props) => {
             transition={{ delay: 0.4, duration: 0.5 }}
             className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 rounded-xl border border-purple-500/20 p-6 backdrop-blur-sm"
           >
-            <div className="text-purple-400 text-4xl mb-4">💬</div>
-            <h3 className={`text-white text-xl mb-3 ${heading2.className}`}>Brand Engagement</h3>
+            {/* <div className="text-purple-400 text-4xl mb-4">💬</div> */}
+            <h3 className={`text-white text-3xl mb-3 ${heading2.className}`}>Brand Engagement</h3>
             <p className={`text-gray-300 ${body.className}`}>Not just seen. Felt. Trusted. Shared.</p>
             
             {/* Example engagement visualization */}

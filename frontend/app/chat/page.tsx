@@ -117,7 +117,7 @@ export default function Chat() {
       {/* Chat Header - Simplified with home button */}
       <div className="p-3 relative">
         <Image
-          src="/chatUI/rise_digital.png"
+          src="/chatUI/rise_digital_logo.png"
           width={256}
           height={64}
           className="w-64 mx-auto"

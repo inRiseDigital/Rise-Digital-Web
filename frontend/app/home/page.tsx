@@ -12,6 +12,7 @@ import About from "./components/About/About";
 import Hero from "./components/Hero-section/Hero";
 import RiseAI from "./components/RiseAI/RiseAI";
 import ScrollIndicator from "../components/ScrollNavigation/ScrollIndicator";
+import MobileHeader from "../components/MobileHeader/MobileHeader";
 
 const Model = dynamic(
   () => import("../components/Bot/Bot").then((mod) => mod.Model),
@@ -38,7 +39,7 @@ export default function Home() {
         <div className="relative z-40">
           <div className="absolute inset-0"></div>
         </div>
-
+        <MobileHeader /> 
         <div className="overflow-hidden w-full">
           {/* Hero Section */}
           <div 

@@ -69,7 +69,7 @@ const Insights = () => {
           </div>
           
           <h2 className={`text-2xl md:text-3xl text-white ${title.className} flex items-center gap-3 mb-2`}>
-            <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full text-white">💡</div>
+            <div className="items-center justify-center w-8 h-8 text-white"></div>
             Core Insights
           </h2>
           
