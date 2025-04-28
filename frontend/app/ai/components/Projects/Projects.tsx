@@ -30,7 +30,7 @@ const Projects = () => {
               className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
               style={{ transitionDelay: "300ms" }}
             >
-              <p className={`text-[#939aff] ${heading1.className}`}>🎬 See Intelligence in Motion</p>
+              <p className={`text-[#939aff] ${heading1.className}`}>See Intelligence in Motion</p>
               <span className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}>
                 Experience the Power of AI in Action
               </span>
@@ -190,7 +190,7 @@ const Projects = () => {
                 className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
                 style={{ transitionDelay: "300ms" }}
               >
-                <p className={`text-[#939aff] ${heading1.className}`}>🌍 Industries We've Upgraded with AI</p>
+                <p className={`text-[#939aff] ${heading1.className}`}>Industries We've Upgraded with AI</p>
                 <span className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}>
                   AI Solutions, Built for Your Industry's Rhythm
                 </span>
@@ -212,7 +212,7 @@ const Projects = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-3">🛍️ Retail</h3>
+            <h3 className="text-2xl font-bold text-white mb-3">Retail</h3>
             <p className="text-gray-300 mb-6 relative z-10">From shelf to screen—predict what buyers want before they do.</p>
             <div className="relative z-10">
               <div className="w-16 h-1 bg-gradient-to-r from-pink-500 to-red-600 rounded-full mb-4"></div>
@@ -236,7 +236,7 @@ const Projects = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-3">🏥 Healthcare</h3>
+            <h3 className="text-2xl font-bold text-white mb-3">Healthcare</h3>
             <p className="text-gray-300 mb-6 relative z-10">Patient flows that save time. AI that saves lives.</p>
             <div className="relative z-10">
               <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full mb-4"></div>
@@ -260,7 +260,7 @@ const Projects = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-3">💰 Finance</h3>
+            <h3 className="text-2xl font-bold text-white mb-3">Finance</h3>
             <p className="text-gray-300 mb-6 relative z-10">Real-time fraud radar and smarter risk insights.</p>
             <div className="relative z-10">
               <div className="w-16 h-1 bg-gradient-to-r from-green-500 to-emerald-600 rounded-full mb-4"></div>

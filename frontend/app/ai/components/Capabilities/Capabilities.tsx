@@ -18,7 +18,7 @@ const Capabilities = () => {
                     <div className='md:w-10/12 mb-12'>
                         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.3 }} viewport={{ once: false }} className="js-build-in-item build-in-slideX-left build-in-animate">
                             <h3 className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white" style={{transitionDelay: '300ms'}}>
-                                <p className={`text-[#939aff] ${heading1.className}`}>🛠️ Core AI Services | Built for Real Impact</p>
+                                <p className={`text-[#939aff] ${heading1.className}`}>Core AI Services | Built for Real Impact</p>
                                 <span className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}>An AI Engine for Every Business Beat</span>
                             </h3>
                         </motion.div>
@@ -33,13 +33,13 @@ const Capabilities = () => {
                                     <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='-400px'>
                                         <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
                                             <h3 className="text-2xl md:text-3xl mb-4 font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-300">
-                                                🔮 Predictive Analytics
+                                                Predictive Analytics
                                             </h3>
                                             <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                                                 <span className='text-white font-semibold'>See around corners.</span> Our machine learning models don't just analyze data—they forecast your future. From demand surges to churn alerts, we help you act before the market shifts.
                                             </p>
                                             <div className="mt-4">
-                                                <p className="text-white font-semibold mb-2">📈 Use Cases:</p>
+                                                <p className="text-white font-semibold mb-2">Use Cases:</p>
                                                 <ul className="text-[#a2a8b3] space-y-1 pl-4">
                                                     <li>• Sales forecasting</li>
                                                     <li>• Inventory planning</li>
@@ -54,13 +54,13 @@ const Capabilities = () => {
                                     <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='0'>
                                         <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
                                             <h3 className="text-2xl md:text-3xl mb-4 font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-300">
-                                                🤖 Intelligent Automation
+                                                Intelligent Automation
                                             </h3>
                                             <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                                                 <span className='text-white font-semibold'>Ditch the manual grind.</span> From inbox triage to invoice processing, our bots handle the boring stuff—perfectly.
                                             </p>
                                             <div className="mt-4">
-                                                <p className="text-white font-semibold mb-2">🔁 Use Cases:</p>
+                                                <p className="text-white font-semibold mb-2">Use Cases:</p>
                                                 <ul className="text-[#a2a8b3] space-y-1 pl-4">
                                                     <li>• Customer support workflows</li>
                                                     <li>• Data migration</li>
@@ -79,13 +79,13 @@ const Capabilities = () => {
                                     <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='0'>
                                         <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
                                             <h3 className="text-2xl md:text-3xl mb-4 font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-300">
-                                                🎯 Personalization at Scale
+                                                Personalization at Scale
                                             </h3>
                                             <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                                                 <span className='text-white font-semibold'>AI that speaks to every single customer—like you know them personally.</span> From smart product recs to micro-personalized emails, we deliver relevance that converts.
                                             </p>
                                             <div className="mt-4">
-                                                <p className="text-white font-semibold mb-2">📬 Use Cases:</p>
+                                                <p className="text-white font-semibold mb-2">Use Cases:</p>
                                                 <ul className="text-[#a2a8b3] space-y-1 pl-4">
                                                     <li>• Dynamic content delivery</li>
                                                     <li>• Real-time product suggestions</li>
@@ -100,13 +100,13 @@ const Capabilities = () => {
                                     <HoverCard backgroundColor='#ffa28b' direction='flex-col' left='-400px'>
                                         <div className='md:flex flex-col flex-1 p-8 sm:p-10 lg:py-16 lg:pl-16 lg:pr-32'>
                                             <h3 className="text-2xl md:text-3xl mb-4 font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-300">
-                                                💬 AI Chatbots That Get It
+                                                AI Chatbots That Get It
                                             </h3>
                                             <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
                                                 <span className='text-white font-semibold'>They don't just answer—they assist.</span> Available 24/7, trained in your tone, and smart enough to solve problems.
                                             </p>
                                             <div className="mt-4">
-                                                <p className="text-white font-semibold mb-2">🧠 Features:</p>
+                                                <p className="text-white font-semibold mb-2">Features:</p>
                                                 <ul className="text-[#a2a8b3] space-y-1 pl-4">
                                                     <li>• Context-aware conversations</li>
                                                     <li>• Integration with CRMs, FAQs, and helpdesks</li>
@@ -148,7 +148,7 @@ const Capabilities = () => {
                         <div className='md:w-10/12 mb-12'>
                             <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.3 }} viewport={{ once: false }} className="js-build-in-item build-in-slideX-left build-in-animate">
                                 <h3 className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white" style={{transitionDelay: '300ms'}}>
-                                    <p className={`text-[#939aff] ${heading1.className}`}>🌟 Why Rise AI?</p>
+                                    <p className={`text-[#939aff] ${heading1.className}`}>Why Rise AI?</p>
                                     <span className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}>Because You Deserve Better Than Off-the-Shelf</span>
                                 </h3>
                             </motion.div>
