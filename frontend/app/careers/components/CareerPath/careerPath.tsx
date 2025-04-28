@@ -85,7 +85,7 @@ const CareerPath = () => {
             variants={itemVariants}
             className="bg-gradient-to-br from-[#161b22] to-[#0d1117] p-6 rounded-xl shadow-lg hover:shadow-purple-900/20 transition-all duration-300 border border-purple-900/20 hover:border-purple-700/40"
           >
-            <div className="text-4xl mb-4">{value.icon}</div>
+            {/* <div className="text-4xl mb-4">{value.icon}</div> */}
             <h3 className="text-xl font-bold text-white mb-2">{value.title}</h3>
             <p className="text-gray-300">{value.description}</p>
           </motion.div>

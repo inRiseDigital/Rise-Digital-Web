@@ -14,23 +14,25 @@ const About = () => {
 
     // Track when component is in viewport
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                setInView(entry.isIntersecting);
-            },
-            { threshold: 0.1 } // Trigger when 10% of the element is visible
-        );
+    const currentRef = sectionRef.current; // Copy the ref value to a local variable
 
-        if (sectionRef.current) {
-            observer.observe(sectionRef.current);
+    const observer = new IntersectionObserver(
+        ([entry]) => {
+            setInView(entry.isIntersecting);
+        },
+        { threshold: 0.1 } // Trigger when 10% of the element is visible
+    );
+
+    if (currentRef) {
+        observer.observe(currentRef);
+    }
+
+    return () => {
+        if (currentRef) {
+            observer.unobserve(currentRef); // Use the copied variable here
         }
-
-        return () => {
-            if (sectionRef.current) {
-                observer.unobserve(sectionRef.current);
-            }
-        };
-    }, []);
+    };
+}, []);
 
     const fadeInUp = {
         hidden: { opacity: 0, y: 20 },
@@ -97,7 +99,7 @@ const About = () => {
                         <h2 className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-8 font-medium text-white">
                             <p className={`text-[#939aff] ${heading1.className} mb-2`}>About Rise AI</p>
                             <span className={`text-[29px] md:text-[30px] leading-[38px] ${heading2.className}`}>
-                                We Don't Just Build Tech—We Engineer Intelligence. At Rise AI, we're reimagining the digital world—one intelligent agent, one breakthrough solution at a time.
+                            We Don&#39;t Just Build Tech—We Engineer Intelligence. At Rise AI, we&#39;re reimagining the digital world—one intelligent agent, one breakthrough solution at a time.
                             </span>
                         </h2>
                         
@@ -122,17 +124,17 @@ const About = () => {
                     
                     <div className="prose prose-lg text-gray-300 max-w-none space-y-6">
                         <p className={`text-xl ${subtitle.className} text-white`}>
-                            Rise AI was born out of a single belief: <span className="text-purple-400 font-medium">The future doesn't wait—so why should innovation?</span>
-                        </p>
+  Rise AI was born out of a single belief: <span className="text-purple-400 font-medium">The future doesn&#39;t wait—so why should innovation?</span>
+</p>
                         
                         <p className={`${body.className} text-gray-300 leading-relaxed`}>
-                            We're not your typical tech company. We are a team of builders, thinkers, creators, and visionaries—pioneering 
-                            the fusion of AI, advanced technology, and strategic marketing. Our mission is to craft intelligent systems 
-                            that learn, adapt, and act, helping businesses unlock limitless growth and transformation.
-                        </p>
+  We&#39;re not your typical tech company. We are a team of builders, thinkers, creators, and visionaries—pioneering 
+  the fusion of AI, advanced technology, and strategic marketing. Our mission is to craft intelligent systems 
+  that learn, adapt, and act, helping businesses unlock limitless growth and transformation.
+</p>
                         
                         <p className={`text-xl ${subtitle.className} text-white`}>
-                            What sets us apart isn't just what we build— <span className="text-purple-400 font-medium">It's where we build it and how we build it.</span>
+                        What sets us apart isn&#39;t just what we build— <span className="text-purple-400 font-medium">It&#39;s where we build it and how we build it.</span>
                         </p>
                         
                         <motion.div 
@@ -144,8 +146,8 @@ const About = () => {
                             <div className="absolute -top-12 -right-12 w-24 h-24 bg-purple-500/20 rounded-full blur-[30px]"></div>
                             
                             <p className={`${body.className} mb-5 relative z-10`}>
-                                <span className="text-green-400 text-lg"></span> Rooted in the heart of Sri Lanka, at Kandy's Bellwood Hills—inside the innovation hub of Rise Tech Village—we 
-                                carry the spirit of resilience, creativity, and brilliance that defines our nation.
+                            <span className="text-green-400 text-lg"></span> Rooted in the heart of Sri Lanka, at Kandy&#39;s Bellwood Hills—inside the innovation hub of Rise Tech Village—we 
+                            carry the spirit of resilience, creativity, and brilliance that defines our nation.
                             </p>
                             <p className={`${body.className} relative z-10`}>
                                 Every line of code, every AI agent we deploy, every solution we deliver—echoes the soul of Sri Lankan ingenuity.
@@ -238,9 +240,9 @@ const About = () => {
                     className="mb-20 md:mb-28 px-4"
                 >
                     <h2 className={`text-2xl md:text-3xl text-white mb-6 ${title.className} flex items-center gap-3`}>
-                        <div className="items-center justify-center w-8 h-8 text-white"></div>
-                        What's Next?
-                    </h2>
+  <div className="items-center justify-center w-8 h-8 text-white"></div>
+  What&#39;s Next?
+</h2>
                     
                     <motion.div 
                         className="bg-gradient-to-r from-[#12151e] to-[#0d1117] p-8 md:p-10 rounded-xl border border-purple-900/30 relative overflow-hidden"
@@ -254,12 +256,12 @@ const About = () => {
                         <div className="absolute -bottom-16 -right-16 w-32 h-32 bg-blue-600/10 rounded-full blur-[80px]"></div>
                         
                         <p className={`text-gray-300 mb-5 ${body.className} leading-relaxed relative z-10`}>
-                            We're building the next generation of AI-native platforms—smart enough to learn from you, fast enough to scale with you, 
+                            We&#39;re building the next generation of AI-native platforms—smart enough to learn from you, fast enough to scale with you, 
                             and intuitive enough to feel like part of your team.
-                        </p>
+                            </p>
                         
                         <p className={`text-xl ${subtitle.className} relative z-10`}>
-                            The future isn't automated. <span className="text-purple-400 font-medium">It's intelligent. It's personal. It's Rise AI.</span>
+                        The future isn&#39;t automated. <span className="text-purple-400 font-medium">It&#39;s intelligent. It&#39;s personal. It&#39;s Rise AI.</span>
                         </p>
                     </motion.div>
                 </motion.div>
@@ -297,12 +299,12 @@ const About = () => {
                         </Link>
                         <Link href="/contact" className="block">
                             <motion.span
-                                className="px-7 py-3 inline-flex items-center gap-2 bg-gradient-to-r from-purple-700 to-blue-700 hover:from-purple-600 hover:to-blue-600 text-white rounded-lg transition-colors shadow-lg shadow-purple-900/30 cursor-pointer"
-                                whileHover={{ scale: 1.05, x: 5, boxShadow: '0 15px 30px -10px rgba(124, 58, 237, 0.3), 0 8px 12px -6px rgba(124, 58, 237, 0.2)' }}
-                                whileTap={{ scale: 0.95 }}
-                            >
-                                Let's Collaborate <FaArrowRight className="transition-transform group-hover:translate-x-1" />
-                            </motion.span>
+  className="px-7 py-3 inline-flex items-center gap-2 bg-gradient-to-r from-purple-700 to-blue-700 hover:from-purple-600 hover:to-blue-600 text-white rounded-lg transition-colors shadow-lg shadow-purple-900/30 cursor-pointer"
+  whileHover={{ scale: 1.05, x: 5, boxShadow: '0 15px 30px -10px rgba(124, 58, 237, 0.3), 0 8px 12px -6px rgba(124, 58, 237, 0.2)' }}
+  whileTap={{ scale: 0.95 }}
+>
+  Let&#39;s Collaborate <FaArrowRight className="transition-transform group-hover:translate-x-1" />
+</motion.span>
                         </Link>
                     </div>
                 </motion.div>
