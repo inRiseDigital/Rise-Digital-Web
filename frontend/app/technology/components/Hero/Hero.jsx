@@ -5,6 +5,7 @@ import styles from "../../../../styles";
 import { slideIn, staggerContainer, textVariant } from "../../../../utils/motion"
 import { pageTitle, subtitle } from "../../../../fonts/font";
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -69,11 +70,14 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="w-full relative z-10 mb-8 mt-2"
               >
-                <img
-                  src="/technology/technology-bg.png"
-                  alt="hero_cover"
-                  className="w-full h-[300px] object-cover rounded-[30px] z-10 relative shadow-xl shadow-purple-900/20"
-                />
+                <Image
+                    src="/technology/technology-bg.png"
+                    alt="hero_cover"
+                    width={1750}
+                    height={875}
+                    className="w-full h-[300px] object-cover rounded-[30px] z-10 relative shadow-xl shadow-purple-900/20"
+                    priority
+                  />
                 <div className="absolute inset-0 rounded-[30px] bg-gradient-to-t from-black/40 to-transparent z-20"></div>
               </motion.div>
             </>
@@ -81,10 +85,13 @@ const Hero = () => {
             <>
               <div className="absolute w-full h-[150px] sm:h-[250px] md:h-[300px] hero-gradient rounded-tl-[40px] sm:rounded-tl-[100px] md:rounded-tl-[140px] z-[0] -top-[20px] sm:-top-[30px]" />
               <div className="w-full relative z-10 mb-8 sm:mb-12 md:mb-16 lg:mb-20">
-                <img
+                <Image
                   src="/technology/technology-bg.png"
                   alt="hero_cover"
+                  width={1750}
+                  height={875}
                   className="w-full h-auto object-cover rounded-tl-[70px] sm:rounded-tl-[100px] md:rounded-tl-[140px] z-10"
+                  priority
                 />
               </div>
             </>

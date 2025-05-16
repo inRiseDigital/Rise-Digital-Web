@@ -14,21 +14,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronCircleUp } from 'react-icons/fa';
 import { pageTitle, title, heading1, heading2, subtitle, body } from '../../fonts/font';
 
-// Create context to share data between components
-import { createContext } from 'react';
-
-export const CareersContext = createContext<{
-  scrollToSection: (sectionId: string) => void;
-  activeSection: string;
-}>({
-  scrollToSection: () => {},
-  activeSection: 'hero'
-});
+// Remove the CareersContext export and import it from the new file
+import { CareersContext } from './CareersContext';
 
 const Model = dynamic(
   () => import("../components/Bot/Bot").then((mod) => mod.Model),
   { ssr: false }
 );
+
 
 export default function Careers() {
   const [activeSection, setActiveSection] = useState('hero');
@@ -99,7 +92,8 @@ export default function Careers() {
   return (
     <CareersContext.Provider value={{ scrollToSection, activeSection }}>
       {/* Main content */}
-      <div className={`min-h-screen bg-[#0d1117] ${body.className}`}>
+
+      <div className={`min-h-screen ${body.className}`}>
         <div className="relative z-50">
           <div className="absolute"></div>
         </div>
@@ -152,27 +146,27 @@ export default function Careers() {
           </div>
           
           {/* Job Roles section with consistent gradient background */}
-          <section id="jobRoles" className="py-12 sm:py-16 bg-gradient-to-b from-[#0d1117] to-[#101620] px-3 sm:px-0">
+          <section id="jobRoles" className="py-12 sm:py-16 px-3 sm:px-0">
             <JobRoles />
           </section>
           
           {/* Open Vacancies section with alternating gradient */}
-          <section id="openVacancies" className="py-12 sm:py-16 bg-gradient-to-b from-[#101620] to-[#0d1117] px-3 sm:px-0">
+          <section id="openVacancies" className="py-12 sm:py-16  px-3 sm:px-0">
             <OpenVacancies />
           </section>
           
           {/* Benefits section with consistent gradient */}
-          <section id="benefits" className="py-12 sm:py-16 bg-gradient-to-b from-[#0d1117] to-[#101620] px-3 sm:px-0">
+          <section id="benefits" className="py-12 sm:py-16  px-3 sm:px-0">
             <Benefits />
           </section>
           
           {/* Career Path section with alternating gradient */}
-          <section id="careerPath" className="py-12 sm:py-16 bg-gradient-to-b from-[#101620] to-[#0d1117] px-3 sm:px-0">
+          <section id="careerPath" className="py-12 sm:py-16 px-3 sm:px-0">
             <CareerPath />
           </section>
           
           {/* Team Testimonials section with consistent gradient */}
-          <section id="teamTestimonials" className="py-12 sm:py-16 bg-gradient-to-b from-[#0d1117] to-[#101620] px-3 sm:px-0">
+          <section id="teamTestimonials" className="py-12 sm:py-16 px-3 sm:px-0">
             <TeamTestimonials />
           </section>
         </div>
@@ -202,7 +196,19 @@ export default function Careers() {
             onClick={scrollToTop}
             aria-label="Scroll to top"
           >
-            <FaChevronCircleUp size={20} />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5 text-current"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+            >
+              <path
+                d="M12 8v8m0 0l4-4m-4 4l-4-4M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"
+              />
+            </svg>
+
           </motion.button>
         )}
       </AnimatePresence>

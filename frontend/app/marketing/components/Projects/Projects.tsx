@@ -117,7 +117,7 @@ const Projects = () => {
             transition={{ delay: 0.6, duration: 0.5 }}
             className={`text-gray-300 text-lg max-w-3xl mb-12 ${body.className}`}
           >
-            We don't make ads. We make experiences that your audience remembers.
+            We don&apos;t make ads. We make experiences that your audience remembers.
             From kinetic storyboards to real-time campaign visualizers, we deliver marketing with movement.
           </motion.p>
         </div>

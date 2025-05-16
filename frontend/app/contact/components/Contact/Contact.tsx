@@ -190,7 +190,7 @@ const Contact = () => {
             className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
             style={{ transitionDelay: "300ms" }}
           >
-            <p className={`text-[#939aff] ${heading1.className}`}>Let's Collaborate to Build Your Digital Future</p>
+            <p className={`text-[#939aff] ${heading1.className}`}>Let&apos;s Collaborate to Build Your Digital Future</p>
             <span className={`text-xl text-gray-400`}>Share your vision—our tech, AI, and marketing teams will bring it to life.</span>
           </motion.h3>
         </div>
@@ -489,7 +489,7 @@ const Contact = () => {
                         Remote-first. Globally present.
                       </p>
                       <p className="text-gray-400 text-sm">
-                        Whether you're in NYC, Tokyo, Dubai, or Berlin—we're just a Zoom away.
+                        Whether you&apos;re in NYC, Tokyo, Dubai, or Berlin—we&apos;re just a Zoom away.
                       </p>
                     </div>
                   </div>
@@ -552,7 +552,7 @@ const Contact = () => {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="text-gray-400 max-w-xl mx-auto mb-8"
         >
-          Let's build something extraordinary—together.
+          Let&apos;s build something extraordinary—together.
         </motion.p>
         
         <motion.a

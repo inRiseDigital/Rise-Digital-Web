@@ -164,13 +164,29 @@ export default function ApplyPage() {
     return (
       <div className={`min-h-screen bg-[#0d1117] flex flex-col items-center justify-center px-4 ${body.className}`}>
         <h1 className={`text-2xl text-white mb-4 ${heading1.className}`}>Job Not Found</h1>
-        <p className="text-gray-300 mb-6">The job you're looking for does not exist or has been removed.</p>
+        <p className="text-gray-300 mb-6">The job you&apos;re looking for does not exist or has been removed.</p>
         <button 
-          onClick={goBack}
-          className="flex items-center gap-2 px-4 py-2 bg-purple-700 hover:bg-purple-600 text-white rounded-lg transition-colors"
-        >
-          <FaArrowLeft /> Back to Careers
-        </button>
+  onClick={goBack}
+  className="flex items-center gap-2 px-4 py-2 bg-purple-700 hover:bg-purple-600 text-white rounded-lg transition-colors"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="text-white"
+  >
+    <path d="M12 19l-7-7 7-7"></path>
+    <path d="M19 12H5"></path>
+  </svg>
+  Back to Careers
+</button>
+
       </div>
     );
   }
@@ -182,11 +198,27 @@ export default function ApplyPage() {
       <div className="pt-32 pb-16 px-4">
         <div className="max-w-screen-lg mx-auto">
           <button 
-            onClick={goBack}
-            className="flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-6 transition-colors"
-          >
-            <FaArrowLeft /> Back to Careers
-          </button>
+  onClick={goBack}
+  className="flex items-center gap-2 text-purple-400 hover:text-purple-300 mb-6 transition-colors"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="20"
+    height="20"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="text-purple-400"
+  >
+    <path d="M12 19l-7-7 7-7"></path>
+    <path d="M19 12H5"></path>
+  </svg>
+  Back to Careers
+</button>
+
           
           {submitted ? (
             <motion.div 
@@ -195,11 +227,11 @@ export default function ApplyPage() {
               className="bg-gradient-to-br from-[#161b22] to-[#0d1117] rounded-xl border border-green-500/30 p-8 text-center"
             >
               <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <FaPaperPlane className="text-green-400" size={28} />
+                {/* <FaPaperPlane className="text-green-400" size={28} /> */}
               </div>
               <h2 className={`text-2xl text-white mb-4 ${heading1.className}`}>Application Submitted!</h2>
               <p className="text-gray-300 mb-8 max-w-md mx-auto">
-                Thank you for applying to {job.title}. We've received your application and will be in touch soon.
+                Thank you for applying to {job.title}. We&apos;ve received your application and will be in touch soon.
               </p>
               <button 
                 onClick={goBack}
@@ -216,7 +248,7 @@ export default function ApplyPage() {
                   <h2 className={`text-2xl text-white mb-4 tracking-wider ${heading1.className}`}>{job.title}</h2>
                   
                   <div className="mb-4 flex items-start gap-2">
-                    <FaBriefcase className="text-purple-500 mt-1 flex-shrink-0" />
+                    {/* <FaBriefcase className="text-purple-500 mt-1 flex-shrink-0" /> */}
                     <div>
                       <p className={`text-gray-300 ${body.className}`}>{job.discipline} • {job.level}</p>
                       <p className={`text-gray-400 text-sm ${body.className}`}>{job.type}</p>
@@ -224,7 +256,7 @@ export default function ApplyPage() {
                   </div>
                   
                   <div className="mb-6 flex items-start gap-2">
-                    <FaMapMarkerAlt className="text-blue-500 mt-1 flex-shrink-0" />
+                    {/* <FaMapMarkerAlt className="text-blue-500 mt-1 flex-shrink-0" /> */}
                     <p className={`text-gray-300 ${body.className}`}>{job.location}</p>
                   </div>
                   
@@ -255,7 +287,7 @@ export default function ApplyPage() {
                           Full Name <span className="text-red-500">*</span>
                         </label>
                         <div className="relative">
-                          <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                          {/* <FaUser className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" /> */}
                           <input
                             type="text"
                             id="fullName"
@@ -277,7 +309,7 @@ export default function ApplyPage() {
                           Email <span className="text-red-500">*</span>
                         </label>
                         <div className="relative">
-                          <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                          {/* <FaEnvelope className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" /> */}
                           <input
                             type="email"
                             id="email"
@@ -299,7 +331,7 @@ export default function ApplyPage() {
                           Phone Number <span className="text-red-500">*</span>
                         </label>
                         <div className="relative">
-                          <FaPhone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+                          {/* <FaPhone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" /> */}
                           <input
                             type="tel"
                             id="phone"
@@ -323,7 +355,7 @@ export default function ApplyPage() {
                         <div className={`border ${errors.resume ? 'border-red-500' : 'border-gray-700'} border-dashed rounded-lg p-4 bg-[#0d1117]`}>
                           <div className="flex items-center justify-center">
                             <label htmlFor="resume" className="cursor-pointer text-center p-4 w-full">
-                              <FaFileAlt className="text-gray-400 mx-auto mb-2" size={24} />
+                              {/* <FaFileAlt className="text-gray-400 mx-auto mb-2" size={24} /> */}
                               <span className={`text-gray-300 block mb-2 ${body.className}`}>
                                 {formData.resume ? formData.resume.name : 'Upload your resume (PDF, DOCX)'}
                               </span>

@@ -50,10 +50,10 @@ const Hero = () => {
             </motion.div>
           )}
           <h1 className={`text-white font-bold ${isMobile ? 'text-[30px] leading-[1.15] mx-1' : 'text-[28px] sm:text-[44px] md:text-[54px] lg:text-[64px] leading-[1.2] sm:leading-[1.25]'} text-center ${pageTitle.className} ${isMobile ? 'bg-clip-text text-transparent bg-gradient-to-r from-white via-purple-100 to-white' : ''}`}>
-            We Don't Just Build Tech, We Engineer Intelligence.
+            We Don&apos;t Just Build Tech, We Engineer Intelligence.
           </h1>
           <h2 className={`${isMobile ? 'text-[16px] leading-[1.6] px-2 mt-4 mb-6' : 'text-[14px] sm:text-[18px] md:text-[20px] leading-[1.5] sm:leading-[1.6] mt-2 sm:mt-3 md:mt-4 mb-4 sm:mb-6 md:mb-8'} text-[#c7c7c7] font-normal text-center font-sub ${subtitle.className}`}>
-            At Rise AI, we're reimagining the digital world—one intelligent agent, one breakthrough solution at a time.
+            At Rise AI, we&apos;re reimagining the digital world—one intelligent agent, one breakthrough solution at a time.
           </h2>
         </motion.div>
 
@@ -70,10 +70,13 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="w-full relative z-10 mb-8 mt-2"
               >
-                <img
+                <Image
                   src="/ai/ai-bg.png"
                   alt="hero_cover"
+                  width={1750}
+                  height={875}
                   className="w-full h-[300px] object-cover rounded-[30px] z-10 relative shadow-xl shadow-purple-900/20"
+                  priority
                 />
                 <div className="absolute inset-0 rounded-[30px] bg-gradient-to-t from-black/40 to-transparent z-20"></div>
               </motion.div>

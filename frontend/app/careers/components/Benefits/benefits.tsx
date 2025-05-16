@@ -92,7 +92,7 @@ const Benefits = () => {
             variants={itemVariants}
             className="bg-gradient-to-br from-[#161b22] to-[#0d1117] p-6 rounded-xl border border-purple-900/20 hover:border-purple-700/40 transition-all duration-300 group"
           >
-            <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{benefit.icon}</div>
+            {/* <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{benefit.icon}</div> */}
             <h3 className="text-xl font-bold text-white mb-2">{benefit.title}</h3>
             <p className="text-gray-300">{benefit.description}</p>
           </motion.div>

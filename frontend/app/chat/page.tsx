@@ -10,6 +10,7 @@ import { CustomButton } from "./components/ui/CustomButton";
 import { GlassCard } from "./components/ui/GlassCard";
 import { ChatBot } from "./api/api";
 import WelcomeMessage from "./components/WelcomeMessage"; // Adjust path as needed
+import StarsCanvas from '../components/Background/Background';
 
 interface Message {
   message: string;
@@ -113,7 +114,10 @@ export default function Chat() {
   };
 
   return (
-    <main className="h-screen flex flex-col bg-muted/50">
+    <main className="h-screen flex flex-col">
+
+      <StarsCanvas />
+
       {/* Chat Header - Simplified with home button */}
       <div className="p-3 relative">
         <Image

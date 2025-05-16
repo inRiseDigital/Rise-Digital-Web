@@ -133,7 +133,7 @@ const Capabilities = (props: Props) => {
                       <p className={`text-xl mb-6 font-medium text-gray-300 ${body.className}`}>
                         Make your data speak volumes. Multi-source integration, real-time dashboards, and AI-powered pipelines that turn raw numbers into next moves.
                       </p>
-                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>It's not big data. It's smart data.</p>
+                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>It&apos;s not big data. It&apos;s smart data.</p>
                     </div>
                   </HoverCard>
                 </motion.div>
@@ -158,7 +158,7 @@ const Capabilities = (props: Props) => {
                       <p className={`text-xl mb-6 font-medium text-gray-300 ${body.className}`}>
                         Defend before danger knocks. Real-time detection, adaptive firewalls, and predictive threat hunting. Our AI-based frameworks are your always-on security ops team.
                       </p>
-                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>Safety isn't a feature—it's the foundation.</p>
+                      <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>Safety isn&apos;t a feature—it&apos;s the foundation.</p>
                     </div>
                   </HoverCard>
                 </motion.div>
@@ -181,7 +181,7 @@ const Capabilities = (props: Props) => {
                         <h4 className="text-2xl font-semibold text-white">AI & Machine Learning</h4>
                       </div>
                       <p className={`text-xl mb-6 font-medium text-gray-300 ${body.className}`}>
-                        From guesswork to precision. We train your systems to think. Whether it's pattern detection, auto-decisions, or smarter ops, our ML models push your productivity into a new dimension.
+                        From guesswork to precision. We train your systems to think. Whether it&apos;s pattern detection, auto-decisions, or smarter ops, our ML models push your productivity into a new dimension.
                       </p>
                       <p className={`text-md md:text-lg text-[#939aff] ${body.className}`}>Think: Automation meets curiosity.</p>
                     </div>

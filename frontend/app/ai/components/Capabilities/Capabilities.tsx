@@ -36,7 +36,7 @@ const Capabilities = () => {
                                                 Predictive Analytics
                                             </h3>
                                             <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
-                                                <span className='text-white font-semibold'>See around corners.</span> Our machine learning models don't just analyze data—they forecast your future. From demand surges to churn alerts, we help you act before the market shifts.
+                                                <span className='text-white font-semibold'>See around corners.</span> Our machine learning models don&apos;t just analyze data—they forecast your future. From demand surges to churn alerts, we help you act before the market shifts.
                                             </p>
                                             <div className="mt-4">
                                                 <p className="text-white font-semibold mb-2">Use Cases:</p>
@@ -103,7 +103,7 @@ const Capabilities = () => {
                                                 AI Chatbots That Get It
                                             </h3>
                                             <p className={`text-xl md:text-2xl mb-6 font-medium text-[#7d8590] ${body.className}`}>
-                                                <span className='text-white font-semibold'>They don't just answer—they assist.</span> Available 24/7, trained in your tone, and smart enough to solve problems.
+                                                <span className='text-white font-semibold'>They don&apos;t just answer—they assist.</span> Available 24/7, trained in your tone, and smart enough to solve problems.
                                             </p>
                                             <div className="mt-4">
                                                 <p className="text-white font-semibold mb-2">Features:</p>
@@ -252,8 +252,3 @@ const Capabilities = () => {
 }
 
 export default Capabilities;
-
-
-
-
-

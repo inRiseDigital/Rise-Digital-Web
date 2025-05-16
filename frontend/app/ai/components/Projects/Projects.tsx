@@ -42,7 +42,7 @@ const Projects = () => {
             transition={{ delay: 0.6, duration: 0.3 }}
             className="text-lg md:text-xl text-gray-300 max-w-4xl mb-12"
           >
-            Our algorithms aren't static—they're storytellers. See raw data morph into meaningful moves.
+            Our algorithms aren&apos;t static—they&apos;re storytellers. See raw data morph into meaningful moves.
           </motion.p>
         </div>
       </div>
@@ -190,9 +190,9 @@ const Projects = () => {
                 className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
                 style={{ transitionDelay: "300ms" }}
               >
-                <p className={`text-[#939aff] ${heading1.className}`}>Industries We've Upgraded with AI</p>
+                <p className={`text-[#939aff] ${heading1.className}`}>Industries We&apos;ve Upgraded with AI</p>
                 <span className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}>
-                  AI Solutions, Built for Your Industry's Rhythm
+                  AI Solutions, Built for Your Industry&apos;s Rhythm
                 </span>
               </h3>
             </motion.h3>
@@ -334,7 +334,7 @@ const Projects = () => {
             href="#" 
             className="px-10 py-4 text-lg bg-gradient-to-r from-purple-600 to-blue-700 rounded-full text-white font-medium shadow-lg shadow-purple-900/30 inline-flex items-center transform hover:scale-105 transition-all duration-300"
           >
-            Let's Collaborate
+            Let&apos;s Collaborate
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>

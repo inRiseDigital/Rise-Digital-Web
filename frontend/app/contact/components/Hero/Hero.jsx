@@ -5,6 +5,7 @@ import styles from "../../../../styles";
 import { slideIn, staggerContainer, textVariant } from "../../../../utils/motion"
 import { pageTitle, subtitle } from "../../../../fonts/font";
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -52,7 +53,7 @@ const Hero = () => {
             Collaborate to Build Your Digital Future
           </h1>
           <h2 className={`${isMobile ? 'text-[16px] leading-[1.6] px-2 mt-4 mb-6' : 'text-[14px] sm:text-[18px] md:text-[20px] leading-[1.5] sm:leading-[1.6] mt-2 sm:mt-3 md:mt-4 mb-4 sm:mb-6 md:mb-8'} text-[#c7c7c7] font-normal text-center ${subtitle.className}`}>
-            Share your vision, and let's work together to create exceptional solutions.
+            Share your vision, and let&apos;s work together to create exceptional solutions.
           </h2>
         </motion.div>
 
@@ -69,10 +70,13 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="w-full relative z-10 mb-8 mt-2"
               >
-                <img
+                <Image
                   src="/ai/ai-bg.png"
                   alt="hero_cover"
+                  width={1750}
+                  height={875}
                   className="w-full h-[300px] object-cover rounded-[30px] z-10 relative shadow-xl shadow-purple-900/20"
+                  priority
                 />
                 <div className="absolute inset-0 rounded-[30px] bg-gradient-to-t from-black/40 to-transparent z-20"></div>
               </motion.div>
@@ -81,10 +85,13 @@ const Hero = () => {
             <>
               <div className="absolute w-full h-[150px] sm:h-[250px] md:h-[300px] hero-gradient rounded-tl-[40px] sm:rounded-tl-[100px] md:rounded-tl-[140px] z-[0] -top-[20px] sm:-top-[30px]" />
               <div className="w-full relative z-10 mb-8 sm:mb-12 md:mb-16 lg:mb-20">
-                <img
+                <Image
                   src="/ai/ai-bg.png"
                   alt="hero_cover"
+                  width={1750}
+                  height={875}
                   className={`w-full sm:h-[350px] md:h-[425px] lg:h-[500px] object-cover rounded-tl-[70px] sm:rounded-tl-[100px] md:rounded-tl-[140px] z-10 relative`}
+                  priority
                 />
               </div>
             </>

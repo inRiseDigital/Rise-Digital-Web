@@ -31,29 +31,33 @@ const Insights = () => {
 
   // Track when component is in viewport
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setInView(entry.isIntersecting);
-      },
-      { threshold: 0.1 } // Trigger when 10% of the element is visible
-    );
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      setInView(entry.isIntersecting);
+    },
+    { threshold: 0.1 }
+  );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+  // Store the current value in a variable
+  const currentRef = sectionRef.current;
+
+  if (currentRef) {
+    observer.observe(currentRef);
+  }
+
+  // Use the stored reference in cleanup
+  return () => {
+    if (currentRef) {
+      observer.unobserve(currentRef);
     }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  };
+}, []);
 
   return (
     <div ref={sectionRef} className="max-w-[1280px] mx-auto relative w-full">
       {/* Decorative background elements */}
-      <div className="absolute top-20 left-0 w-[300px] h-[300px] bg-purple-600/5 rounded-full blur-[150px] -z-10"></div>
-      <div className="absolute bottom-20 right-0 w-[300px] h-[300px] bg-blue-600/5 rounded-full blur-[150px] -z-10"></div>
+      {/* <div className="absolute top-20 left-0 w-[300px] h-[300px] bg-purple-600/5 rounded-full blur-[150px] -z-10"></div>
+      <div className="absolute bottom-20 right-0 w-[300px] h-[300px] bg-blue-600/5 rounded-full blur-[150px] -z-10"></div> */}
       
       <div className="flex justify-between items-center mb-16">
         <motion.div
@@ -64,7 +68,7 @@ const Insights = () => {
         >
           {/* Decorative element */}
           <div className="flex items-center mb-3">
-            <div className="h-0.5 w-8 bg-gradient-to-r from-purple-500 to-purple-300 opacity-70 mr-3"></div>
+            <div className="h-0.5 w-8 mr-3"></div>
             <p className="text-purple-400 text-sm uppercase tracking-wider font-medium">Our Philosophy</p>
           </div>
           
@@ -105,14 +109,14 @@ const Insights = () => {
         className="mt-24 text-center px-4 pb-8 relative"
       >
         {/* Decorative element */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[100px] bg-purple-600/10 rounded-full blur-[80px] -z-10"></div>
+        {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[100px] bg-purple-600/10 rounded-full blur-[80px] -z-10"></div> */}
         
         <div className="flex justify-center mb-6">
           <div className="h-0.5 w-16 bg-gradient-to-r from-purple-500/50 to-blue-500/50"></div>
         </div>
         
         <p className={`text-xl text-gray-300 max-w-3xl mx-auto ${heading2.className} leading-relaxed`}>
-          <span className="text-purple-400 font-medium">Our mission:</span> To craft intelligent systems that learn, adapt, and act, 
+          <span className="text-purple-400 font-medium">Our mission:</span>To craft intelligent systems that learn, adapt, and act, 
           helping businesses unlock limitless growth and transformation.
         </p>
         
