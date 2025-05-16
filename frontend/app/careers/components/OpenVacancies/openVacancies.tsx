@@ -214,14 +214,28 @@ const OpenVacancies = () => {
       </h2>
       <p className={`text-gray-300 text-center mb-8 sm:mb-12 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed px-4 ${body.className}`}>
         Join our team of passionate professionals and help us build the future of AI.
-        We're looking for talented individuals to fill the following positions.
+        We&apos;re looking for talented individuals to fill the following positions.
       </p>
 
       <div className="relative bg-gradient-to-br from-[#1a1f2c] to-[#0d1117] rounded-xl shadow-xl border border-purple-900/20 overflow-hidden mx-3 sm:mx-0">
         <div className="p-4 sm:p-6 border-b border-gray-800">
           <div className="flex flex-col md:flex-row gap-3 sm:gap-4 items-start md:items-center">
             <div className="relative flex-grow">
-              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="15" y2="15" />
+              </svg>
               <input
                 type="text"
                 placeholder="Search positions..."
@@ -234,7 +248,22 @@ const OpenVacancies = () => {
                   onClick={() => setSearchQuery('')}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-200"
                 >
-                  <FaTimes />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="text-gray-400"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+
                 </button>
               )}
             </div>
@@ -244,7 +273,21 @@ const OpenVacancies = () => {
               onClick={() => setShowFilters(!showFilters)}
             >
               {showFilters ? 'Hide Filters' : 'Show Filters'}
-              <FaChevronDown className={`transition-transform ${showFilters ? 'rotate-180' : ''}`} />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className={`transition-transform ${showFilters ? 'rotate-180' : ''}`}
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+
             </button>
           </div>
 
@@ -303,7 +346,19 @@ const OpenVacancies = () => {
                           onClick={() => toggleDiscipline(discipline)}
                           className="text-purple-300 hover:text-white"
                         >
-                          <FaTimes size={12} />
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-3 h-3"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+
                         </button>
                       </span>
                     ))}
@@ -314,21 +369,46 @@ const OpenVacancies = () => {
                           onClick={() => toggleLocation(location)}
                           className="text-blue-300 hover:text-white"
                         >
-                          <FaTimes size={12} />
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-3 h-3"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+
                         </button>
                       </span>
                     ))}
                     {searchQuery && (
-                      <span className="inline-flex items-center gap-1 bg-gray-800 px-3 py-1 rounded-full text-gray-200 text-xs sm:text-sm">
-                        "{searchQuery}"
-                        <button 
-                          onClick={() => setSearchQuery('')}
-                          className="text-gray-400 hover:text-white"
+                      
+                    <span className="inline-flex items-center gap-1 bg-gray-800 px-3 py-1 rounded-full text-gray-200 text-xs sm:text-sm">
+                      &quot;{searchQuery}&quot;
+                      <button 
+                        onClick={() => setSearchQuery('')}
+                        className="text-gray-400 hover:text-white"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="w-3 h-3"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          viewBox="0 0 24 24"
                         >
-                          <FaTimes size={12} />
-                        </button>
-                      </span>
-                    )}
+                          <path d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+
+                      </button>
+                    </span>
+                  )}
                     <button 
                       onClick={clearFilters}
                       className="text-xs sm:text-sm text-gray-400 hover:text-white underline ml-2"
@@ -370,11 +450,11 @@ const OpenVacancies = () => {
                         <h3 className={`text-lg sm:text-xl font-bold text-white tracking-wider ${heading1.className}`}>{vacancy.title}</h3>
                         <div className={`flex flex-wrap items-center gap-2 sm:gap-3 mt-1 sm:mt-2 text-xs sm:text-sm ${body.className}`}>
                           <span className="inline-flex items-center gap-1 text-purple-400">
-                            <FaBriefcase className="text-purple-500" size={12} />
+                            {/* <FaBriefcase className="text-purple-500" size={12} /> */}
                             {vacancy.discipline} • {vacancy.level}
                           </span>
                           <span className="inline-flex items-center gap-1 text-blue-400">
-                            <FaMapMarkerAlt className="text-blue-500" size={12} />
+                            {/* <FaMapMarkerAlt className="text-blue-500" size={12} /> */}
                             {vacancy.location}
                           </span>
                         </div>
@@ -383,10 +463,18 @@ const OpenVacancies = () => {
                         <span className={`text-gray-400 text-xs sm:text-sm mr-2 sm:mr-4 ${body.className}`}>
                           Posted: {formatDate(vacancy.postedDate)}
                         </span>
-                        <FaChevronDown 
-                          className={`text-purple-500 transition-transform ${expandedJobId === vacancy.id ? 'rotate-180' : ''}`} 
-                          size={16}
-                        />
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className={`w-4 h-4 text-purple-500 transition-transform ${expandedJobId === vacancy.id ? 'rotate-180' : ''}`} 
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M19 9l-7 7-7-7" />
+                        </svg>
                       </div>
                     </div>
                   </div>
@@ -439,11 +527,24 @@ const OpenVacancies = () => {
           ) : (
             <div className="py-10 sm:py-16 text-center">
               <div className="inline-flex justify-center items-center w-12 h-12 sm:w-16 sm:h-16 bg-gray-800 rounded-full mb-3 sm:mb-4">
-                <FaSearch className="text-gray-400" size={20} />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="text-gray-400 w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+
               </div>
               <h3 className={`text-lg sm:text-xl font-bold text-white mb-2 tracking-wider ${heading1.className}`}>No positions found</h3>
               <p className={`text-gray-400 max-w-md mx-auto mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base ${body.className}`}>
-                We couldn't find any positions matching your criteria. Try adjusting your filters or check back later.
+                We couldn&apos;t find any positions matching your criteria. Try adjusting your filters or check back later.
               </p>
               <button
                 onClick={clearFilters}

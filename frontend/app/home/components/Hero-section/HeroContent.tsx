@@ -113,7 +113,7 @@ const HeroContent = () => {
           `}
         >
           {/* Heading */}
-          <h3 className="text-left w-full">
+          <h3 className="ml-4 sm:ml-8 md:ml-12 lg:ml-16 text-left w-full">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 uppercase">
               WHERE AI BECOMES YOUR SHARPEST TEAMMATE
             </span>
@@ -129,8 +129,8 @@ const HeroContent = () => {
               relative overflow-hidden scrollbar-thin scrollbar-thumb-gray-700 scrollbar-track-transparent
             `}
           >
-            <div className="absolute inset-0 flex">
-              <p className="w-full">
+            <div className="ml-4 sm:ml-8 md:ml-12 lg:ml-16 absolute inset-0 flex">
+              <p className="w-full uppercase">
                 {/* 
                 {isClient ? (
                   <Typewriter
@@ -153,7 +153,7 @@ const HeroContent = () => {
             </div>
           </div>
           {/* CTA Button */}
-          <div className="mt-4">
+          <div className="mt-4 ml-4 sm:ml-8 md:ml-12 lg:ml-16">
             <a
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}

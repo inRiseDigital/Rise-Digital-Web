@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import Link from 'next/link'
 import { heading1, heading2, body } from "../../../../fonts/font";
 import ClientOnly from '../../../components/ClientOnly/ClientOnly'
+import Image from 'next/image'
 
 // Dynamically import HoverCard with SSR disabled
 const HoverCard = dynamic(() => import('./HoverCard'), { ssr: false });
@@ -96,13 +97,15 @@ const Capabilities = (props: Props) => {
 
   {/* Card 1: Go-to-Market */}
   <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}
-    className="relative w-full sm:w-[380px] md:w-[460px] lg:w-[500px] h-[450px] sm:h-[430px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
-    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/85 to-black/80 z-10" />
-    <img
-      src="/Go-to-Market-But Smarter.jpg"
-      alt="Go-to-Market"
-      className="w-full h-full object-cover"
-    />
+      className="relative w-full sm:w-[380px] md:w-[460px] lg:w-[500px] h-[450px] sm:h-[430px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/85 to-black/80 z-10" />
+      <Image
+        src="/Go-to-Market-But Smarter.jpg"
+        alt="Go-to-Market"
+        width={500}
+        height={400}
+        className="w-full h-full object-cover"
+      />
     <div className="absolute bottom-0 p-4 sm:p-6 z-20 flex flex-col justify-end h-full">
       <div>
         <p className={`text-white text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 ${body.className}`}>
@@ -130,11 +133,13 @@ const Capabilities = (props: Props) => {
   <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}
     className="relative w-full sm:w-[380px] md:w-[460px] lg:w-[500px] h-[450px] sm:h-[430px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/85 to-black/80 z-10" />
-    <img
-      src="/Performance Marketing That Performs.jpg"
-      alt="Performance Marketing"
-      className="w-full h-full object-cover"
-    />
+    <Image
+        src="/Performance Marketing That Performs.jpg"
+        alt="Performance Marketing"
+        width={500}
+        height={400}
+        className="w-full h-full object-cover"
+      />
     <div className="absolute bottom-0 p-4 sm:p-6 z-20 flex flex-col justify-end h-full">
       <div>
         <p className={`text-white text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 ${body.className}`}>
@@ -159,18 +164,20 @@ const Capabilities = (props: Props) => {
   <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}
     className="relative w-full sm:w-[380px] md:w-[460px] lg:w-[500px] h-[450px] sm:h-[430px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/85 to-black/80 z-10" />
-    <img
-      src="/Content That Captivates and Converts.jpg"
-      alt="Content Creation"
-      className="w-full h-full object-cover"
-    />
+   <Image
+        src="/Content That Captivates and Converts.jpg"
+        alt="Content Creation"
+        width={500}
+        height={400}
+        className="w-full h-full object-cover"
+      />
     <div className="absolute bottom-0 p-4 sm:p-6 z-20 flex flex-col justify-end h-full">
       <div>
         <p className={`text-white text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 ${body.className}`}>
           Content That Captivates (and Converts)
         </p>
         <p className="text-[#c2c2c2] text-sm sm:text-md mb-3 sm:mb-4">
-          Not just pretty words. AI-enhanced content that's laser-focused on what your audience actually wants. SEO meets storytelling. Clicks become conversions.
+          Not just pretty words. AI-enhanced content that&apos;s laser-focused on what your audience actually wants. SEO meets storytelling. Clicks become conversions.
         </p>
         <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
           <FeatureBadge text="Intent-Driven Blogs" icon="📈" delay={0.1} />
@@ -188,11 +195,13 @@ const Capabilities = (props: Props) => {
   <motion.div whileHover={{ scale: 1.03 }} transition={{ duration: 0.3 }}
     className="relative w-full sm:w-[380px] md:w-[460px] lg:w-[500px] h-[450px] sm:h-[430px] md:h-[400px] rounded-lg overflow-hidden shadow-lg">
     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/85 to-black/80 z-10" />
-    <img
-      src="/Marketing on Autopilot.jpg"
-      alt="Marketing on Autopilot"
-      className="w-full h-full object-cover"
-    />
+    <Image
+        src="/Marketing on Autopilot.jpg"
+        alt="Marketing on Autopilot"
+        width={500}
+        height={400}
+        className="w-full h-full object-cover"
+      />        
     <div className="absolute bottom-0 p-4 sm:p-6 z-20 flex flex-col justify-end h-full">
       <div>
         <p className={`text-white text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 ${body.className}`}>

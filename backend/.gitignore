@@ -1,4 +1,83 @@
+# === Node.js / JavaScript ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+build/
+.next/             # Next.js build output
+out/               # static export
+.cache/
+
+# Environment files
 .env
-db.sqllite3
+.env.*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+
+# === Python ===
 __pycache__/
+*.py[cod]
+*$py.class
+dist/
+build/
+eggs/
+*.egg-info/
+.venv/
+venv/
+ENV/
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Django
+*.sqlite3
+*.pyc
 media/
+staticfiles/
+
+# === IDEs and Editors ===
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# === macOS ===
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# === Windows ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# === JetBrains IDEs ===
+*.iml
+*.iws
+out/
+
+# === Miscellaneous ===
+*.log
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# === Optional package lock files ===
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

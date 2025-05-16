@@ -15,7 +15,7 @@ interface InsightCardProps {
 const InsightCard = ({ imgUrl, title, description, index }: InsightCardProps) => (
   <motion.div
     variants={fadeIn("up", "spring", index * 0.3, 1)}
-    className="flex md:flex-row flex-col gap-6 items-center bg-gradient-to-br from-[#161b22]/70 to-[#0d1117]/70 p-5 md:p-7 rounded-xl border border-purple-900/20 hover:border-purple-500/30 transition-all duration-500"
+    className="flex md:flex-row flex-col gap-6 items-center  p-5 md:p-7 rounded-xl border border-purple-900/20 hover:border-purple-500/30 transition-all duration-500"
     whileHover={{ 
       scale: 1.02, 
       boxShadow: '0 15px 30px -10px rgba(124, 58, 237, 0.2), 0 8px 12px -6px rgba(124, 58, 237, 0.15)'

@@ -137,7 +137,18 @@ const Projects = () => {
                       <p className="flex lg:text-xl md:text-xs text-sm text-purple">
                         Check Live Site
                       </p>
-                      <FaLocationArrow className="ms-3" color="#CBACF9" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="ms-3 w-5 h-5"
+                        fill="none"
+                        stroke="#CBACF9"
+                        viewBox="0 0 24 24"
+                        stroke-width="2"
+                      >
+                        <path
+                          d="M12 5v14m0 0l-4-4m4 4l4-4M19 12a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"
+                        />
+                      </svg>
                     </div>
                   </div>
                 </PinContainer>

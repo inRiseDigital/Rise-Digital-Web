@@ -114,7 +114,7 @@ const Hero = () => {
             AI Solutions That Redefine Possibilities
           </h1>
           <h2 className={`${isMobile ? 'text-[16px] leading-[1.6] px-2 mt-4 mb-6' : 'text-[14px] sm:text-[18px] md:text-[20px] leading-[1.5] sm:leading-[1.6] mt-2 sm:mt-3 md:mt-4 mb-4 sm:mb-6 md:mb-8'} text-[#c7c7c7] font-normal text-center ${subtitle.className}`}>
-            We don't just automate—we elevate. Tap into intelligent systems that think, predict, and perform like never before.
+            We don&apos;t just automate—we elevate. Tap into intelligent systems that think, predict, and perform like never before.
           </h2>
         </motion.div>
 
@@ -132,10 +132,13 @@ const Hero = () => {
                 className="w-full relative z-10 mb-8 mt-2"
               >
                 <div className="relative">
-                  <img
+                  <Image
                     src="/ai/ai-bg.png"
                     alt="hero_cover"
+                    width={1750}
+                    height={875}
                     className="w-full h-[300px] object-cover rounded-[30px] z-10 relative shadow-xl shadow-purple-900/20"
+                    priority
                   />
                   <div className="absolute inset-0 rounded-[30px] bg-gradient-to-t from-black/40 to-transparent z-20"></div>
                 </div>

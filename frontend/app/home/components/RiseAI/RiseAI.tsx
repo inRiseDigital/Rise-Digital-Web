@@ -77,7 +77,7 @@ const RiseAI = (props: Props) => {
                   <h4 className="text-2xl font-semibold text-white">Custom AI Development</h4>
                 </div>
                 <p className={`text-xl mb-6 font-medium text-gray-300 ${body.className}`}>
-                  "We build brains, not templates. Every solution is purpose-crafted."
+                  &quot;We build brains, not templates. Every solution is purpose-crafted.&quot;
                 </p>
                 <div className="mt-auto">
                   <div className="w-full h-40 bg-gradient-to-br from-purple-600/30 to-indigo-800/30 rounded-lg flex items-center justify-center">
@@ -117,7 +117,7 @@ const RiseAI = (props: Props) => {
                   <h4 className="text-2xl font-semibold text-white">Seamless Integration</h4>
                 </div>
                 <p className={`text-xl mb-6 font-medium text-gray-300 ${body.className}`}>
-                  "Plug-and-play is cute. We do plug-and-thrive."
+                  &quot;Plug-and-play is cute. We do plug-and-thrive.&quot;
                 </p>
                 <div className="mt-auto">
                   <div className="w-full h-40 bg-gradient-to-br from-blue-600/30 to-cyan-800/30 rounded-lg flex items-center justify-center">
@@ -163,7 +163,7 @@ const RiseAI = (props: Props) => {
                   <h4 className="text-2xl font-semibold text-white">Scalable and Adaptive</h4>
                 </div>
                 <p className={`text-xl mb-6 font-medium text-gray-300 ${body.className}`}>
-                  "As your business grows, our AI evolves—with zero bottlenecks."
+                  &quot;As your business grows, our AI evolves—with zero bottlenecks.&quot;
                 </p>
                 <div className="mt-auto">
                   <div className="w-full h-40 bg-gradient-to-br from-indigo-600/30 to-purple-800/30 rounded-lg flex items-center justify-center">
@@ -206,14 +206,14 @@ const RiseAI = (props: Props) => {
         className="w-full mt-20 p-8 bg-gradient-to-r from-purple-900/30 to-blue-900/30 rounded-xl backdrop-blur-sm border border-purple-500/10"
       >
         <h2 className={`text-3xl md:text-4xl text-white mb-4 ${heading1.className}`}>
-          🎬 See Intelligence in Motion
+          See Intelligence in Motion
         </h2>
         <h3 className={`text-xl md:text-2xl text-blue-300 mb-6 ${heading2.className}`}>
           Experience the Power of AI in Action
         </h3>
         <p className={`text-lg text-gray-300 max-w-3xl mb-8 ${body.className}`}>
-          "Our algorithms aren't static—they're storytellers. See raw data morph into meaningful moves."
-        </p>
+            &quot;Our algorithms aren&apos;t static—they&apos;re storytellers. See raw data morph into meaningful moves.&quot;
+          </p>
 
         {/* Animated Dashboard Mockup */}
         <div className="w-full h-80 bg-gradient-to-br from-purple-900/40 to-blue-900/40 rounded-lg flex items-center justify-center relative overflow-hidden">
@@ -296,10 +296,10 @@ const RiseAI = (props: Props) => {
         className="w-full mt-20"
       >
         <h2 className={`text-3xl md:text-4xl text-white mb-4 ${heading1.className}`}>
-          Industries We've Upgraded with AI
+          Industries We&apos;ve Upgraded with AI
         </h2>
         <h3 className={`text-xl md:text-2xl text-blue-300 mb-10 ${heading2.className}`}>
-          AI Solutions, Built for Your Industry's Rhythm
+          AI Solutions, Built for Your Industry&apos;s Rhythm
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -313,7 +313,7 @@ const RiseAI = (props: Props) => {
             {/* <div className="text-4xl mb-4">🛍️</div> */}
             <h4 className="text-3xl font-semibold text-white mb-3">Retail</h4>
             <p className={`text-gray-300 ${body.className}`}>
-              "From shelf to screen—predict what buyers want before they do."
+              &quot;From shelf to screen—predict what buyers want before they do.&quot;
             </p>
           </motion.div>
           
@@ -327,7 +327,7 @@ const RiseAI = (props: Props) => {
             {/* <div className="text-4xl mb-4">🏥</div> */}
             <h4 className="text-3xl font-semibold text-white mb-3">Healthcare</h4>
             <p className={`text-gray-300 ${body.className}`}>
-              "Patient flows that save time. AI that saves lives."
+              &quot;Patient flows that save time. AI that saves lives.&quot;
             </p>
           </motion.div>
           
@@ -341,7 +341,7 @@ const RiseAI = (props: Props) => {
             {/* <div className="text-4xl mb-4">💰</div> */}
             <h4 className="text-3xl font-semibold text-white mb-3">Finance</h4>
             <p className={`text-gray-300 ${body.className}`}>
-              "Real-time fraud radar and smarter risk insights."
+              &quot;Real-time fraud radar and smarter risk insights.&quot;
             </p>
           </motion.div>
           
@@ -355,7 +355,7 @@ const RiseAI = (props: Props) => {
             {/* <div className="text-4xl mb-4">📚</div> */}
             <h4 className="text-3xl font-semibold text-white mb-3">Education</h4>
             <p className={`text-gray-300 ${body.className}`}>
-              "Classrooms that learn back. Tools that empower."
+              &quot;Classrooms that learn back. Tools that empower.&quot;
             </p>
           </motion.div>
         </div>
@@ -403,7 +403,7 @@ const RiseAI = (props: Props) => {
                     bg-gradient-to-r from-purple-600/90 to-blue-700/90 
                     hover:from-purple-700 hover:to-blue-800
                     shadow-lg shadow-purple-900/30 transition-all duration-300">
-            <span>Let's Collaborate</span>
+            <span>Let&apos;s Collaborate</span>
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2 transition-transform group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>

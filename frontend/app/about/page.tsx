@@ -8,6 +8,7 @@ import Insights from './components/Insights/Insights';
 import About from './components/About/About';
 import ScrollIndicator from "../components/ScrollNavigation/ScrollIndicator";
 import { useEffect } from 'react';
+import StarsCanvas from '../components/Background/Background';
 
 const Model = dynamic(
   () => import("../components/Bot/Bot").then((mod) => mod.Model),
@@ -68,6 +69,7 @@ export default function AboutPage() {
 
   return (
     <main className="min-h-screen bg-[#0d1117] overflow-x-hidden relative flex flex-col items-center">
+    <StarsCanvas />
       {/* Background decorative elements */}
       <div className="fixed top-0 left-0 w-full h-full z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[10%] left-[5%] w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[200px]"></div>
@@ -86,7 +88,7 @@ export default function AboutPage() {
         <About />
       </section>
       
-      <section id="Insights" className="py-20 md:py-28 px-4 sm:px-6 overflow-hidden bg-gradient-to-b from-[#0d1117] to-[#101520] relative z-10 w-full flex justify-center">
+      <section id="Insights" className="py-20 md:py-28 px-4 sm:px-6 overflow-hidden relative z-10 w-full flex justify-center">
         <Insights />
       </section>
       
@@ -109,4 +111,3 @@ export default function AboutPage() {
     </main>
   );
 }
-

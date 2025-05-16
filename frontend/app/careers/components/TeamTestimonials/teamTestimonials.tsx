@@ -92,13 +92,16 @@ const TeamTestimonials = () => {
       { threshold: 0.2 }
     )
     
-    if (elementRef.current) {
-      observer.observe(elementRef.current)
+    // Store the current value in a variable
+    const currentElement = elementRef.current;
+    
+    if (currentElement) {
+      observer.observe(currentElement)
     }
     
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current)
+      if (currentElement) {
+        observer.unobserve(currentElement)
       }
     }
   }, [])
@@ -202,7 +205,19 @@ const TeamTestimonials = () => {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.4 }}
                     >
-                      <FaQuoteLeft className="text-purple-500 mb-3 sm:mb-4" size={24} />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="text-purple-500 w-6 h-6 mb-3 sm:mb-4"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M18 7c-7 0-7 6-7 6v8H3V3h8V7h7v10c0 7-7 6-7 6" />
+                      </svg>
+
                       <p className={`text-gray-300 text-sm sm:text-base md:text-lg mb-4 sm:mb-6 leading-relaxed ${body.className}`}>
                         {testimonial.quote}
                       </p>
@@ -220,7 +235,15 @@ const TeamTestimonials = () => {
                               className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-blue-800/30 flex items-center justify-center text-blue-400 hover:bg-blue-800/50 transition-colors duration-300"
                               aria-label={`${testimonial.name}'s LinkedIn`}
                             >
-                              <FaLinkedinIn size={14} />
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="w-3.5 h-3.5 text-current"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                stroke="none"
+                              >
+                                <path d="M3 3.5A2.5 2.5 0 015.5 1h13A2.5 2.5 0 0121 3.5v17A2.5 2.5 0 0118.5 23h-13A2.5 2.5 0 013 20.5v-17zM8.25 16V9.5H6V16h2.25zm1.125-7.625c.768 0 1.125.51 1.125 1.125s-.357 1.125-1.125 1.125H6.75c-.768 0-1.125-.51-1.125-1.125s.357-1.125 1.125-1.125h2.625zm6.125 7.625v-4.5h-2.25v4.5h2.25zm0-5.625c.768 0 1.125.51 1.125 1.125s-.357 1.125-1.125 1.125h-2.625c-.768 0-1.125-.51-1.125-1.125s.357-1.125 1.125-1.125h2.625zM4.5 6c0 .621.504 1.125 1.125 1.125S6.75 6.621 6.75 6 6.246 4.875 5.625 4.875 4.5 5.379 4.5 6z" />
+                              </svg>
                             </a>
                           )}
                           {testimonial.twitter && (
@@ -230,7 +253,16 @@ const TeamTestimonials = () => {
                               className="h-8 w-8 sm:h-9 sm:w-9 rounded-full bg-blue-500/30 flex items-center justify-center text-blue-400 hover:bg-blue-500/50 transition-colors duration-300"
                               aria-label={`${testimonial.name}'s Twitter`}
                             >
-                              <FaTwitter size={14} />
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="w-3.5 h-3.5 text-current"
+                                fill="currentColor"
+                                viewBox="0 0 24 24"
+                                stroke="none"
+                              >
+                                <path d="M23 3a10.9 10.9 0 01-3.15.86A4.48 4.48 0 0022.4 2a9.02 9.02 0 01-2.89 1.1 4.47 4.47 0 00-7.65 4.08A12.74 12.74 0 011.67 3.15a4.48 4.48 0 001.38 5.96A4.43 4.43 0 01.89 8.72v.06a4.47 4.47 0 003.57 4.39 4.51 4.51 0 01-2.02.08 4.47 4.47 0 004.18 3.12A9.03 9.03 0 010 19.29a12.72 12.72 0 006.89 2.02c8.27 0 12.78-6.85 12.78-12.78 0-.19 0-.37-.02-.56A9.12 9.12 0 0023 3z" />
+                              </svg>
+
                             </a>
                           )}
                         </div>
@@ -299,14 +331,32 @@ const TeamTestimonials = () => {
                   className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-800 flex items-center justify-center text-white hover:bg-gray-700 transition-colors duration-300"
                   aria-label="Previous testimonial"
                 >
-                  <FaArrowLeft size={14} />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-3.5 h-3.5 text-current"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                  >
+                    <path d="M15 19l-7-7 7-7" />
+                  </svg>
                 </button>
                 <button
                   onClick={() => navigate('next')}
                   className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-purple-700 flex items-center justify-center text-white hover:bg-purple-600 transition-colors duration-300"
                   aria-label="Next testimonial"
                 >
-                  <FaArrowRight size={14} />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-3.5 h-3.5 text-current"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    stroke-width="2"
+                  >
+                    <path d="M9 5l7 7-7 7" />
+                  </svg>
                 </button>
               </div>
             </div>

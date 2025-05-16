@@ -34,11 +34,10 @@ const Capabilities = (props: Props) => {
                 We Build Thinkers, Not Just Tools
               </p>
               <span
-                className={`text-[28px] md:text-[32px] leading-[36px] font-heading3 ${heading2.className}`}
+                className={`text-[28px] md:text-[32px] leading-[36px] font-heading2 ${heading2.className}`}
               >
-                From digital minds that manage customer experiences to
-                infrastructure that scales without a whisper—we build tools that
-                think and tech that feels alive.
+                From digital minds that manage customer experiences to infrastructure
+                that scales without a whisper—we build tools that think and tech that feels alive.
               </span>
             </motion.h3>
           </div>

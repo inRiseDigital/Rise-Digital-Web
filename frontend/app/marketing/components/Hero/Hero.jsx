@@ -6,6 +6,7 @@ import styles from "../../../../styles";
 import { slideIn, staggerContainer, textVariant } from "../../../../utils/motion"
 import { pageTitle, subtitle } from "../../../../fonts/font";
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -131,7 +132,7 @@ const Hero = () => {
             Strategies That Speak. Marketing That Converts.
           </h1>
           <h2 className={`${isMobile ? 'text-[16px] leading-[1.6] px-2 mt-4 mb-6' : 'text-[14px] sm:text-[18px] md:text-[20px] leading-[1.5] sm:leading-[1.6] mt-2 sm:mt-3 md:mt-4 mb-4 sm:mb-6 md:mb-8'} text-[#c7c7c7] font-normal text-center ${subtitle.className}`}>
-            We build campaigns that don't just talk—they listen, adapt, and deliver.
+            We build campaigns that don&apos;t just talk—they listen, adapt, and deliver.
           </h2>
         </motion.div>
 
@@ -149,10 +150,13 @@ const Hero = () => {
                 className="w-full relative z-10 mb-8 mt-2"
               >
                 <div className="relative">
-                  <img
+                  <Image
                     src="/marketing/marketing-bg.png"
                     alt="hero_cover"
+                    width={1750}
+                    height={875}
                     className="w-full h-[300px] object-cover rounded-[30px] z-10 relative shadow-xl shadow-purple-900/20"
+                    priority
                   />
                   <div className="absolute inset-0 rounded-[30px] bg-gradient-to-t from-black/40 to-transparent z-20"></div>
                   
@@ -171,10 +175,13 @@ const Hero = () => {
               <div className="absolute w-full h-[150px] sm:h-[250px] md:h-[300px] hero-gradient rounded-tl-[40px] sm:rounded-tl-[100px] md:rounded-tl-[140px] z-[0] -top-[20px] sm:-top-[30px]" />
               <div className="w-full relative z-10 mb-8 sm:mb-12 md:mb-16 lg:mb-20">
                 <div className="relative">
-                  <img
+                  <Image
                     src="/marketing/marketing-bg.png"
                     alt="hero_cover"
+                    width={1750}
+                    height={875}
                     className="w-full h-auto object-cover rounded-tl-[70px] sm:rounded-tl-[100px] md:rounded-tl-[140px] z-10"
+                    priority
                   />
                   
                   {/* Add animated elements for desktop */}

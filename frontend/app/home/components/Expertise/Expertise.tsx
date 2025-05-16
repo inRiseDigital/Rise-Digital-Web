@@ -25,7 +25,7 @@ const Expertise = (props: Props) => {
           <h3 className="mb-4">
             <p className={`text-[#939aff] ${heading1.className} text-[24px] md:text-[32px] mb-2`}>Expertise Areas</p>
             <span className={`text-[28px] md:text-[40px] lg:text-[48px] leading-[1.2] font-heading3 text-white ${heading2.className}`}>
-              Industries We're Reinventing
+              Industries We&apos;re Reinventing
             </span>
           </h3>
           <p className="text-[#7d8590] text-[16px] md:text-[18px] leading-[30px] mb-10 max-w-4xl mx-auto">

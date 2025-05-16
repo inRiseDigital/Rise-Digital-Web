@@ -5,7 +5,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { heading1, heading2, title, subtitle, body } from "../../../../fonts/font";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/fa";
+// import { FaArrowRight } from "react-icons/fa";
 
 const About = () => {
     const [hovered, setHovered] = useState<boolean>(false);
@@ -18,7 +18,7 @@ const About = () => {
 
     const observer = new IntersectionObserver(
         ([entry]) => {
-            setInView(entry.isIntersecting);
+            setInView(entry.isIntersecting); 
         },
         { threshold: 0.1 } // Trigger when 10% of the element is visible
     );
@@ -240,9 +240,9 @@ const About = () => {
                     className="mb-20 md:mb-28 px-4"
                 >
                     <h2 className={`text-2xl md:text-3xl text-white mb-6 ${title.className} flex items-center gap-3`}>
-  <div className="items-center justify-center w-8 h-8 text-white"></div>
-  What&#39;s Next?
-</h2>
+                    <div className="items-center justify-center w-8 h-8 text-white"></div>
+                    What&#39;s Next?
+                    </h2>
                     
                     <motion.div 
                         className="bg-gradient-to-r from-[#12151e] to-[#0d1117] p-8 md:p-10 rounded-xl border border-purple-900/30 relative overflow-hidden"
@@ -261,7 +261,8 @@ const About = () => {
                             </p>
                         
                         <p className={`text-xl ${subtitle.className} relative z-10`}>
-                        The future isn&#39;t automated. <span className="text-purple-400 font-medium">It&#39;s intelligent. It&#39;s personal. It&#39;s Rise AI.</span>
+                            <span className="text-white">The future isn&apos;t automated.</span>{" "}
+                            <span className="text-purple-400 font-medium">It&apos;s intelligent. It&apos;s personal. It&apos;s Rise AI.</span>
                         </p>
                     </motion.div>
                 </motion.div>
@@ -303,8 +304,22 @@ const About = () => {
   whileHover={{ scale: 1.05, x: 5, boxShadow: '0 15px 30px -10px rgba(124, 58, 237, 0.3), 0 8px 12px -6px rgba(124, 58, 237, 0.2)' }}
   whileTap={{ scale: 0.95 }}
 >
-  Let&#39;s Collaborate <FaArrowRight className="transition-transform group-hover:translate-x-1" />
+  Let&#39;s Collaborate
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-5 h-5 transition-transform group-hover:translate-x-1"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M5 12h14" />
+    <path d="m12 5 7 7-7 7" />
+  </svg>
 </motion.span>
+
                         </Link>
                     </div>
                 </motion.div>

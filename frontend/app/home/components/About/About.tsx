@@ -32,8 +32,8 @@ const Clients = () => {
                             </p>
 
                             <span className={`text-[20px] md:text-[24px] leading-[22px] text-justify ${heading1.className}`}>
-                            "Not Just Digital—Dimensional." We don't just deliver services—we build intelligent ecosystems.
-                            Whether you're crafting the next unicorn startup or streamlining an enterprise workflow,
+                            &quot;Not Just Digital—Dimensional.&quot; We don&apos;t just deliver services—we build intelligent ecosystems.
+                            Whether you&apos;re crafting the next unicorn startup or streamlining an enterprise workflow,
                             Rise AI is your co-pilot in the age of artificial intelligence.
                             </span>
                         </motion.h3>

@@ -39,12 +39,12 @@ const Contact = () => {
                                                 className="text-[28px] md:text-[40px] max-md:leading-8 max-lg:leading-10 lg:text-5xl mb-7 font-medium text-white js-build-in-item build-in-slideX-left build-in-animate"
                                                 style={{ transitionDelay: '300ms' }}
                                             >
-                                                <p className={`text-[#939aff] ${heading1.className}`}>Let's Build Your Future</p>
+                                                <p className={`text-[#939aff] ${heading1.className}`}>Let&apos;s Build Your Future</p>
 
                                             </h3>
                                         </motion.h3>
                                         <p className={`mb-4 md:text-xl text-[16px] text-[#7d8590] px-4 mx-auto ${body.className}`}>
-                                            Let’s innovate, automate, and elevate—AI is the future, and your future starts today!
+                                            Let&apos;s innovate, automate, and elevate—AI is the future, and your future starts today!
                                         </p>
                                         <div className="flex items-center justify-center lg:space-x-5 max-lg:space-y-3 max-lg:flex-col max-lg:w-full max-lg:mt-5">
                                             <a
@@ -105,7 +105,7 @@ const Contact = () => {
                                         </motion.h3>
 
                                         <p className={`mb-4 md:text-xl text-[16px] text-[#7d8590] px-4 mx-auto ${body.className}`}>
-                                            Join our team of innovators. We're looking for curious minds who want to build the future of intelligent systems. Flexibility, growth, and groundbreaking work await.
+                                            Join our team of innovators. We&apos;re looking for curious minds who want to build the future of intelligent systems. Flexibility, growth, and groundbreaking work await.
                                         </p>
                                         <div className="flex items-center justify-center lg:space-x-5 max-lg:space-y-3 max-lg:flex-col max-lg:w-full max-lg:mt-5">
                                             <a

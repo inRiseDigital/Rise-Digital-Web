@@ -68,8 +68,8 @@ const CareerPath = () => {
       >
         <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">Our Culture at Rise AI</h2>
         <p className="text-gray-300 max-w-3xl mx-auto text-base sm:text-lg">
-          Join a team where innovation meets collaboration. At Rise AI, we're building a culture 
-          that empowers talent and pushes the boundaries of what's possible.
+          Join a team where innovation meets collaboration. At Rise AI, we&apos;re building a culture 
+          that empowers talent and pushes the boundaries of what&apos;s possible.
         </p>
       </motion.div>
 
@@ -100,7 +100,7 @@ const CareerPath = () => {
       >
         <h3 className="text-2xl font-bold text-white mb-4">Ready to Join Our Team?</h3>
         <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-          We're always looking for passionate individuals who are excited about technology and want to make an impact.
+          We&apos;re always looking for passionate individuals who are excited about technology and want to make an impact.
           Explore our open roles and find where you fit in.
         </p>
         <a 

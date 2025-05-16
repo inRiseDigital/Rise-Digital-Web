@@ -3,7 +3,7 @@ import React, { useState, useRef, useEffect, useContext } from 'react'
 import { motion } from 'framer-motion'
 import { FaCode, FaPaintBrush, FaChartLine, FaArrowRight, FaLightbulb, FaCogs, FaMobileAlt } from 'react-icons/fa'
 import { title, heading1, heading2, subtitle, body } from '../../../../fonts/font'
-import { CareersContext } from '../../page'
+import { CareersContext } from '../../CareersContext'
 
 interface JobCategory {
   title: string
@@ -33,13 +33,16 @@ const JobRoles = () => {
       { threshold: 0.1 }
     )
     
-    if (elementRef.current) {
-      observer.observe(elementRef.current)
+    // Store the current value in a variable
+    const currentElement = elementRef.current;
+    
+    if (currentElement) {
+      observer.observe(currentElement)
     }
     
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current)
+      if (currentElement) {
+        observer.unobserve(currentElement)
       }
     }
   }, [])
@@ -48,7 +51,23 @@ const JobRoles = () => {
     {
       title: "Engineering",
       description: "Build cutting-edge technology that powers our AI solutions and transforms industries.",
-      icon: <FaCode className="text-blue-400" size={24} />,
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="text-blue-400"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <polyline points="16 18 22 12 16 6" />
+          <polyline points="8 6 2 12 8 18" />
+        </svg>
+      ),
       backgroundColor: "from-blue-900/20 to-blue-900/5",
       roles: [
         {
@@ -74,7 +93,23 @@ const JobRoles = () => {
     {
       title: "Design",
       description: "Create intuitive, beautiful experiences that make complex AI capabilities accessible to everyone.",
-      icon: <FaPaintBrush className="text-purple-400" size={24} />,
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="text-purple-400"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M2 21h4v-4H2v4zM4 19h2v-2H4v2zm15-12l-6 6-3-3 6-6c1.44-1.44 3.6-1.44 5 0 1.44 1.44 1.44 3.6 0 5z" />
+          <path d="M16 6l6 6" />
+        </svg>
+      ),
       backgroundColor: "from-purple-900/20 to-purple-900/5",
       roles: [
         {
@@ -100,7 +135,23 @@ const JobRoles = () => {
     {
       title: "Product",
       description: "Identify market opportunities and guide the development of innovative AI solutions.",
-      icon: <FaChartLine className="text-green-400" size={24} />,
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="text-green-400"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M3 17l4-4 4 4 4-4 4 4" />
+          <path d="M3 13V6h4l4 4 4-4h4v11" />
+        </svg>
+      ),
       backgroundColor: "from-green-900/20 to-green-900/5",
       roles: [
         {
@@ -126,7 +177,24 @@ const JobRoles = () => {
     {
       title: "Innovation",
       description: "Explore emerging technologies and create new applications for artificial intelligence.",
-      icon: <FaLightbulb className="text-yellow-400" size={24} />,
+      icon: (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="text-yellow-400"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M9 18h6" />
+          <path d="M12 2C10.343 2 9 3.343 9 5a4.5 4.5 0 0 0 1 2.917V9c0 1.5-.5 2.5-1 4a5.5 5.5 0 0 0 5 0c-.5-1.5-1-2.5-1-4V7.917A4.5 4.5 0 0 0 15 5C15 3.343 13.657 2 12 2z" />
+          <path d="M10 18v2h4v-2" />
+        </svg>
+      ),
       backgroundColor: "from-yellow-900/20 to-yellow-900/5",
       roles: [
         {
@@ -266,7 +334,7 @@ const JobRoles = () => {
 
             <div>
               <h4 className={`text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3 flex items-center tracking-wide ${heading2.className}`}>
-                <FaCogs className="mr-2 text-purple-500" />
+                {/* <FaCogs className="mr-2 text-purple-500" /> */}
                 Key Skills
               </h4>
               <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3">
@@ -283,7 +351,7 @@ const JobRoles = () => {
 
             <div>
               <h4 className={`text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3 flex items-center tracking-wide ${heading2.className}`}>
-                <FaMobileAlt className="mr-2 text-purple-500" />
+                {/* <FaMobileAlt className="mr-2 text-purple-500" /> */}
                 Your Impact
               </h4>
               <div className="bg-gradient-to-r from-purple-900/20 to-transparent p-3 sm:p-4 md:p-6 rounded-lg border-l-4 border-purple-700">
@@ -299,7 +367,21 @@ const JobRoles = () => {
                 className={`inline-flex items-center group bg-gradient-to-r from-purple-700 to-blue-600 hover:from-purple-600 hover:to-blue-500 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 text-sm sm:text-base ${body.className} tracking-wide`}
               >
                 View Open Positions
-                <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
               </button>
             </div>
           </div>
